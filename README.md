@@ -18,14 +18,12 @@ the web app will fulfil the needs of the intended users.
 This high-level diagram should include the different components of the
 system and any additional APIs from external services that might be used.
 
-### 5. an ER Diagram (this must be in compressed Chen notation), along with a description of
-the attributes (with their data types) for each entity – 1 slide;
+### 5. an ER Diagram (this must be in compressed Chen notation), along with a description of the attributes (with their data types) for each entity – 1 slide;
 The model should be relevant and appropriate in the context of the
 specification. The diagram should adhere to compressed Chen notation
 and should give data types for the attributes in the separate tables.
 
-### 6. a number of wireframes to show the main functionality of the system – at least 3 and at
-most 6 slides;
+### 6. a number of wireframes to show the main functionality of the system – at least 3 and at most 6 slides;
 The wireframes should include login functionality and context. There
 should be a sufficient number to illustrate the functionality provided by the
 app as indicated by the specification
