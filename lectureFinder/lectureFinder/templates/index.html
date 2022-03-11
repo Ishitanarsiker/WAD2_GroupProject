@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Homepage
+{% endblock %}
+
+{% block main_block %}
+
+
+<div class="main-body">
+    <div class="body-container-index">
+        <div>
+            <div class="category-title"><h5>Recently Uploaded</h5></div>
+            <div class="table">
+                {% for item in recently_uploaded %}
+                    {% if item != last %}
+                        <div class="table-cell">{{ item }}</div>
+                    {% else %}
+                        <div class="table-cell table-bottom">{{ item }}</div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div>
+            <div class="category-title"><h5>Most Visited</h5></div>
+            <div class="table">
+                {% for item in most_visited %}
+                    {% if item != last %}
+                        <div class="table-cell">{{ item }}</div>
+                    {% else %}
+                        <div class="table-cell table-bottom">{{ item }}</div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+

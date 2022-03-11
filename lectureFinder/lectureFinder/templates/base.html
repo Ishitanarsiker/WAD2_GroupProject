@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <meta charset="UTF-8">
+    <title>
+        {% block title_block %}
+            WAD2 - Group Project
+        {% endblock %}
+    </title>
+</head>
+
+<header>
+    <div class="header-container-a">
+        <div><a href="index.html"><img class="logo" src="logo.png" alt="FindMyLecture logo"></a></div>
+        <div class="enter-container">
+            {% if logged_in %}
+                <button class="enter-btn btn-a"><strong>Log in</strong></button>
+                <button class="enter-btn btn-b"><strong>Sign up</strong></button>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="header-container-b">
+        <div class="navbar">
+
+            <div><a class="navbar-btn" href="index.html">HOME</a></div>
+            <div><a class="navbar-btn" href="courses.html">COURSES</a></div>
+            <div><a class="navbar-btn" href="members.html">MEMBERS</a></div>
+            <div><a class="navbar-btn" href="search.html">SEARCH</a></div>
+
+        </div>
+    </div>
+</header>
+
+
+<body class="main-body">
+    {% block main_body %}
+    {% endblock %}
+</body>
+
+
+</html>

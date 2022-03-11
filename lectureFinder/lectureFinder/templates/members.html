@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Homepage
+{% endblock %}
+
+{% block main_block %}
+    <div class="main-body">
+        <div class="body-container-members">
+
+            <div class="side-menu">
+                <button class="side-menu-cell side-menu-top">Settings</button>
+                <button class="side-menu-cell">My Files</button>
+                <button class="side-menu-cell">C</button>
+                <button class="side-menu-cell">D</button>
+                <button class="side-menu-cell side-menu-bottom">E</button>
+            </div>
+
+            <div class="selected-view">
+                <div>Your saved files will appear here</div>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}
