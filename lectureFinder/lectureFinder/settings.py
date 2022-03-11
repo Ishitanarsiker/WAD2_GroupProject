@@ -29,9 +29,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-app_name = 'lectureFinderApp'
-
-
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
