@@ -13,7 +13,8 @@ class UserProfile(models.Model):
 
 
 class Course(models.Model):
-    name = models.TextField(max_length=128, unique=True)
+    name = models.TextField(max_length=128, unique=False)
+    code = models.IntegerField(unique=True, default=0)
 
     def __str__(self):
         return self.name
@@ -30,7 +31,14 @@ class Lecture(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     professor = models.ForeignKey(UserProfile, on_delete=models.DO_NOTHING)
 
+    def __str__(self):
+        return str(self.title) + " => for " + str(self.course)
+
 
 class SavedLecture(models.Model):
     lecture = models.ForeignKey(Lecture, on_delete=models.CASCADE)
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.lecture) + ", saved by, " + str(self.user)
+
