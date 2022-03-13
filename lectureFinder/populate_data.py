@@ -40,6 +40,7 @@ def populate():
         2021: [
             {
                 'title': 'Lecture 1-A',
+                'transcript_name': '',
                 'video_url': 'https://moodle.gla.ac.uk/mod/lti/view.php?id=2774846',
                 'slideshow_url': 'https://moodle.gla.ac.uk/pluginfile.php/5180587/mod_resource/content/1/L1-Introduction-notes.pdf',
                 'professor': professors[1]
@@ -48,6 +49,7 @@ def populate():
         2008: [
             {
                 'title': '5.1 Monday Lecture - Mocking',
+                'transcript_name': 'OOSE2_mocking_transcript.vtt',
                 'video_url': 'https://uofglasgow.zoom.us/rec/play/Gnh6zBh2sxyjQgqY7Zb-zRm4CpjIWHtigZtPwfalth-JYCHDVcDaXc4zREq8eX7AqK9-CAUIhVTAGc7T.aDtc97nEaL726nun?startTime=1644231182000&_x_zm_rtaid=Kn8QJRdNTW2kousYc7ITPQ.1647047085571.d7a9e03007c63ee4c99d3454883e0232&_x_zm_rhtaid=206',
                 'slideshow_url': 'https://gla.sharepoint.com/:p:/r/sites/COMPSCI2008OBJECT-ORIENTEDSOFTWAREENGINEERING22/_layouts/15/Doc.aspx?sourcedoc=%7BF25477F5-9A3F-4636-9D46-AF69742A1790%7D&file=OOSE%205.1.2%20Doubling%20and%20Mocking.pptx&action=edit&mobileredirect=true',
                 'professor': professors[0]
@@ -64,7 +66,8 @@ def populate():
                 professor=lecture.get('professor'),
                 title=lecture.get('title'),
                 video_url=lecture.get('video_url'),
-                slideshow_url=lecture.get('slideshow_url')
+                slideshow_url=lecture.get('slideshow_url'),
+                transcript_name=lecture.get('transcript_name')
             ))
 
     saved_lectures = [
@@ -82,10 +85,11 @@ def add_course(name, code):
     return c
 
 
-def add_lecture(title, video_url, slideshow_url, course, professor, views=0, likes=0):
+def add_lecture(title, video_url, transcript_name, slideshow_url, course, professor, views=0, likes=0):
     l = Lecture.objects.get_or_create(title=title, course=course, professor=professor)[0]
     l.video_url = video_url
     l.slideshow_url = slideshow_url
+    l.transcript_name = transcript_name
     l.views = views
     l.likes = likes
     l.save()

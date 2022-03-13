@@ -1,0 +1,1278 @@
+WEBVTT
+
+1
+00:10:45.540 --> 00:11:02.820
+Sally Smith: hi there and I see on the chat there somebody said this lecture looks kinda dead, so I was hoping, I could have a quick word because i've been invited, just to spend five minutes with you, and in the absence of anything else we can get always I Derek I didn't see you on the.
+
+2
+00:11:02.820 --> 00:11:06.540
+Derek Somerville: Call I sorry, no, no, so I was a little bit, at least in joining sort of that, so thank you.
+
+3
+00:11:06.990 --> 00:11:07.260
+So.
+
+4
+00:11:08.520 --> 00:11:10.800
+Sally Smith: I would just take advantage of the quiet to.
+
+5
+00:11:10.950 --> 00:11:11.430
+Derek Somerville: me and.
+
+6
+00:11:12.600 --> 00:11:14.610
+Sally Smith: Then i'll kick off the call.
+
+7
+00:11:15.660 --> 00:11:23.820
+Sally Smith: Thanks David, so my name is Sally Smith and i'm project director of our project called a policeman Scotland and.
+
+8
+00:11:24.600 --> 00:11:35.280
+Sally Smith: His main goal is to find you are student policeman relevant work experience, while you are still a student at university of Glasgow studying a computing or digital related.
+
+9
+00:11:35.970 --> 00:11:42.960
+Sally Smith: subject so we've been running since 2010 we get funding from the same organization that funds your university.
+
+10
+00:11:43.800 --> 00:11:49.530
+Sally Smith: And we work with our an organization to body for it in Scotland called Scotland is.
+
+11
+00:11:50.220 --> 00:11:55.950
+Sally Smith: To speak to employers to persuade them to offer some paid work experience you do not fantastic module.
+
+12
+00:11:56.220 --> 00:12:05.040
+Sally Smith: If you're learning about object oriented software engineering you're getting the right skills for getting some relevant work experience and it's a lot of employers that are advertising at the moment.
+
+13
+00:12:05.400 --> 00:12:15.960
+Sally Smith: And so i'm here just to encourage you to take a look at our project website is look if I share my screen for a second and it.
+
+14
+00:12:17.700 --> 00:12:19.830
+Sally Smith: didn't get this up so that's.
+
+15
+00:12:21.660 --> 00:12:29.640
+Sally Smith: The project website placement scotland.com just click on view all and you can see all the vacancies that are being advertised at the moment.
+
+16
+00:12:29.910 --> 00:12:37.740
+Sally Smith: cadence I know has been filled by University of Glasgow students in the past and so there's those jobs coming up all the way through to the summer.
+
+17
+00:12:38.160 --> 00:12:45.840
+Sally Smith: And if you're a second year student going in the summer going into third year and it might be more difficult, but.
+
+18
+00:12:46.140 --> 00:12:54.720
+Sally Smith: you're getting the right sorts of skills and actually applying for a summer placement, this summer, can still be really valuable experience for you, for next summer.
+
+19
+00:12:55.140 --> 00:13:02.160
+Sally Smith: The way the site works, as you can register, so you can register the skills that you've got the interest on your upload your CV.
+
+20
+00:13:02.490 --> 00:13:17.520
+Sally Smith: And then we can see the sorts of students that are looking for placements and start speaking to employers and telling them that our students in your area that are keen to use their software engineering, the object oriented software engineering skills and the summer, so this.
+
+21
+00:13:18.660 --> 00:13:23.370
+Sally Smith: One slide there just to encourage you to think about it this year and, of course, we did.
+
+22
+00:13:24.360 --> 00:13:32.280
+Sally Smith: Some research what employers looking for graduates Number One relevant work experience number two's your degree subject So there we go and.
+
+23
+00:13:32.580 --> 00:13:39.330
+Sally Smith: Other other degree subjects is really, really important actually getting some relevant and your degree subject will help you get that relevant work experience anyway.
+
+24
+00:13:39.690 --> 00:13:47.340
+Sally Smith: And then the third is attitude and actually having some relevant work experience shows what a great attitude and you've had you in your your time studying.
+
+25
+00:13:47.700 --> 00:13:57.090
+Sally Smith: So that's in a nutshell thanks for letting me sit on your class and I really look forward to seeing you register on emplacements got one.com.
+
+26
+00:13:57.330 --> 00:14:04.050
+Sally Smith: and start looking for some relevant work experience for for next summer got lot flexible jobs as well, people looking for part time.
+
+27
+00:14:04.410 --> 00:14:08.550
+Sally Smith: In term time and and lots of other things got CV advice up there.
+
+28
+00:14:08.790 --> 00:14:20.400
+Sally Smith: Writing your cover letter and it's in addition to all the work that University of Glasgow are doing to try and find your placements as well, so it's just another thing that another resource that you can use great, thank you for letting me join you today.
+
+29
+00:14:20.430 --> 00:14:28.320
+Derek Somerville: or no, thank you and just read it with Sally said i'd see so look after the intense about 20% or 10 to 20%.
+
+30
+00:14:28.710 --> 00:14:38.160
+Derek Somerville: Of the people who are doing the formal presentation after the third year i'd say had actually started in the second year doing internships, so I think it is.
+
+31
+00:14:38.460 --> 00:14:45.960
+Derek Somerville: A great opportunity that may be a little bit harder, but I think it's a great opportunity to start and then put the founders they do an internship and the second year.
+
+32
+00:14:46.230 --> 00:15:01.110
+Derek Somerville: Do a 30 year and then there was possibly always then offered a full time job that they have the option to come in afterwards as well, so, but thank you very much Sally and that's key and then suddenly you a week after the internship so any extra help is pretty much welcome Sunday so.
+
+33
+00:15:01.110 --> 00:15:02.400
+Sally Smith: thoroughly thanks very much.
+
+34
+00:15:02.460 --> 00:15:03.630
+Derek Somerville: cheers everyone Thank you bye.
+
+35
+00:15:03.750 --> 00:15:04.050
+Right.
+
+36
+00:15:09.120 --> 00:15:21.900
+Derek Somerville: So perfect so i'll just put in chat and just to remind you, if you can try and fill out the class representative a questionnaire that certainly very helpful.
+
+37
+00:15:22.560 --> 00:15:27.840
+Derek Somerville: Self and Stephen m, we got the impression that a few.
+
+38
+00:15:28.560 --> 00:15:39.180
+Derek Somerville: issues with the course when it was run in last year and stuff so we've tried to do things to try and improve it, but your feedback is really quite essential for us to try and make what.
+
+39
+00:15:39.540 --> 00:15:49.530
+Derek Somerville: What what should meaning make it better for you and also improve it for future for students, so, certainly in giving them that feedback, it would be very a very welcome.
+
+40
+00:15:49.860 --> 00:15:58.260
+Derek Somerville: So if people can start in filling that out as well, that would be great i'll just put that up on the teams say as well and.
+
+41
+00:16:13.620 --> 00:16:14.790
+Derek Somerville: Excellent okay perfect.
+
+42
+00:16:26.130 --> 00:16:27.120
+yeah.
+
+43
+00:16:37.020 --> 00:16:47.370
+Derek Somerville: So can people and see can anyone just confirm if they can see my screen with object oriented software engineering deploying and mocking perfect that's great Thank you.
+
+44
+00:16:47.640 --> 00:17:03.180
+Derek Somerville: So just start then and in thanks for just listening to a salad there any policeman Scotland I think getting a policeman and will be helpful and for you cool so so some is running, I believe.
+
+45
+00:17:09.060 --> 00:17:18.750
+Derek Somerville: yeah so reporting perfect so Eric tended learning outcome air for this part is to understand the different approaches to software testing okay.
+
+46
+00:17:20.310 --> 00:17:27.720
+Derek Somerville: So Dublin month mocking what i'm going to do is just do a quick reminder of unit testing topic continuous integration topic toppling.
+
+47
+00:17:28.170 --> 00:17:41.520
+Derek Somerville: top of it more king and then just give you an example okay so and in terms of remainder of unit testing unit testing what she did for the lab and last week you're testing an individual.
+
+48
+00:17:42.030 --> 00:17:49.320
+Derek Somerville: function or method yeah you're doing it specifically for one set of parameters you're just testing for one thing.
+
+49
+00:17:50.160 --> 00:18:02.460
+Derek Somerville: and your test testing One scenario okay and you're really focusing on the inputs outputs and it's a lot easier for you to keep tests, if you do have a return, if you getting an open.
+
+50
+00:18:03.420 --> 00:18:13.740
+Derek Somerville: And it just makes life a lot easier for you, creating the different n different tests Okay, and then by controlling it with it and it's just a little bit easier.
+
+51
+00:18:14.220 --> 00:18:25.110
+Derek Somerville: When you start using class level variables become slightly more challenging for you to know you're controlling them and to some extent by the method being created.
+
+52
+00:18:25.710 --> 00:18:44.280
+Derek Somerville: With the set parameters when knows the other counters you have to send what is when you start making use of class little variables, the could have the names changed, etc, they are more internal to the class so which case it becomes slightly more difficult as well okay.
+
+53
+00:18:45.510 --> 00:18:52.560
+Derek Somerville: So just reiterating it's just I would focus for unit testing when the inputs and the outputs okay.
+
+54
+00:18:55.050 --> 00:19:04.590
+Derek Somerville: So, in terms of distribution job conference before the blue and Eric one people meet commits to personal branches and then you created local environments.
+
+55
+00:19:04.890 --> 00:19:13.560
+Derek Somerville: And for the tester work and the master branch would be branched off of it, and then the changes the MIC to the personal branch.
+
+56
+00:19:13.800 --> 00:19:22.110
+Derek Somerville: The manage back to the master branch, then the freeze the master branch for pdfs so that they don't add a new features, but just fixing anybody.
+
+57
+00:19:22.920 --> 00:19:27.720
+Derek Somerville: Then the test on that scratch, environment and then create the live environment okay.
+
+58
+00:19:28.410 --> 00:19:37.620
+Derek Somerville: So when you're doing your local unit tests, as was just discussed you're taking a branch to your personal a feature branch you're calling and checking that out.
+
+59
+00:19:37.950 --> 00:19:47.460
+Derek Somerville: With amending the quarter new features and then you test new features, to ensure that works and avoid any breaks in the future okay.
+
+60
+00:19:48.570 --> 00:19:56.700
+Derek Somerville: And it just gives you confidence that what you've written then works and slightly even for myself and some of the stuff I was just doing for you.
+
+61
+00:19:57.540 --> 00:20:05.130
+Derek Somerville: I didn't so coordinate assumed it worked, but then, when I wrote something else I find out that some of the very basic underlying.
+
+62
+00:20:05.640 --> 00:20:12.570
+Derek Somerville: functions overwritten didn't actually quite work, the point is I hadn't created a unit test them to until i've created a unit test.
+
+63
+00:20:12.870 --> 00:20:19.050
+Derek Somerville: How do you really know if it does you plan it to do, and certainly that had caught me out and then, once I.
+
+64
+00:20:19.590 --> 00:20:27.360
+Derek Somerville: worked over the problem was undefeated unit tests for I then got it working and then it was really quick to actually develop the new code.
+
+65
+00:20:28.230 --> 00:20:39.000
+Derek Somerville: Key so or who regression tests unit tests, so the change issue you make me break existing code of other methods classes or packages.
+
+66
+00:20:39.600 --> 00:20:51.480
+Derek Somerville: So you want to run tests locally, for the whole class you want to run regression tests for the package that your classes call classes or package calls or you want to run regression tests.
+
+67
+00:20:52.260 --> 00:21:03.210
+Derek Somerville: For a class and package that you're the kosher class and also the your class calls Okay, and then that just gives you confidence that you're not breaking anything okay.
+
+68
+00:21:04.680 --> 00:21:20.880
+Derek Somerville: And with the concept of continuous integration at regular intervals and on a commit then a whole suite of unit tests are run okay so, for example, and if.
+
+69
+00:21:21.390 --> 00:21:29.970
+Derek Somerville: you're making your commits it could be quite expensive and time consuming to lower your test so potentially on what's been submitted.
+
+70
+00:21:30.270 --> 00:21:37.290
+Derek Somerville: Then all the tests that you have, for your project or all the unit tests are all potentially run on the other.
+
+71
+00:21:37.890 --> 00:21:53.430
+Derek Somerville: Other run muddy and end of day, just to make sure that everything people committed so far have done, but another snotty was people do that once as a committee, made then runs all the tests, but should to do that, you need to test be quite fast okay.
+
+72
+00:21:54.450 --> 00:22:05.250
+Derek Somerville: And you change me affect other methods classes of packages so which is you want these tests run to ensure that you have major change and everything still works OK.
+
+73
+00:22:06.150 --> 00:22:20.730
+Derek Somerville: And the speed of the test is quite important, because the faster the test than the more often, you can run these tests and then the faster you get the feedback to know what changes you've made works and haven't hasn't broken anything else.
+
+74
+00:22:21.480 --> 00:22:28.680
+Derek Somerville: And the early feedback and your change as I think i've mentioned before, is very useful so, for example, if you make a change.
+
+75
+00:22:30.540 --> 00:22:35.760
+Derek Somerville: And then you find out by 11am it's broken, something is still quite familiar in your mind.
+
+76
+00:22:36.300 --> 00:22:44.610
+Derek Somerville: So you then can quite quickly probably rectify any problems, whereas if you commit something at 10am and then you don't find out till tomorrow.
+
+77
+00:22:45.180 --> 00:22:53.670
+Derek Somerville: That it's broken, something you need to try and catch your main back of what you change yesterday back slow you down and make it in difficult.
+
+78
+00:22:54.030 --> 00:23:03.990
+Derek Somerville: Likewise, also you may be on holiday or maybe offset the next day, in which case that dili's when you would be able to rectify any issues yeah.
+
+79
+00:23:04.470 --> 00:23:10.440
+Derek Somerville: and your change could have broken a number of other things that causes other software engineers problems because.
+
+80
+00:23:11.400 --> 00:23:31.380
+Derek Somerville: before they even doing this, then broken and they're relying on on diet getting fixed, so the area, the feedback, the quicker and easier to be few to fix the problem and, likewise, it will be better because you can fix it quicker, for your other people within your team and other teams.
+
+81
+00:23:33.360 --> 00:23:37.050
+Derek Somerville: So this one's doing remote working, which has been a lot more common.
+
+82
+00:23:38.160 --> 00:23:43.560
+Derek Somerville: And coronavirus you could have to network for Internet access yeah.
+
+83
+00:23:44.730 --> 00:23:55.440
+Derek Somerville: And you may require to have a vpn connection in order to connect to certain assets databases, etc, in your work, so it makes life more difficult.
+
+84
+00:23:56.370 --> 00:24:06.540
+Derek Somerville: And likewise the could be security and firewall that prevents access, certainly when I worked, even at JPMorgan you could only connect a database.
+
+85
+00:24:07.050 --> 00:24:14.220
+Derek Somerville: And it wasn't that accurate, but basically only certain floors were able to access certain things.
+
+86
+00:24:14.700 --> 00:24:26.040
+Derek Somerville: So they're probably reluctant to go and set up access specifically for your home machine yeah and likewise host security is your home machine.
+
+87
+00:24:26.490 --> 00:24:38.970
+Derek Somerville: You could go and have an attack and then someone takes that over so, in which case you will potentially have slight limitations what you can do when you're working remotely from home.
+
+88
+00:24:40.410 --> 00:24:47.820
+Derek Somerville: And likewise there could be no slow or teammates of the connections, as well as not necessarily getting access to everything yeah.
+
+89
+00:24:49.620 --> 00:24:59.040
+Derek Somerville: So when you're doing local workings you testing the things locally, again, even when you're in work that can be firewalls in place to go and restrict.
+
+90
+00:24:59.490 --> 00:25:11.910
+Derek Somerville: we're queer you can access things from and that just takes effort him to maintain and again things could be slow or time dates, or you could be working and doing changes for.
+
+91
+00:25:13.290 --> 00:25:24.600
+Derek Somerville: Applications application that runs in New York, in which case you've to connect all the way from the UK to New York and certainly in my idea it's probably solved, but see 10 years ago sure.
+
+92
+00:25:25.260 --> 00:25:37.560
+Derek Somerville: If you are connecting talk home you didn't go yuki Hong Kong you ain't yuki America then America Hong Kong, so the network connections were really quite slow, so therefore.
+
+93
+00:25:37.920 --> 00:25:47.730
+Derek Somerville: If you're testing locally, you may not have access to everything and it may not quite all work so doubling is a solution to this.
+
+94
+00:25:48.210 --> 00:26:01.980
+Derek Somerville: So by doubling you remove the external dependencies you databases file systems http s etc, and you remove the networking and alternate dependency that you have.
+
+95
+00:26:02.910 --> 00:26:13.230
+Derek Somerville: And by removing these things he even though they may not be issues, do you still be slowing down the speed quitters if you connect.
+
+96
+00:26:13.830 --> 00:26:21.000
+Derek Somerville: To an in memory database that's locally running on your machine that will be super fast, rather than you having to go out.
+
+97
+00:26:21.420 --> 00:26:32.970
+Derek Somerville: Going across the network connected database and potentially when you query the main database, you get a lot of data back, whereas your local an in memory database could be set up in such a way.
+
+98
+00:26:33.300 --> 00:26:42.030
+Derek Somerville: That it just has a few records so everything works significantly faster okay so they're sort of some good.
+
+99
+00:26:43.290 --> 00:26:55.110
+Derek Somerville: Reasons so for for doubling you probably want to do if you're reading or writing to fail because we integrate into a file and one potentially could be a lot because other people are doing it.
+
+100
+00:26:55.590 --> 00:27:07.110
+Derek Somerville: But, and you just then have to cross the network to get it, and just the reading and writing of a file is slow, even when it's done locally, on your machine that can still slow things down.
+
+101
+00:27:07.980 --> 00:27:19.290
+Derek Somerville: And then potentially you're reading and writing to a database again, this can be quite slow so just slow down your tests and hence slow down the continuous integration.
+
+102
+00:27:19.800 --> 00:27:28.200
+Derek Somerville: That you want to try and run as many of your tests as possible on as regular and, as you can to try and give people any feedback.
+
+103
+00:27:29.370 --> 00:27:38.310
+Derek Somerville: You may also called web services again your network connections to call these web services these web services are also potentially doing quite that work.
+
+104
+00:27:38.640 --> 00:28:01.230
+Derek Somerville: To process your request, whereas if you double it and just turn and sentences scenarios are result that's going to be a lot faster yeah so, for example, and it was on legally ropy yeah was on a weekend, you can be going calling some web service to gives you a tell me.
+
+105
+00:28:02.490 --> 00:28:10.230
+Derek Somerville: A high score or have the best five rugby teams, in which case it potentially is doing quite the process and get it back.
+
+106
+00:28:10.770 --> 00:28:20.850
+Derek Somerville: But you couldn't you're doubling just send back a dummy result of five teams and then it will process it accordingly, so it just then helps speed up things.
+
+107
+00:28:21.750 --> 00:28:32.760
+Derek Somerville: But also, you can be climbing another an application, as I mentioned Bloomberg earlier on, at one point when I was working JP Morgan we to then interface with the Bloomberg.
+
+108
+00:28:33.210 --> 00:28:48.240
+Derek Somerville: And that calling the other application was then quite slow and when it would reply back also but the point is the only the license agreement was you could only make em five calls in.
+
+109
+00:28:48.720 --> 00:28:53.250
+Derek Somerville: In the deal a week or someplace that can remember, but the point being is.
+
+110
+00:28:53.670 --> 00:29:09.930
+Derek Somerville: You couldn't really test it then because you could only make five calls So if you wanted to regularly test it you had to keep some sort of a doubling so that you wouldn't actually call and Bloomberg several times, because it was costs involved, if you wanted to do it and regularly.
+
+111
+00:29:11.070 --> 00:29:28.230
+Derek Somerville: and potentially if you're calling it external libraries, which could be then calling external applications or doing a significant amount processing and slow that could all mean that is worthwhile considering doing doubling so you can speed up in your tests okay.
+
+112
+00:29:31.470 --> 00:29:42.570
+Derek Somerville: So it just remains doing continuous integration, so this is what we're striving towards merging doubling is that you can run your regular intervals, or all commit a series of unit tests.
+
+113
+00:29:43.290 --> 00:29:51.870
+Derek Somerville: And you can go and check if there's no effects on other packages and you want to try and get your speed of tests as fast as possible.
+
+114
+00:29:52.320 --> 00:30:07.590
+Derek Somerville: And you want to then get early feedback on your changes okay so mocking why so it speeds up by doing mocking you speed up this continuous integration, because what walking is is a type of doubling.
+
+115
+00:30:08.190 --> 00:30:19.740
+Derek Somerville: And mocking you you're trying to avoid going out to these external applications databases these websites etc instead at runtime you're just defining.
+
+116
+00:30:20.100 --> 00:30:35.100
+Derek Somerville: For would have been replied would have responded from that a call, so it just means that things then become faster and you get your earlier feedback and it removes the dependencies on the sort of em.
+
+117
+00:30:35.760 --> 00:30:49.620
+Derek Somerville: em operating systems inputs and outputs or database etc you're moving these of external dependencies and you're removing dependencies on external applications slow things down.
+
+118
+00:30:50.490 --> 00:31:10.110
+Derek Somerville: and which isn't so true with Java is slightly more true Python with Python it's mocking frameworks, a little bit and better and, in which case with partly because it's more of a script to dynamic language but in Python you don't need to change your code.
+
+119
+00:31:11.250 --> 00:31:20.730
+Derek Somerville: And the whole two years working with Java, you still need to change your code, a little bit in some circumstances in all circumstances, to get the marks to work properly.
+
+120
+00:31:21.630 --> 00:31:27.930
+Derek Somerville: But it certainly reduces it compared to other types of dumplings you end up making your code, a little bit more complicated.
+
+121
+00:31:28.290 --> 00:31:40.860
+Derek Somerville: In order to do doubling and that's not Greeks, you want your code to be as simple and easy to read, as possible, why are you having to bother about in complications to this record to handle doubling.
+
+122
+00:31:42.870 --> 00:31:44.160
+Derek Somerville: So, in terms of walking.
+
+123
+00:31:45.360 --> 00:31:59.310
+Derek Somerville: More can be used to specify a return value for our function, and so, if you've got what, for you know different screen and methods and functions so functions of return method you just call it perform some sort of action.
+
+124
+00:31:59.820 --> 00:32:17.910
+Derek Somerville: So if you have a return rather than actually processing the logic inside of that function if you keep a mock you can just see when I call this a function, give me back this result, but it means it doesn't have to actually do the logic is in that function.
+
+125
+00:32:19.110 --> 00:32:33.630
+Derek Somerville: And a mock can specify one return value and insight a class, certainly for a in Java there's a there's a walk in something very similar, which is a spine yeah okay.
+
+126
+00:32:35.280 --> 00:32:41.730
+Derek Somerville: So for marks you use you would important static or the key, the key to the key to walk.
+
+127
+00:32:42.210 --> 00:32:57.510
+Derek Somerville: And then you import the when key and the more than the when the mark allows you to create the mark and know when allows you to go and specify when you call a particular function or value to you back okay.
+
+128
+00:32:59.100 --> 00:33:11.610
+Derek Somerville: So, in terms of that if we wanted to go and create a more of a calculator class what we do is vehicle been a key is of tape calculator access to the morgue is of the calculator.
+
+129
+00:33:11.940 --> 00:33:20.550
+Derek Somerville: We then would name the vehicle, so what calculator and then we just call more, and then we pass in the calculator class so it's they created a mock.
+
+130
+00:33:20.820 --> 00:33:31.080
+Derek Somerville: Of the calculator class that we can know years and then we see when mark calculator dot first value is called then returned a value of two.
+
+131
+00:33:31.500 --> 00:33:41.370
+Derek Somerville: So that says got that therefore we could have that test set equals two is equal to the more calculated value first value.
+
+132
+00:33:42.120 --> 00:33:54.690
+Derek Somerville: One thing to know about this, this text is this test is just demonstrated, this is a pointless test because you're not test any court here she just testing a walk wax but that's all we wanted to some demonstrate yeah.
+
+133
+00:33:56.940 --> 00:34:03.570
+Derek Somerville: So you also another thing about mark is again we keep the mock calculator but.
+
+134
+00:34:04.650 --> 00:34:26.760
+Derek Somerville: When you do a mock it will also check the actual an input parameters, so when you call first value with a for it, then the terms to So if you were to pass in three it will just do it's normal logic doesn't specifically when the parameter value matches yeah.
+
+135
+00:34:28.440 --> 00:34:40.320
+Derek Somerville: And then you can so this would this be probably not work in actual fact, because it's not doing it first value for to mean or give you back the two.
+
+136
+00:34:41.550 --> 00:34:50.220
+Derek Somerville: Key so my key talk when twice so also when I create this mark, I can go in and see when first found you then return to.
+
+137
+00:34:50.610 --> 00:35:00.090
+Derek Somerville: And when first value, then the time to three so it means the first time I call it returns to the second time I call that function, it will return three.
+
+138
+00:35:00.900 --> 00:35:13.140
+Derek Somerville: So then, if I just call first file you, it will return to and then second time, it will turn the three so just allows you the flexibility of calling me several times OK.
+
+139
+00:35:16.140 --> 00:35:27.090
+Derek Somerville: So we also have the spy so with the spy and it's just another import of a library, you need to do for the spine yeah.
+
+140
+00:35:28.290 --> 00:35:34.380
+Derek Somerville: And with the spine slightly different in this case you key an instance of.
+
+141
+00:35:35.250 --> 00:35:52.410
+Derek Somerville: The class calculator and then you do a spine it instead of doing the walk we did calculator class, and this we just call it with an instance yeah and then we have the same we just see when spike ocular first then return true yeah.
+
+142
+00:35:54.030 --> 00:36:19.410
+Derek Somerville: So then one can call, so in this case spine allows you to call another method and all make use of the first value so i'll go into this an example later on in a bit more detail, but basically the spine is quite good for a lame new to the mark is more just returns.
+
+143
+00:36:20.610 --> 00:36:21.030
+Derek Somerville: and
+
+144
+00:36:22.500 --> 00:36:31.050
+Derek Somerville: I think it's maybe improve slightly, but originally anyway uh mark would only work for the functions that you call.
+
+145
+00:36:31.530 --> 00:36:40.800
+Derek Somerville: That you've locked up yeah it wouldn't work for other ones with a spine works that for the ones you mock it returned to walk file you.
+
+146
+00:36:41.460 --> 00:36:50.070
+Derek Somerville: And, but for the ones you've not done it will call the true called and because it's taken a copy of that instance.
+
+147
+00:36:50.610 --> 00:37:05.910
+Derek Somerville: So set example and both can be used to walk methods of fields and the differences that mark you're creating a complete more config object file and the spy there is a real object and the spy or stopping specific methods key.
+
+148
+00:37:06.390 --> 00:37:16.740
+Derek Somerville: So the advantage of the spine is you can then test other elements a working in the using the real code in it okay.
+
+149
+00:37:18.540 --> 00:37:32.790
+Derek Somerville: So you also can do both in marks and exceptions, you can do it, so you can do the market first value then through so you then can throw an exception, so, for example, if you're reading a file.
+
+150
+00:37:33.750 --> 00:37:41.790
+Derek Somerville: And then you meet check to go and see if there's exceptions raised and then potentially you will write an error and.
+
+151
+00:37:42.510 --> 00:37:52.560
+Derek Somerville: Or you behave in a different way if file fields to read and find the file, in which case, but you throwing the exception, you can then test how your call behaves.
+
+152
+00:37:52.770 --> 00:38:03.420
+Derek Somerville: And i'd say this is really quite important, because people sometimes forget to test these negative scenarios, we discussed what makes a good a unit test it is.
+
+153
+00:38:03.900 --> 00:38:17.520
+Derek Somerville: to also consider these feelings scenarios and making sure your code works for both the positive snipers the happy case we will, through it, and also for the last half be cases where you intend to problems, what happens.
+
+154
+00:38:17.760 --> 00:38:27.600
+Derek Somerville: When there's a timeout and potentially that reason exceptions, you can test the potentially you call something else in the case of these exceptions OK.
+
+155
+00:38:30.510 --> 00:38:37.620
+Derek Somerville: cool so some of the challenges with marks, so one of the big challenges with marks is and I had.
+
+156
+00:38:38.220 --> 00:38:49.200
+Derek Somerville: In town do that with me is that you can get lost in the Marks and especially when you're walking and databases, the ended up starting marking the connections.
+
+157
+00:38:49.650 --> 00:38:58.410
+Derek Somerville: And mocking all the setup of getting the select and it's not another, so the case at an awful lot of code to walk that the reality is.
+
+158
+00:38:59.190 --> 00:39:04.020
+Derek Somerville: You don't necessarily you should try and avoid doing that you should just do you walk.
+
+159
+00:39:04.620 --> 00:39:13.830
+Derek Somerville: The return of the information you shouldn't have to walk all the surrounding infrastructure for it because why you walking our.
+
+160
+00:39:14.220 --> 00:39:23.610
+Derek Somerville: database connection database connections tested only really when you get the database connection so so important, so marketing can also be considered as a smell.
+
+161
+00:39:24.540 --> 00:39:40.620
+Derek Somerville: Because, if you are walking suggest maybe the slight gaps and how you've written your your code or you've got high level of coupling in dependency with other classes So be careful with using marks okay and.
+
+162
+00:39:41.910 --> 00:39:48.480
+Derek Somerville: Some people end up just testing the key all these tests and because they're getting lost in the marks.
+
+163
+00:39:48.870 --> 00:40:01.260
+Derek Somerville: All the rocks are really testing is the other marks are set up correctly and not testing of your code so it's important to make sure that if you do use mocks you're actually testing your real court.
+
+164
+00:40:03.480 --> 00:40:03.780
+Okay.
+
+165
+00:40:05.070 --> 00:40:13.350
+Derek Somerville: And what's the point of having 100% test coverage or things like database connections, so, as I mentioned before, some companies see.
+
+166
+00:40:13.560 --> 00:40:26.490
+Derek Somerville: You need to go and have X percentage coverage, but if you've got a class and it mainly just does a database connection I would argue this probably limited value in having that as a class and.
+
+167
+00:40:27.480 --> 00:40:45.420
+Derek Somerville: Having more automated tests what you want to do with it is tested properly so which case you would maybe then just go and create an in memory database and kicked kicked which is more dealing with fix will cover later on and make sure it works that way but.
+
+168
+00:40:46.680 --> 00:40:51.330
+Derek Somerville: Trying to avoid doing the database connection and doesn't necessarily help.
+
+169
+00:40:53.070 --> 00:41:01.500
+Derek Somerville: And likewise when you are doing tests, although I think tests are very important trying to avoid making your code more complicated.
+
+170
+00:41:04.260 --> 00:41:10.050
+Derek Somerville: Or it so a couple questions here can you define what regression testers so it's all regression test.
+
+171
+00:41:11.070 --> 00:41:27.000
+Derek Somerville: is just testing what's already in place so m by regression test you're just testing already exists, so if I fill a blackjack as a card game yeah.
+
+172
+00:41:27.540 --> 00:41:44.040
+Derek Somerville: And then I added sevens which will do for the loud I may want to check that none of the changes i've done to card game etc break who blackjack works regression test would just be testing the blackjack still works and.
+
+173
+00:41:44.850 --> 00:41:54.690
+Derek Somerville: Is doubling just keeping local offline copy sort of yeah to basically by doubling you're trying to key.
+
+174
+00:41:55.860 --> 00:42:09.870
+Derek Somerville: Local versions of things to try and make sure you can work offline almost and everything still works you're still getting confidence do your testing your towards codes so, especially if you're doing, remote or local testing.
+
+175
+00:42:10.230 --> 00:42:19.410
+Derek Somerville: Having this ability to test everything locally and offline makes life a lot easier, hopefully, that answer your question and then us.
+
+176
+00:42:23.640 --> 00:42:37.020
+Derek Somerville: Okay, so some of our challenges is also the one of the other challenges that mocking can sometimes be set to is doing dependency injection and in you could end up.
+
+177
+00:42:37.710 --> 00:42:51.810
+Derek Somerville: Having high levels of coupling and few lines of code or will read readable, so you could end up with marking any creating a lot of code in your unit test.
+
+178
+00:42:52.320 --> 00:43:01.800
+Derek Somerville: Your unit test becomes harder to beat so it's just to see it's a challenge, and so, in which case, certainly for some of the tests, I created and.
+
+179
+00:43:02.340 --> 00:43:13.080
+Derek Somerville: I was creating slope, for example, but I end up getting a little issue with it, but ended up creating quite a lot code just to do all the walking so that makes your unit tests that we harder to beat.
+
+180
+00:43:14.940 --> 00:43:25.200
+Derek Somerville: and basically the other sort of challenge justice by test that and just outputs apart from as inputs outputs by you slightly faking or creating something.
+
+181
+00:43:25.890 --> 00:43:35.340
+Derek Somerville: To market you're not really doing a test so, therefore, that is a potential smell, yes, it means speed things up that doesn't really work.
+
+182
+00:43:35.760 --> 00:43:41.850
+Derek Somerville: And one of the things i've maybe suggest getting a little bit detail is that there's another thing sometimes called a smoke test.
+
+183
+00:43:42.360 --> 00:43:49.830
+Derek Somerville: So even if you do a lot of walking present and things like testing a database to be quite good probably have an overnight test.
+
+184
+00:43:50.160 --> 00:43:57.810
+Derek Somerville: Which is sometimes referred to as a smoke tests that runs and actually checks it's got a connection to a database and then runs all the tests.
+
+185
+00:43:58.260 --> 00:44:11.910
+Derek Somerville: Properly calling a database, but the point is due to the timing or etc, you can maybe only run out once or twice a day, whereas if you've got all your marks, you can maybe run that in 20 3040 times a D.
+
+186
+00:44:12.300 --> 00:44:13.200
+Derek Somerville: So it's worth.
+
+187
+00:44:13.290 --> 00:44:17.670
+Derek Somerville: To think by doing the more does now, by doing it.
+
+188
+00:44:18.180 --> 00:44:27.720
+Derek Somerville: And it does help you to run fast and get early feedback but don't forget is worthwhile testing it with the proper inputs and outputs as well.
+
+189
+00:44:31.320 --> 00:44:42.060
+Derek Somerville: And you need to test how the manipulation happens when you get difference when you do a walk you're seeing it works with this particular set of values.
+
+190
+00:44:42.600 --> 00:44:53.010
+Derek Somerville: theory, maybe not close to the real life values, in which case, your tests are slightly more limited yeah and, likewise, if you use parameters.
+
+191
+00:44:53.430 --> 00:44:57.390
+Derek Somerville: In your functions whenever you're doing some logic you passing parameters.
+
+192
+00:44:57.840 --> 00:45:10.260
+Derek Somerville: And then you do the logic which case you don't need to em mark to test it because you've got input parameters and return to do any manipulation, so all your code that's doing manipulation.
+
+193
+00:45:10.650 --> 00:45:18.690
+Derek Somerville: is then easy to test and it's important consider that having inputs, in return, values, so you can test things well.
+
+194
+00:45:21.060 --> 00:45:21.540
+Derek Somerville: Okay.
+
+195
+00:45:23.190 --> 00:45:37.020
+Derek Somerville: and other challenges, so one of the things just to consider is, you have the concept of black box testing Okay, in which case with black box testing you don't know what's inside the black box okay.
+
+196
+00:45:37.530 --> 00:45:50.520
+Derek Somerville: So, in which case you have the what's referred to as application programming interfaces you have defined interfaces and then I have your blind box, so your application so which case you test them.
+
+197
+00:45:50.970 --> 00:46:01.170
+Derek Somerville: So you're just testing those inputs and the other known api's or wheat call your black box, so that then gives you coverage on that.
+
+198
+00:46:01.710 --> 00:46:16.620
+Derek Somerville: You also fight box testing with white box em or maybe it should be called transparent box testing, so you can see inside the box so which fishing cnc applications, you can test all the different parts of the application.
+
+199
+00:46:18.450 --> 00:46:25.500
+Derek Somerville: earned slightly little people quite encouraged to try and get a hold of test coverage to test every line of code.
+
+200
+00:46:26.220 --> 00:46:45.480
+Derek Somerville: determine diminished file you the closer you get to get into 100% yeah and it's worthwhile building in mind that it's great to have all these tests, but is it worthwhile spending an extra month having close to 100% yeah when you could have added a bunch of a number of new features.
+
+201
+00:46:49.980 --> 00:47:06.990
+Derek Somerville: And the other point is called coverage test how much code sort of is exercise, how many cars, how many use cases are covered by the test suite so it's important to make sure you're testing real world scenarios no tests and.
+
+202
+00:47:08.340 --> 00:47:22.710
+Derek Somerville: And, and likewise validation would maybe 10 prevent that so if you're doing a whole world of no testing your methods or potentially your validation to make sure it never get to those methods, if it is not which case you do need.
+
+203
+00:47:23.400 --> 00:47:39.090
+Derek Somerville: And need these things cool so in terms of doubling in walking we covered a continuous integration doubling more king and then we'll just go through, then an example other any questions on marketing so far.
+
+204
+00:48:07.680 --> 00:48:08.010
+Okay.
+
+205
+00:48:13.770 --> 00:48:14.010
+yeah.
+
+206
+00:48:17.130 --> 00:48:22.530
+Derek Somerville: We just look at this and oh chancing.
+
+207
+00:48:32.700 --> 00:48:46.170
+Derek Somerville: whoa zander that question is you're creating a local copy that's not so much doubling you just kiss your local version of the Court and So how do I work this and.
+
+208
+00:48:47.490 --> 00:48:50.760
+Derek Somerville: cool so if we just look at this method and.
+
+209
+00:48:53.520 --> 00:49:00.510
+Derek Somerville: we've got calculator first file your returns for second virus on seven and then at first and second.
+
+210
+00:49:01.140 --> 00:49:10.350
+Derek Somerville: A basically just adds first and second, we have that and an exception and then add two numbers which is passes in the two numbers.
+
+211
+00:49:10.830 --> 00:49:21.300
+Derek Somerville: cool so we just look at our tests, if people could just actually if I just run each of these individually, so people can in zoom just put what do you think that is.
+
+212
+00:49:21.720 --> 00:49:38.970
+Derek Somerville: So fine just test the fresh value fresh file you and returns for yeah and then second value returns and seven, and then, if I run this ad 14 seven.
+
+213
+00:49:39.750 --> 00:49:56.430
+Derek Somerville: i'll just get 11 so that all works, so now, if I run this what What do people think i'll get if I create a more complete a class and I see first values to the people can just paste into zoom, what do you think will print out.
+
+214
+00:50:10.350 --> 00:50:13.620
+Derek Somerville: Okay perfect Okay, so we just run that.
+
+215
+00:50:18.210 --> 00:50:19.410
+Derek Somerville: refer to so now.
+
+216
+00:50:20.970 --> 00:50:28.830
+Derek Somerville: We do a mock and then, first of all used to, and then we call more calculator yeah what do we feel will get here.
+
+217
+00:50:31.890 --> 00:50:33.390
+Derek Somerville: What result to people think.
+
+218
+00:50:49.530 --> 00:50:50.010
+Derek Somerville: Okay.
+
+219
+00:50:55.020 --> 00:51:00.360
+Derek Somerville: that's just the quality people want to use it, some people think it will be 11 so far okay.
+
+220
+00:51:08.880 --> 00:51:18.630
+Derek Somerville: zero because it doesn't actually run because the mark doesn't have any sort of value so if we know do this as a spy yeah.
+
+221
+00:51:19.710 --> 00:51:25.830
+Derek Somerville: We care spite of calculator do mock first two and then call walk out What do people think will get.
+
+222
+00:51:27.600 --> 00:51:37.410
+Derek Somerville: And so the point is you can't really use a mock test other functions, is the point you would use a spy instead So what do people think will be the result of this one.
+
+223
+00:51:43.260 --> 00:51:44.610
+Derek Somerville: Okay, any other guesses.
+
+224
+00:51:51.090 --> 00:51:54.870
+Derek Somerville: crew Okay, and so just from that.
+
+225
+00:51:59.190 --> 00:52:02.520
+Derek Somerville: Yet so name to Duncan is click there okay.
+
+226
+00:52:03.600 --> 00:52:16.800
+Derek Somerville: And so, this one we Casey a more with a spine, we see first of all your turn through the Ad first and second terms for What do people think will be the return value from this, so why 92 plus seven.
+
+227
+00:52:19.290 --> 00:52:21.690
+Derek Somerville: So any other guesses on what it is.
+
+228
+00:52:23.250 --> 00:52:24.870
+Derek Somerville: cool okay let's see.
+
+229
+00:52:30.030 --> 00:52:34.650
+Derek Somerville: yep so returns for okay know and.
+
+230
+00:52:35.760 --> 00:52:46.080
+Derek Somerville: We do our two numbers, we just added two numbers and what do we think that a ton value of this will be know of this test and let it run.
+
+231
+00:52:52.380 --> 00:52:54.240
+Derek Somerville: Excellent cool okay like seeing.
+
+232
+00:52:58.860 --> 00:53:06.750
+Derek Somerville: Seven and can anyone, I think, someone guest for the two people understand why the reason is because we did a mork having.
+
+233
+00:53:07.050 --> 00:53:16.770
+Derek Somerville: Two values passed in two and three so only mark when it's tuned three Okay, I suppose i've solved unanswerable So what do we think the answer will be of this one for me market.
+
+234
+00:53:25.500 --> 00:53:25.890
+Derek Somerville: Okay.
+
+235
+00:53:30.960 --> 00:53:41.490
+Derek Somerville: So for because the more is to turn 42 in your past, so if it's tuned see it doesn't run the view logic, so is for naught five K.
+
+236
+00:53:43.140 --> 00:54:00.090
+Derek Somerville: So here, and if we go back to our yeah So if you go by quickly to our calculator and that's the function for adding yeah okay So what do we think we will get as a result.
+
+237
+00:54:01.110 --> 00:54:01.830
+Derek Somerville: and
+
+238
+00:54:03.600 --> 00:54:04.710
+Derek Somerville: When.
+
+239
+00:54:05.970 --> 00:54:08.130
+Derek Somerville: So, if you look at the code here again.
+
+240
+00:54:09.450 --> 00:54:13.770
+Derek Somerville: yeah, what do you think you'll get as a result, when we run this one here.
+
+241
+00:54:17.340 --> 00:54:18.210
+Derek Somerville: Any guesses.
+
+242
+00:54:23.460 --> 00:54:24.510
+Derek Somerville: Any more guesses.
+
+243
+00:54:30.360 --> 00:54:31.290
+Derek Somerville: King crew.
+
+244
+00:54:36.780 --> 00:54:45.360
+Derek Somerville: It gives an exception because we're seeing through an exception of exception, whereas if you notice in the class.
+
+245
+00:54:45.990 --> 00:54:55.560
+Derek Somerville: Actually checks for the unknown point exception so then that's what's thrown so there's no catch for an exception that really catches a no point exception.
+
+246
+00:54:56.220 --> 00:55:04.980
+Derek Somerville: So we go back here we noticed test this last one So what do we think will get for this one, we were going in and seeing it through the no point to the exception.
+
+247
+00:55:12.030 --> 00:55:12.870
+coo coo coo.
+
+248
+00:55:20.430 --> 00:55:26.490
+Derek Somerville: zero because no point exception is then caught working so that's all good.
+
+249
+00:55:29.190 --> 00:55:31.380
+Derek Somerville: And now, if we go to.
+
+250
+00:55:32.730 --> 00:55:33.480
+Derek Somerville: court to go.
+
+251
+00:55:36.060 --> 00:55:39.000
+Derek Somerville: And all right now, if we go to run into yeah.
+
+252
+00:55:40.680 --> 00:55:41.400
+Derek Somerville: and
+
+253
+00:55:42.840 --> 00:56:03.330
+Derek Somerville: Also, if we go to run into is a message and we keep a new random yeah We then get input file you string calls input stream and then we do next yeah to get the run next random integer with three yeah so we go to hear and.
+
+254
+00:56:04.500 --> 00:56:07.470
+Derek Somerville: What we do is that and.
+
+255
+00:56:09.240 --> 00:56:22.020
+Derek Somerville: We know key the random input yeah and these two tests, the tests that are pleased that are less than 03 whatever, but here we know key a mark of the random class.
+
+256
+00:56:22.890 --> 00:56:31.500
+Derek Somerville: And then we see what it's called with next three return one yeah then and random in we do a set the set the walk brandon.
+
+257
+00:56:32.010 --> 00:56:52.290
+Derek Somerville: So know we can then test that random didn't get, and so this is quite good as a test, because it means we're testing all our logic, the only thing we're not testing is the new creation of random yeah if that makes sense we are testing all of our main court, so we just run all these tests.
+
+258
+00:56:56.700 --> 00:57:07.590
+Derek Somerville: The then just pass, so it means it's quite good about that way of creating a mock is your testing, the main one, I tried to do that actually for the scanner.
+
+259
+00:57:08.160 --> 00:57:33.720
+Derek Somerville: And to read a file, but you can't mark a final class it's a bit annoying and which makes life difficult and a Sophie look here and now, which is maybe slightly closer from what you're going to do so, we just call and the 10 winner so which case it's a draw and which is fine.
+
+260
+00:57:35.460 --> 00:57:39.240
+Derek Somerville: And then computer wins if it seems too.
+
+261
+00:57:41.820 --> 00:57:50.730
+Derek Somerville: So know we do a mock So if you look at this class which I don't know if any of you have to the mock we have a config file which got.
+
+262
+00:57:51.240 --> 00:58:07.680
+Derek Somerville: caught the are, but instead we're mocking up to keep the mark, so when we call get config recall and get from conflict Stub so, in which case we run this test, because if you look at, if you look at that you will fail resources.
+
+263
+00:58:11.040 --> 00:58:17.400
+Derek Somerville: it's rock paper scissors then Star Wars read Lord of the Rings chair, but instead, if we look at the concept stop.
+
+264
+00:58:18.060 --> 00:58:35.100
+Derek Somerville: it's just got Star Wars and Lord of the Rings to know we can test this with so we can know test the generation of the game list with I actually going to the file system reading so instead we're just doing it here, so if you're struggling test.
+
+265
+00:58:37.650 --> 00:58:49.290
+Derek Somerville: That know works yeah and, likewise, I could change this here, and if I wanted to know what I do with pain and.
+
+266
+00:58:51.540 --> 00:58:52.110
+Derek Somerville: So.
+
+267
+00:58:53.250 --> 00:59:09.300
+Derek Somerville: yep uh no I am i've got little test for that as well, but see here, no i'm actually testing the rock paper scissors and from start to finish, so I can test, I put.
+
+268
+00:59:10.620 --> 00:59:25.170
+Derek Somerville: A key a console and put on a seed, the first single second values, for then I said, the more input a set of 10 test output, so that opened storing what i'm doing, and if this run this again.
+
+269
+00:59:26.490 --> 00:59:33.030
+Derek Somerville: And i'm no testing cause i'm mocking the inputs from the user and then evil.
+
+270
+00:59:34.710 --> 00:59:35.370
+Derek Somerville: and
+
+271
+00:59:36.480 --> 00:59:46.980
+Derek Somerville: And then evil to test it from end to end so that's really good because i'm no testing my rock paper scissors from end to end okay cool.
+
+272
+00:59:48.630 --> 00:59:53.070
+Derek Somerville: Look we're running out of time i'll just try going for it, though, so m.
+
+273
+00:59:57.120 --> 00:59:57.420
+o
+
+274
+01:00:10.560 --> 01:00:14.850
+Derek Somerville: yeah cool so running a chamber entropy will see my screen okay.
+
+275
+01:00:19.500 --> 01:00:19.950
+Derek Somerville: cool.
+
+276
+01:00:22.860 --> 01:00:33.120
+Derek Somerville: So we've got thing on so we're just crossing and breadth of software engineering so with em maven and i'll just cover what is maven.
+
+277
+01:00:33.720 --> 01:00:45.750
+Derek Somerville: By have maven home even works dependencies etc So what does maven maven as a bill to it compiles and creates the executable for your Java program okay.
+
+278
+01:00:46.710 --> 01:00:56.550
+Derek Somerville: and also as a dependency management to as well, and also, it can be considered a documentation to two key So what is maven.
+
+279
+01:00:57.180 --> 01:01:07.380
+Derek Somerville: Apache maven is a software project management to and it basically uses the poem project object model fail to go and create things and then.
+
+280
+01:01:08.040 --> 01:01:16.380
+Derek Somerville: get more detail there and how it works so basically you have a palm file, which is red air it then.
+
+281
+01:01:16.980 --> 01:01:28.230
+Derek Somerville: m goes to look to go and do the build it checks to see if your local maven repository has items or dependencies in your from your palm file.
+
+282
+01:01:28.740 --> 01:01:34.470
+Derek Somerville: Then, if it doesn't it goes and gets those dependencies and puts it to your maven local repository.
+
+283
+01:01:35.040 --> 01:01:53.040
+Derek Somerville: And then, it puts them in the local apartment and then it generates the executable so it's doing all of these, and all of these things and i'll maybe just em skip to get a script to just be a DEMO anything and.
+
+284
+01:01:56.940 --> 01:02:20.130
+Derek Somerville: So, if we look at our POM xml yeah we have know to dependencies Jupiter notebook and mosquito yeah so it means that we use these to external libraries we're basically loading them up yeah so that just gives you quite an advantage of how that then it works yeah.
+
+285
+01:02:21.240 --> 01:02:31.170
+Derek Somerville: So just one of the things as intelligent you're just doing file printed, you can predict structure you check that you've got that there you can also just check what libraries are then loaded.
+
+286
+01:02:31.470 --> 01:02:45.390
+Derek Somerville: For you as well, so the Jupiter notebooks Quito etc, all of this is then loaded in so by having these items here, it means rather new so you could also go and manually load.
+
+287
+01:02:46.440 --> 01:02:53.220
+Derek Somerville: These objects, but instead by me doing it with a maven It means, then, when you all booting up.
+
+288
+01:02:53.700 --> 01:03:00.120
+Derek Somerville: The key tool and you've been doing for the unit tests, it just loads in the unit test library almost immediately yeah.
+
+289
+01:03:00.840 --> 01:03:14.580
+Derek Somerville: And one of the things is, which is with here is, if you do right click, then you just go back to me even and then we will project that will then just reload and the information there okay so.
+
+290
+01:03:26.460 --> 01:03:30.330
+Derek Somerville: Oh that's not good, I think you just do it a second time, sometimes doesn't work for us.
+
+291
+01:03:41.250 --> 01:03:47.040
+Derek Somerville: Okay perfect yeah no i've noticed that with intelligent first time it doesn't work so just to.
+
+292
+01:03:49.470 --> 01:03:50.640
+Derek Somerville: finish my eclipse going.
+
+293
+01:03:51.960 --> 01:03:52.740
+Derek Somerville: That is.
+
+294
+01:03:57.330 --> 01:03:58.920
+Derek Somerville: Coco Coco Coco.
+
+295
+01:04:02.040 --> 01:04:03.300
+Coco interesting.
+
+296
+01:04:11.190 --> 01:04:27.840
+Derek Somerville: So with here with eclipse all you're doing is right click you go back down to maven and then within maven used to update project and certainly for what some of the students you're having issues and just clicking this update project then go to to to work OK.
+
+297
+01:04:28.950 --> 01:04:29.400
+OK.
+
+298
+01:04:30.960 --> 01:04:42.540
+Derek Somerville: But I think also you can do here, you can do project, and then you can do update maven project's two ways of doing it in eclipse and both of them are worthwhile doing, but the one thing to note is that.
+
+299
+01:04:43.290 --> 01:04:50.190
+Derek Somerville: When you're logging all your projects, you want to do, open from file system The other thing that's slightly client is that m.
+
+300
+01:05:00.840 --> 01:05:01.500
+Derek Somerville: hi.
+
+301
+01:05:10.530 --> 01:05:14.730
+Derek Somerville: Yes, so the other thing is, if you are having particular problems with your maven project.
+
+302
+01:05:15.150 --> 01:05:25.860
+Derek Somerville: Quite maybe do is delete your settings your class class and don't project if you to eclipse and then reopen it from the file system, just as I mentioned here just do file.
+
+303
+01:05:26.730 --> 01:05:42.720
+Derek Somerville: am open from file system, because these all her caching sin elements that you've done for it, if you are having particular problems it's just just em deleting them perfect is that any other questions sorry for running over time.
+
+304
+01:05:46.320 --> 01:05:48.540
+Derek Somerville: Hope is lost Christians so.
+
+305
+01:05:55.260 --> 01:06:02.670
+Derek Somerville: who made me even is just an application developed by Apache called maven and it's just a bill to and.
+
+306
+01:06:17.700 --> 01:06:31.350
+Derek Somerville: So, and you could only use by rather than using more I think the advantage, maybe over mark is it slightly simpler and probably quicker to do so, for example, of get config I created a mock.
+
+307
+01:06:32.100 --> 01:06:39.000
+Derek Somerville: And then said it, so it would probably be slightly faster, to create a mock because it's less detailed report it's doing.
+
+308
+01:06:43.350 --> 01:06:54.060
+Derek Somerville: So the reason for using maven is that i've got you all to run unit tests and you didn't bother having to go and manually installed library that probably saved you.
+
+309
+01:06:54.630 --> 01:07:02.340
+Derek Somerville: quite a bit of time and saved you bothering the demonstration she couldn't get it to work so Joe that's what I would see to use it.
+
+310
+01:07:05.880 --> 01:07:16.290
+Derek Somerville: noticeable job entails you, your answer is better to test, as I mentioned was better to test the regular inputs, the only reason for using more spice.
+
+311
+01:07:16.740 --> 01:07:26.010
+Derek Somerville: Is if reading that file is slow, of that database doesn't exist in an order to run your tests used to do what you're better creating.
+
+312
+01:07:26.460 --> 01:07:40.050
+Derek Somerville: inputs and return values for your test to test your logic, but in some circumstances, if you want to do more of an end to end test you meet their needs to call the database, in which case you may want to mark its results, I hope that answers your question.
+
+313
+01:07:47.730 --> 01:07:53.970
+Derek Somerville: So jack in essence if you're writing good tests you pull you hopefully don't need to use more.
+
+314
+01:07:55.140 --> 01:07:57.000
+Derek Somerville: yeah but the reality is.
+
+315
+01:07:58.110 --> 01:08:10.020
+Derek Somerville: If you want to have fast test, you may need to use marks that marks are cool smell yeah and if you if you break your code nicely, you will have limited need from walking.
+
+316
+01:08:14.760 --> 01:08:25.290
+Derek Somerville: And certainly the walking one nestle test much of your actual logic, because you maybe get the data from the database and one call and then you pass it into practice, you test or your logic.
+
+317
+01:08:25.500 --> 01:08:34.440
+Derek Somerville: without having to bother him walking in because all your be testing as an organizational function, which is quite simple, which case is it worthwhile doing questionable.
+
+318
+01:08:37.560 --> 01:08:55.110
+Derek Somerville: Again, sorry for going over time and if you If so, I skipped me even em I hadn't quite factored in a stuff but there's a little bit more detail in the maven slade's if you want to go over it, but it's not essential but it may help your understanding of things.
+
+319
+01:09:00.420 --> 01:09:06.570
+Derek Somerville: Excellent well, thank you all very much for your time and and have a good day, so thank you.
+
