@@ -14,15 +14,15 @@
 <body class="main-body" style="margin: 0;">
 <header>
     <div class="header-container">
-        <div class="logo-area"><a href="/lectureFinderApp/"><img class="logo" src="/static/images/logo-black.png"
+        <div class="logo-area"><a href="{% url 'lectureFinderApp:index' %}"><img class="logo" src="/static/images/logo-black.png"
                                                          alt="FindMyLecture logo"></a></div>
         <div class="nav-area">
             <nav class="navbar">
 
-                <div><a class="navbar-btn" href="/lectureFinderApp/">HOME</a></div>
-                <div><a class="navbar-btn" href="/lectureFinderApp/members/">MEMBERS</a></div>
-                <div><a class="navbar-btn" href="/lectureFinderApp/search/">SEARCH</a></div>
-                <div><a class="navbar-btn" href="/lectureFinderApp/about/">ABOUT</a></div>
+                <div><a class="navbar-btn" href="{% url 'lectureFinderApp:index' %}">HOME</a></div>
+                <div><a class="navbar-btn" href="{% url 'lectureFinderApp:members' %}">MEMBERS</a></div>
+                <div><a class="navbar-btn" href="{% url 'lectureFinderApp:search' %}">SEARCH</a></div>
+                <div><a class="navbar-btn" href="{% url 'lectureFinderApp:about' %}">ABOUT</a></div>
 
             </nav>
             <div>
