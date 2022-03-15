@@ -19,10 +19,10 @@
         <div class="nav-area">
             <nav class="navbar">
 
-                <div><a class="navbar-btn" href="index.html">HOME</a></div>
-                <div><a class="navbar-btn" href="members.html">MEMBERS</a></div>
-                <div><a class="navbar-btn" href="search.html">SEARCH</a></div>
-                <div><a class="navbar-btn" href="about.html">ABOUT</a></div>
+                <div><a class="navbar-btn" href="{% url 'lectureFinderApp:index' %}">HOME</a></div>
+                <div><a class="navbar-btn" href="{% url 'lectureFinderApp:members' %}">MEMBERS</a></div>
+                <div><a class="navbar-btn" href="{% url 'lectureFinderApp:search' %}">SEARCH</a></div>
+                <div><a class="navbar-btn" href="{% url 'lectureFinderApp:about' %}">ABOUT</a></div>
 
             </nav>
             <div>
