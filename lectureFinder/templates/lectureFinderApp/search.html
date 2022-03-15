@@ -5,7 +5,7 @@
     Search
 {% endblock %}
 
-{% block main_block %}
+{% block body_block %}
     <div class="main-body">
 
         <div class="body-container-search">
@@ -65,7 +65,8 @@
                         {% if forloop.first %}
                             <div class="table-cell table-top">
                                 <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
-                            </div>                        {% elif forloop.last %}
+                            </div>
+                        {% elif forloop.last %}
                             <div class="table-cell table-bottom">
                                 <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
                             </div>

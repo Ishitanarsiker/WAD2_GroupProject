@@ -15,6 +15,9 @@ def index(request):
 	return render(request, 'lectureFinderApp/index.html', context=context_dict)
 
 
+def about(request):
+	return render(request, 'lectureFinderApp/about.html')
+
 def members(request):
 	return render(request, 'lectureFinderApp/members.html')
 

@@ -5,8 +5,8 @@
     Homepage
 {% endblock %}
 
-{% block main_body %}
-    <div class="main-body">
+{% block body_block %}    
+<div class="main-body">
         <div class="body-container-index">
 
             <div>
@@ -16,13 +16,13 @@
                     </div>
                     <div class="table">
                         {% for list_item in recently_uploaded %}
-                            {% if forloop.counter == 1 %}
+                            {% if forloop.first %}
                                 <div class="table-cell table-top">
                                     <div class="cell-container"><a class="list-item"
                                                                    href="{% url list_item.url %}">{{ list_item }}</a>
                                     </div>
                                 </div>
-                            {% elif forloop.counter == 5 %}
+                            {% elif forloop.last %}
                                 <div class="table-cell table-bottom">
                                     <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
                                 </div>
