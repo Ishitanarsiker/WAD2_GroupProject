@@ -1,12 +1,11 @@
-{% extends 'lectureFinderApp/base.html' %}
+{% extends 'base.html' %}
 {% load staticfiles %}
 
 {% block title_block %}
-    Homepage
+    Search
 {% endblock %}
 
 {% block main_block %}
-
     <div class="main-body">
 
         <div class="body-container-search">
@@ -63,10 +62,17 @@
             <div class="results-container">
                 <div class="table">
                     {% for item in results %}
-                        {% if item != last %}
-                            <div class="table-cell">{{ item }}</div>
+                        {% if forloop.first %}
+                            <div class="table-cell table-top">
+                                <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                            </div>                        {% elif forloop.last %}
+                            <div class="table-cell table-bottom">
+                                <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                            </div>
                         {% else %}
-                            <div class="table-cell table-bottom">{{ item }}</div>
+                            <div class="table-cell">
+                                <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                            </div>
                         {% endif %}
                     {% endfor %}
                 </div>

@@ -3,43 +3,165 @@
 
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="../../static/css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
     <meta charset="UTF-8">
     <title>
         {% block title_block %}
-            WAD2 - Group Project
+        WAD2 - Group Project
         {% endblock %}
     </title>
 </head>
-
+<body class="main-body" style="margin: 0;">
 <header>
-    <div class="header-container-a">
-        <div><a href="index.html"><img class="logo" src="../../static/images/logo.png" alt="FindMyLecture logo"></a></div>
-        <div class="enter-container">
-            {% if logged_in %}
-                <button class="enter-btn btn-a"><strong>Log in</strong></button>
-                <button class="enter-btn btn-b"><strong>Sign up</strong></button>
-            {% endif %}
+    <div class="header-container">
+        <div class="logo-area"><a href="index.html"><img class="logo" src="logo-black.png"
+                                                         alt="FindMyLecture logo"></a></div>
+        <div class="nav-area">
+            <nav class="navbar">
+
+                <div><a class="navbar-btn" href="index.html">HOME</a></div>
+                <div><a class="navbar-btn" href="members.html">MEMBERS</a></div>
+                <div><a class="navbar-btn" href="search.html">SEARCH</a></div>
+                <div><a class="navbar-btn" href="about.html">ABOUT</a></div>
+
+            </nav>
+            <div>
+                <div class="enter-container">
+                    {% if not logged_in %}
+                    <button class="enter-btn log-in" onclick="document.getElementById('id01').style.display='block'">Log
+                        in
+                    </button>
+
+                    <div id="id01" class="modal">
+                        <form class="modal-content animate" action="/action_page.php" method="post">
+                            <div class="form-header">
+                                <div class="form-title"><h1>Log in</h1></div>
+
+                                <div class="close-btn-container">
+                            <span onclick="document.getElementById('id01').style.display='none'"
+                                  class="close">&times;</span>
+                                </div>
+                            </div>
+
+                            <div class="form-container">
+                                <div class="form-input">
+                                    <label for="uname"><b>Username</b>
+                                        <input type="text" placeholder="Enter Username" name="uname" required>
+                                    </label>
+                                </div>
+
+                                <div class="form-input">
+                                    <label for="psw"><b>Password</b>
+                                        <input type="password" placeholder="Enter Password" name="psw" required>
+                                    </label>
+                                </div>
+
+
+                                <div class="login-options-container">
+                                    <div class="checkbox-container">
+                                        <label><input type="checkbox" checked="" name="remember"></label>
+                                        <span>Remember me</span>
+                                    </div>
+                                    <div><a class="password-reset-link" href="#">Forgot password?</a></div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="portal-buttons-container">
+                                <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                                        class="enter-btn cancel-btn">Cancel
+                                </button>
+                                <button class="enter-btn log-in" type="submit">Log in</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <button class="enter-btn sign-up" onclick="document.getElementById('id02').style.display='block'">
+                        Sign up
+                    </button>
+
+                    <div id="id02" class="modal">
+                        <form class="modal-content animate" action="/action_page.php">
+                            <div class="form-header">
+                                <div class="form-title"><h1>Sign up</h1></div>
+
+                                <div class="close-btn-container">
+                            <span onclick="document.getElementById('id02').style.display='none'"
+                                  class="close">&times;</span>
+                                </div>
+                            </div>
+
+                            <div class="form-container">
+                                <div class="form-input">
+                                    <label for="email"><b>Email</b>
+                                        <input type="text" placeholder="Enter Email" name="email" required>
+                                    </label>
+                                </div>
+
+                                <div class="form-input">
+                                    <label for="psw"><b>Password</b>
+                                        <input type="password" placeholder="Enter Password" name="psw" required>
+                                    </label>
+                                </div>
+
+                                <div class="form-input">
+                                    <label for="psw-repeat"><b>Repeat Password</b>
+                                        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                                    </label>
+                                </div>
+
+                                <div class="form-input radio-container">
+                                    <label for="prof">
+                                        <input type="radio" id="prof" name="prof-or-student">Professor
+                                    </label>
+                                    <label for="student">
+                                        <input type="radio" id="student" name="prof-or-student">Student
+                                    </label>
+
+                                </div>
+
+
+                                <div class="checkbox-container">
+                                    <label><input type="checkbox" checked="checked" name="remember"></label>
+                                    <span>Remember me</span>
+                                </div>
+                            </div>
+
+                            <div class="portal-buttons-container">
+                                <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                                        class="enter-btn cancel-btn">Cancel
+                                </button>
+                                <button type="submit" class="enter-btn sign-up">Sign up</button>
+                            </div>
+                            <div class="tos-container"><p>By creating an account you agree to our <a href="#"
+                                                                                                     style="color:dodgerblue">Terms
+                                & Privacy</a>.</p></div>
+                        </form>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
         </div>
-    </div>
 
-    <div class="header-container-b">
-        <div class="navbar">
-
-            <div><a class="navbar-btn" href="/lectureFinderApp/">HOME</a></div>
-            <div><a class="navbar-btn" href="/lectureFinderApp/courses/">COURSES</a></div>
-            <div><a class="navbar-btn" href="/lectureFinderApp/members/">MEMBERS</a></div>
-            <div><a class="navbar-btn" href="/lectureFinderApp/search/">SEARCH</a></div>
-
-        </div>
     </div>
 </header>
-
-
-<body class="main-body">
-    {% block main_body %}
-    {% endblock %}
+<script>
+    let modal1 = document.getElementById('id01');
+    let modal2 = document.getElementById('id02');
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target === modal1) {
+            modal1.style.display = "none";
+        }
+        if (event.target === modal2) {
+            modal2.style.display = "none";
+        }
+    }
+</script>
+{% block main_body %}
+{% endblock %}
 </body>
-
-
 </html>

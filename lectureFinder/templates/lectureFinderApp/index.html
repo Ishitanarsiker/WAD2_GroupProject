@@ -1,4 +1,4 @@
-{% extends 'lectureFinderApp/base.html' %}
+{% extends 'base.html' %}
 {% load staticfiles %}
 
 {% block title_block %}
@@ -6,38 +6,67 @@
 {% endblock %}
 
 {% block main_block %}
+    <div class="main-body">
+        <div class="body-container-index">
 
+            <div>
+                <div class="table-card">
+                    <div>
+                        <div class="category-title">Recently Uploaded</div>
+                    </div>
+                    <div class="table">
+                        {% for list_item in recently_uploaded %}
+                            {% if forloop.counter == 1 %}
+                                <div class="table-cell table-top">
+                                    <div class="cell-container"><a class="list-item"
+                                                                   href="{% url list_item.url %}">{{ list_item }}</a>
+                                    </div>
+                                </div>
+                            {% elif forloop.counter == 5 %}
+                                <div class="table-cell table-bottom">
+                                    <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                                </div>
+                            {% else %}
 
-<div class="main-body">
-    <div class="body-container-index">
-        <div>
-            <div class="category-title"><h5>Recently Uploaded</h5></div>
-            <div class="table">
-                {% for item in recently_uploaded %}
-                    {% if item != last %}
-                        <div class="table-cell">{{ item }}</div>
-                    {% else %}
-                        <div class="table-cell table-bottom">{{ item }}</div>
-                    {% endif %}
-                {% endfor %}
+                                <div class="table-cell">
+                                    <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div>
-            <div class="category-title"><h5>Most Visited</h5></div>
-            <div class="table">
-                {% for item in most_visited %}
-                    {% if item != last %}
-                        <div class="table-cell">{{ item }}</div>
-                    {% else %}
-                        <div class="table-cell table-bottom">{{ item }}</div>
-                    {% endif %}
-                {% endfor %}
+            <div class="index-col-2">
+                <div class="table-card">
+
+                    <div class="category-title">Most Viewed</div>
+
+                    <div class="table">
+                        {% for list_item in most_viewed %}
+                            {% if forloop.first %}
+                                <div class="table-cell table-top">
+                                    <div class="cell-container"><a class="list-item"
+                                                                   href="{% url list_item.url %}">{{ list_item }}</a>
+                                    </div>
+                                </div>
+                            {% elif forloop.last %}
+                                <div class="table-cell table-bottom">
+                                    <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                                </div>
+                            {% else %}
+
+                                <div class="table-cell">
+                                    <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+                </div>
             </div>
-        </div>
 
+        </div>
     </div>
-</div>
-
 {% endblock %}
 

@@ -1,24 +1,47 @@
-{% extends 'lectureFinderApp/base.html' %}
+{% extends 'base.html' %}
 {% load staticfiles %}
 
 {% block title_block %}
-    Homepage
+    Members
 {% endblock %}
 
 {% block main_block %}
     <div class="main-body">
         <div class="body-container-members">
-
-            <div class="side-menu">
-                <button class="side-menu-cell side-menu-top">Settings</button>
-                <button class="side-menu-cell">My Files</button>
-                <button class="side-menu-cell">C</button>
-                <button class="side-menu-cell">D</button>
-                <button class="side-menu-cell side-menu-bottom">E</button>
+            <div>
+                <div class="side-menu">
+                    <button class="side-menu-cell side-menu-top">Settings</button>
+                    <button class="side-menu-cell side-menu-bottom">My Files</button>
+                </div>
             </div>
 
             <div class="selected-view">
-                <div>Your saved files will appear here</div>
+                <div class="table-card">
+
+                    <div class="category-title members">My Files</div>
+
+                    <div class="table">
+                        {% for list_item in saved_files %}
+                            {% if forloop.first %}
+                                <div class="table-cell table-top members">
+                                    <div class="cell-container"><a class="list-item"
+                                                                   href="{% url list_item.url %}">{{ list_item }}</a>
+                                    </div>
+                                </div>
+                            {% elif forloop.last %}
+                                <div class="table-cell table-bottom members">
+                                    <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                                </div>
+                            {% else %}
+
+                                <div class="table-cell members">
+                                    <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+                </div>
             </div>
 
         </div>
