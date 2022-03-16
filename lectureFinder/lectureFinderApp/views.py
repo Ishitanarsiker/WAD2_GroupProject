@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from lectureFinderApp.models import Lecture
+from django.urls import reverse
 
 
 def index(request):
