@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse
 from lectureFinderApp.models import Lecture
 
 
@@ -18,6 +19,7 @@ def index(request):
 def about(request):
 	return render(request, 'lectureFinderApp/about.html')
 
+
 def members(request):
 	return render(request, 'lectureFinderApp/members.html')
 
@@ -30,5 +32,5 @@ def about(request):
 	return render(request, 'lectureFinderApp/about.html')
 
 
-def show_lecture(request, lecture_id):
+def show_lecture(request, lecture_name_slug):
 	return render(request, 'lectureFinderApp/show_lecture.html')

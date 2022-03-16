@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.template.defaultfilters import slugify
 
 
 class UserProfile(models.Model):
@@ -21,16 +22,21 @@ class Course(models.Model):
 
 
 class Lecture(models.Model):
-    title = models.TextField(max_length=128)
+    title = models.TextField(max_length=128, unique=True)
     video_url = models.URLField()
     slideshow_url = models.URLField()
     transcript_name = models.TextField(max_length=128, default="")
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
+    slug = models.SlugField(unique=True)
 
     # Foreign keys (which course & professor is this lecture linked to?)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     professor = models.ForeignKey(UserProfile, on_delete=models.DO_NOTHING)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Lecture, self).save(*args, **kwargs)
 
     def __str__(self):
         return str(self.title) + " => for " + str(self.course)

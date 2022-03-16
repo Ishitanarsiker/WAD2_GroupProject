@@ -19,17 +19,17 @@
                             {% if forloop.first %}
                                 <div class="table-cell table-top">
                                     <div class="cell-container"><a class="list-item"
-                                                                   href="{% url list_item.url %}">{{ list_item }}</a>
+                                                                   href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a>
                                     </div>
                                 </div>
                             {% elif forloop.last %}
                                 <div class="table-cell table-bottom">
-                                    <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                                    <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a></div>
                                 </div>
                             {% else %}
 
                                 <div class="table-cell">
-                                    <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                                    <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a></div>
                                 </div>
                             {% endif %}
                         {% endfor %}
@@ -47,17 +47,17 @@
                             {% if forloop.first %}
                                 <div class="table-cell table-top">
                                     <div class="cell-container"><a class="list-item"
-                                                                   href="{% url list_item.url %}">{{ list_item }}</a>
+                                                                   href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a>
                                     </div>
                                 </div>
                             {% elif forloop.last %}
                                 <div class="table-cell table-bottom">
-                                    <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                                    <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a></div>
                                 </div>
                             {% else %}
 
                                 <div class="table-cell">
-                                    <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                                    <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a></div>
                                 </div>
                             {% endif %}
                         {% endfor %}
