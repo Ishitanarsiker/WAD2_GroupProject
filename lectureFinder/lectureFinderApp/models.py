@@ -23,8 +23,8 @@ class Course(models.Model):
 
 class Lecture(models.Model):
     title = models.TextField(max_length=128, unique=True)
-    video_url = models.URLField()
-    slideshow_url = models.URLField()
+    video_url = models.URLField(max_length=400)
+    slideshow_url = models.URLField(max_length=400)
     transcript_name = models.TextField(max_length=128, default="")
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
