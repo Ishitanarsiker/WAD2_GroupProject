@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.urls import reverse
-from lectureFinderApp.models import Lecture
+from lectureFinderApp.models import Lecture, SavedLecture, UserProfile
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 
 def index(request):
@@ -20,8 +22,18 @@ def about(request):
 	return render(request, 'lectureFinderApp/about.html')
 
 
+@login_required
 def members(request):
-	return render(request, 'lectureFinderApp/members.html')
+	# When login system complete, can replace test code below with request.user.id etc.
+	test_user_luke = User.objects.get(first_name="Luke")
+	logged_in_user = UserProfile.objects.get(user=test_user_luke)
+	all_saved_lectures_for_user = SavedLecture.objects.all().filter(user=logged_in_user)
+
+	context_dict = {
+		'saved_lectures': all_saved_lectures_for_user
+	}
+
+	return render(request, 'lectureFinderApp/members.html', context=context_dict)
 
 
 def search(request):
