@@ -28,7 +28,10 @@ class Lecture(models.Model):
     transcript_name = models.TextField(max_length=128, default="")
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
-    slug = models.SlugField(unique=True)
+
+    # Default of None only helps in the case of migrating an empty DB -- the .save() method
+    # means this slug will always be populated.
+    slug = models.SlugField(unique=True, default=None)
 
     # Foreign keys (which course & professor is this lecture linked to?)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
