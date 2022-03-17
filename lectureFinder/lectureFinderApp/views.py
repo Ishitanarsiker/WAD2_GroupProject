@@ -53,7 +53,7 @@ def show_lecture(request, lecture_name_slug):
 	return render(request, 'lectureFinderApp/show_lecture.html', context=context_dict)
 
 
-# @login_required
+@login_required
 def save_lecture(request, lecture_name_slug):
 	current_user = UserProfile.objects.get(user=User.objects.get(user_id=request.user.id))
 
@@ -64,3 +64,16 @@ def save_lecture(request, lecture_name_slug):
 		)
 
 	return redirect(reverse('lectureFinderApp:search'))
+
+
+@login_required
+def remove_saved_lecture(request, lecture_name_slug):
+	current_user = UserProfile.objects.get(user=User.objects.get(user_id=request.user.id))
+
+	if request.method == 'POST':
+		saved_leture = SavedLecture.objects.delete(
+			lecture=Lecture.objects.get(slug=lecture_name_slug),
+			user=current_user
+		)
+
+	return redirect(reverse('lectureFinderApp:members'))
