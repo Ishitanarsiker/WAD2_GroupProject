@@ -22,7 +22,7 @@ def about(request):
 	return render(request, 'lectureFinderApp/about.html')
 
 
-@login_required
+#@login_required
 def members(request):
 	# When login system complete, can replace test code below with request.user.id etc.
 	test_user_luke = User.objects.get(first_name="Luke")
@@ -40,9 +40,10 @@ def search(request):
 	return render(request, 'lectureFinderApp/search.html')
 
 
-def about(request):
-	return render(request, 'lectureFinderApp/about.html')
-
-
 def show_lecture(request, lecture_name_slug):
-	return render(request, 'lectureFinderApp/show_lecture.html')
+	context_dict = {}
+	lecture_to_show = Lecture.objects.get(slug=lecture_name_slug)
+
+	context_dict['lecture'] = lecture_to_show
+
+	return render(request, 'lectureFinderApp/show_lecture.html', context=context_dict)
