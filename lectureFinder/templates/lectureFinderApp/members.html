@@ -10,35 +10,62 @@
         <div class="body-container-members">
             <div>
                 <div class="side-menu">
-                    <button class="side-menu-cell side-menu-top">Settings</button>
-                    <button class="side-menu-cell side-menu-bottom">My Lectures</button>
+                    <button type="submit" class="side-menu-cell side-menu-top" onclick="swapToS()">Settings</button>
+                    <button type="submit" class="side-menu-cell side-menu-bottom" onclick="swapToM()">My Files</button>
                 </div>
             </div>
 
             <div class="selected-view">
-                <div class="table-card">
+                <div class="table-card" id="m" style="display: block">
 
-                    <div class="category-title members">My Saved Lectures</div>
+                    <div class="category-title members">My Files</div>
 
-                    <div class="table">
-                        {% for saved_lecture in saved_lectures %}
-                            {% if forloop.first %}
-                                <div class="table-cell table-top members">
-                                    <div class="cell-container"><a class="list-item"
-                                                                   href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
+                    {% if saved_files %}
+                        <div class="table">
+                            {% for saved_lecture in saved_lectures %}
+                                {% if forloop.first %}
+                                    <div class="table-cell table-top members">
+                                        <div class="cell-container"><a class="list-item"
+                                                                       href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
+                                        </div>
                                     </div>
-                                </div>
-                            {% elif forloop.last %}
-                                <div class="table-cell table-bottom members">
-                                    <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a></div>
-                                </div>
-                            {% else %}
+                                {% elif forloop.last %}
+                                    <div class="table-cell table-bottom members">
+                                        <div class="cell-container"><a class="list-item"
+                                                                       href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}">{{ list_item }}</a>
+                                        </div>
+                                    </div>
+                                {% else %}
 
-                                <div class="table-cell members">
-                                    <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a></div>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
+                                    <div class="table-cell members">
+                                        <div class="cell-container"><a class="list-item"
+                                                                       href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}">{{ list_item }}</a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div>
+                            Your files will appear here
+                        </div>
+                    {% endif %}
+
+                </div>
+
+                <div class="settings-card" id="s" style="display: none">
+
+                    <div class="category-title members">Settings</div>
+
+                    <div style="padding-left: 2rem;">
+                        <h4>Toggle Theme</h4>
+                        <label class="theme-toggle">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <h4><a class="password-link" href="#">Change Password</a></h4>
+                        <h4><a class="delete-link" href="#">Delete account</a></h4>
+
                     </div>
 
                 </div>

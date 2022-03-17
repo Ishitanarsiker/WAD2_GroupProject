@@ -274,6 +274,7 @@
     color: var(--orange-2);
 }
 
+
 .body-container-search {
     display: grid;
     grid-template-columns: 1fr;
@@ -282,7 +283,7 @@
 .input-container {
     display: grid;
     grid-template-columns: 1fr 7fr 1fr;
-    grid-template-areas: ". a .";
+    grid-template-areas: ". a b";
     align-items: center;
 }
 
@@ -314,6 +315,7 @@
 .search-btn {
     height: 3rem;
     background-color: var(--orange-1);
+    grid-area: b;
 }
 
 .search-btn:hover {

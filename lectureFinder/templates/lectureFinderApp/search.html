@@ -10,9 +10,12 @@
 
         <div class="body-container-search">
             <div class="input-container">
-                <input class="search-bar" type="text"
-                       placeholder="Enter a keyword, phrase, or leave blank for filter search only">
-                <button class="btn">Q</button>
+                <div class="input-container-content">
+                    <input class="search-bar" type="text"
+                           placeholder="Enter a keyword, phrase, or leave blank for filter search only">
+                    <button class="btn search-btn"><img class="search-icon" src="../../static/images/search-icon.png"
+                                                        alt="Q"></button>
+                </div>
             </div>
 
             <div class="filter-container">
@@ -59,25 +62,27 @@
 
             </div>
 
+            {% if valid_search %}
             <div class="results-container">
                 <div class="table">
                     {% for item in results %}
                         {% if forloop.first %}
                             <div class="table-cell table-top">
-                                <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                                <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}">{{ list_item }}</a></div>
                             </div>
                         {% elif forloop.last %}
                             <div class="table-cell table-bottom">
-                                <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                                <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}">{{ list_item }}</a></div>
                             </div>
                         {% else %}
                             <div class="table-cell">
-                                <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                                <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}">{{ list_item }}</a></div>
                             </div>
                         {% endif %}
                     {% endfor %}
                 </div>
             </div>
+            {% endif %}
 
         </div>
 
