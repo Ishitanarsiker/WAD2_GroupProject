@@ -1,0 +1,86 @@
+{% extends 'lectureFinderApp/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Search
+{% endblock %}
+
+{% block body_block %}
+    <div class="main-body">
+
+        <div class="body-container-search">
+            <div class="input-container">
+                <input class="search-bar" type="text"
+                       placeholder="Enter a keyword, phrase, or leave blank for filter search only">
+                <button class="btn">Q</button>
+            </div>
+
+            <div class="filter-container">
+                <div>
+                    <select class="dropdown">
+                        <option value="0">Year</option>
+                        {% for k in number_of_years %}
+                            <option value="{{ k }}">Year {{ k }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
+                    <select class="dropdown">
+                        <option value="0">Module</option>
+                        {% for k in modules %}
+                            <option value="{{ k }}">{{ k }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
+                    <select class="dropdown">
+                        <option value="0">Professor</option>
+                        {% for k in professors %}
+                            <option value="{{ k }}">{{ k }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
+                    <select class="dropdown">
+                        <option value="0">Week</option>
+                        {% for k in number_of_weeks %}
+                            <option value="{{ k }}">Week {{ k }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
+                    <select class="dropdown">
+                        <option value="0">Type</option>
+                        {% for k in file_formats %}
+                            <option value="{{ k }}">{{ k }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="results-container">
+                <div class="table">
+                    {% for item in results %}
+                        {% if forloop.first %}
+                            <div class="table-cell table-top">
+                                <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                            </div>
+                        {% elif forloop.last %}
+                            <div class="table-cell table-bottom">
+                                <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                            </div>
+                        {% else %}
+                            <div class="table-cell">
+                                <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
