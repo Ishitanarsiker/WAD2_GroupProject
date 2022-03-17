@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse
 from lectureFinderApp.models import Lecture, SavedLecture, UserProfile
 from django.contrib.auth.decorators import login_required
@@ -51,3 +51,16 @@ def show_lecture(request, lecture_name_slug):
 	context_dict['lecture'] = lecture_to_show
 
 	return render(request, 'lectureFinderApp/show_lecture.html', context=context_dict)
+
+
+# @login_required
+def save_lecture(request, lecture_name_slug):
+	current_user = UserProfile.objects.get(user=User.objects.get(user_id=request.user.id))
+
+	if request.method == 'POST':
+		saved_leture = SavedLecture.objects.create(
+			lecture=Lecture.objects.get(slug=lecture_name_slug),
+			user=current_user
+		)
+
+	return redirect(reverse('lectureFinderApp:search'))
