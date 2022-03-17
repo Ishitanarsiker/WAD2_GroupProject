@@ -22,10 +22,14 @@ def about(request):
 	return render(request, 'lectureFinderApp/about.html')
 
 
-#@login_required
+# @login_required
 def members(request):
-	# When login system complete, can replace test code below with request.user.id etc.
 	test_user_luke = User.objects.get(first_name="Luke")
+
+	# TODO: Uncomment the below (and delete the line above), when authentication system complete
+	# logged_in_user = User.objects.get(user_id=request.user.id)
+	# logged_in_user = UserProfile.objects.get(user=logged_in_user)
+
 	logged_in_user = UserProfile.objects.get(user=test_user_luke)
 	all_saved_lectures_for_user = SavedLecture.objects.all().filter(user=logged_in_user)
 

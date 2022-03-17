@@ -1,0 +1,618 @@
+WEBVTT
+
+1
+00:00:04.200 --> 00:00:12.540
+Michele Sevegnani: Hello everyone. Welcome to lecture number for today we are going to cover the topic of recursive algorithms.
+
+2
+00:00:13.830 --> 00:00:28.980
+Michele Sevegnani: This is the outline of the lecture. So we are going to define a recursion traces to analyze. Of course of algorithms that are going to talk about different kinds of recursion, namely linear recursion and binary data collection.
+
+3
+00:00:30.420 --> 00:00:44.910
+Michele Sevegnani: A anti recursion down, we will investigate how you can convert a recursive algorithms into non recursive algorithms and we talked as well about a recursion trees.
+
+4
+00:00:46.200 --> 00:00:58.590
+Michele Sevegnani: Down, we will cover a different design paradigms to define algorithms mainly incremental and divide and conquer. And then I give you an example of
+
+5
+00:00:59.610 --> 00:01:07.440
+Michele Sevegnani: Merged sort it's sorting algorithm. The first 14 algorithm. We are going to a recursive salt in Hungary and we are going to start in the course.
+
+6
+00:01:08.460 --> 00:01:11.760
+Michele Sevegnani: Okay, let's activate the laser pointer.
+
+7
+00:01:12.990 --> 00:01:23.640
+Michele Sevegnani: Alright, so I have to say that these lecture, maybe along. So maybe it's best to to split it into a times when you watch it. So, okay.
+
+8
+00:01:25.440 --> 00:01:34.500
+Michele Sevegnani: What is recursion. So in math function is recursive if it refers to itself in its definition. And the classic example.
+
+9
+00:01:35.040 --> 00:01:48.270
+Michele Sevegnani: Is the factorial function. So we want to compute the product for the first and numbers so factorial M is defined as n times n minus one times n minus two.
+
+10
+00:01:49.140 --> 00:01:59.280
+Michele Sevegnani: Times you keep decreasing and until you reach one that's the last element to add. Okay, so if you were to implement this function in. So the code.
+
+11
+00:01:59.700 --> 00:02:18.630
+Michele Sevegnani: We could map it a straight into what we have here in the box. So we have a fun show called the fact that takes an integer. And as input. Then we have our condition. If an equal to one we just return one.
+
+12
+00:02:19.890 --> 00:02:20.700
+Michele Sevegnani: Otherwise,
+
+13
+00:02:21.720 --> 00:02:33.000
+Michele Sevegnani: We return and we just return what's defined in the factory function here. So we return n times the factorial of n minus one, minus one.
+
+14
+00:02:34.440 --> 00:02:47.160
+Michele Sevegnani: Okay, so these is actually a recursive algorithm. As you can see here in the return statement we refer to fact. So the algorithm scrolling itself.
+
+15
+00:02:48.270 --> 00:02:52.620
+Michele Sevegnani: So that's the indication that the algorithm is recursive
+
+16
+00:02:54.090 --> 00:03:02.580
+Michele Sevegnani: So something important to note is that fact here in the last statement is apply to a smaller number.
+
+17
+00:03:03.810 --> 00:03:06.060
+Michele Sevegnani: And minus one, the input was and
+
+18
+00:03:07.140 --> 00:03:19.860
+Michele Sevegnani: And we keep decrease in until we stop here, when n equals two, one would have one. So it means that we don't end up applying factorial to negative numbers. Otherwise, you keep decreasing taken
+
+19
+00:03:20.850 --> 00:03:28.260
+Michele Sevegnani: Away from n and you end up in negative numbers. So we need to make sure that we stopped at some point when we define our recursive algorithms.
+
+20
+00:03:30.300 --> 00:03:35.370
+Michele Sevegnani: Okay, so in general is when we define a recursive
+
+21
+00:03:36.870 --> 00:03:48.690
+Michele Sevegnani: Function recursive algorithm so that the function makes a clone of itself. And then he calls the clone with the appropriate parameters in the previous case and minus one.
+
+22
+00:03:49.620 --> 00:04:06.510
+Michele Sevegnani: So we have two rules to ever correct a recursive algorithm. And we already mentioned them earlier so rule one produce size of data set or the number we are working on each time the recursive a call is invoked.
+
+23
+00:04:07.680 --> 00:04:18.150
+Michele Sevegnani: And rule number two, we need to provide a base case terminating condition in the previous case we stopped when n equals one.
+
+24
+00:04:20.340 --> 00:04:35.520
+Michele Sevegnani: Okay, so how do we study recursive algorithms. So one way is to use regression traces. It's a graphical methods that allows you to visualize the execution of our recursive algorithm.
+
+25
+00:04:36.540 --> 00:04:46.680
+Michele Sevegnani: So I will show you how it's done. But it's very simple. So you have to draw a box for each recursive call. And then we use our rules to
+
+26
+00:04:47.880 --> 00:04:59.160
+Michele Sevegnani: Follow the flow of computation. So we have a narrow from each color to the query here in the slide, we use black, but it doesn't matter. So usually we go from top to bottom.
+
+27
+00:05:00.150 --> 00:05:15.810
+Michele Sevegnani: And then we also have an arrow going backwards from bottom to top, to show the return values from each recursive call. Okay. Sometimes when the question traces too big. We just omit the returns. Okay.
+
+28
+00:05:16.980 --> 00:05:17.460
+Michele Sevegnani: So,
+
+29
+00:05:18.480 --> 00:05:25.170
+Michele Sevegnani: While important we need to pick an input. You can't just do it in an otherwise you control it. So it becomes
+
+30
+00:05:26.580 --> 00:05:27.240
+A
+
+31
+00:05:28.950 --> 00:05:40.620
+Michele Sevegnani: It becomes more difficult to draw it. So let's assume you have factorial for here is again the pseudo code. So it means that here and takes value for at the beginning.
+
+32
+00:05:41.160 --> 00:05:49.860
+Michele Sevegnani: So we arrived here in if four equals one. So we skip we arrive in the US branch. And then we arrive hearing the return statement and here
+
+33
+00:05:50.250 --> 00:05:59.700
+Michele Sevegnani: It says that we need to invoke factorial. Again, but we've four minus one free. So let's see how it looks like. So we enter we familiar for
+
+34
+00:06:00.180 --> 00:06:06.270
+Michele Sevegnani: Once we are in the body, as we said we are right here in the last line of the pseudo code and we need to call factorial three
+
+35
+00:06:07.200 --> 00:06:21.480
+Michele Sevegnani: So that's how we represent it victoriously so now we mentioned on the banter factorial with three here again we jump into the S branch. And then here we need to call factorial with three minus one equals two.
+
+36
+00:06:22.890 --> 00:06:29.820
+Michele Sevegnani: You repeat that again. So we have factorial of two and we need to call it on factorial one
+
+37
+00:06:31.410 --> 00:06:51.360
+Michele Sevegnani: Okay, so now we enter with factorial one it's a bit repetitive, but you get the point. So we are here if m. So this time, and as by one is one down return one. Okay, so it means we don't execute the else branch. So there's no longer another
+
+38
+00:06:52.710 --> 00:07:03.600
+Michele Sevegnani: Call so we just start to go backwards in the trace. So we go upwards. Sorry. So here we will just return one. That's exactly what this statement said
+
+39
+00:07:04.470 --> 00:07:16.950
+Michele Sevegnani: So then it means that when we were here in factorial to so it means that we were here when we invoked factory one in the return statement. So here we are, and has value to
+
+40
+00:07:18.030 --> 00:07:37.860
+Michele Sevegnani: And then it means that we need to return to times that factorial one but factorial. One is just one. So we need to return two times one. Sorry. So that's what we do. And then we do need to do the same again for factorial. So we need to compute the return of this box here factory or three
+
+41
+00:07:38.970 --> 00:07:54.600
+Michele Sevegnani: So we were here when we invoke factorial to and we know that we need to return the result of factorial two times and that is time as by your three. So that's three times two equals six.
+
+42
+00:07:55.710 --> 00:08:08.490
+Michele Sevegnani: We do the same for the first call pictorial for and we just returned four times the result of factorial three that we already completed the six. So four times 624 and that's the result.
+
+43
+00:08:10.500 --> 00:08:21.540
+Michele Sevegnani: Okay, so that's how we throw the recursion, a trace. So when I mentioned that we need an input for we can just do it for him. You can do it for him. But then you need to put like
+
+44
+00:08:22.920 --> 00:08:23.130
+Michele Sevegnani: It's
+
+45
+00:08:24.510 --> 00:08:33.870
+Michele Sevegnani: You can't explicitly mentioned all the boxes, you need to put like dot dot dot and try to to infer what's going on. So you really you just do it with a fixed input.
+
+46
+00:08:35.340 --> 00:08:53.790
+Michele Sevegnani: Right, okay. So here is another concept a Lena recursion. So what does it mean we have little recognition. When a method is defined in such a way that it said invoking the recursive called only once at most once each time it is invoked.
+
+47
+00:08:54.810 --> 00:08:55.260
+Michele Sevegnani: Okay.
+
+48
+00:08:56.610 --> 00:09:10.410
+Michele Sevegnani: So why is it important. It's important because the amount of space needed to keep track of these codes gross linearly with n. So, if you recall in the previous example in the
+
+49
+00:09:11.640 --> 00:09:16.560
+Michele Sevegnani: In the trace we computed for factorial. We had an boxes for
+
+50
+00:09:17.760 --> 00:09:20.250
+Michele Sevegnani: It. That's exactly linear with the input we have
+
+51
+00:09:21.540 --> 00:09:31.560
+Michele Sevegnani: So it is linear, because we only call factorial. Once we call it in the last statement return with factorial and minus one.
+
+52
+00:09:32.760 --> 00:09:33.210
+Michele Sevegnani: Okay.
+
+53
+00:09:34.350 --> 00:09:55.230
+Michele Sevegnani: Let's go back. So our input was four and we have 1234 boxes. So it grows as the input and you see here there is Victoria and then we go through each a iteration. And we see that we own factorial, of course, to once again. So that's an agricultural function.
+
+54
+00:09:56.280 --> 00:10:08.700
+Michele Sevegnani: Okay, so let's see another example. We want to some the elements of an array of the integers. So we assume our array as usual. These capital A contains integers and is greater than one.
+
+55
+00:10:11.010 --> 00:10:27.420
+Michele Sevegnani: A Yeah, so a as at least and elements. So that's our assumption, with the input and the output is the sum of the first and integers in a case define the algorithm, we want to define it a recursive. The again so
+
+56
+00:10:28.740 --> 00:10:43.380
+Michele Sevegnani: A, we have a conditional here. If n equals one, then we just return the first element of the array. Otherwise, we have a recursive call. So what do we do, we call the same
+
+57
+00:10:45.120 --> 00:10:51.960
+Michele Sevegnani: Algorithm on n minus one over some the same array, plus the last element.
+
+58
+00:10:53.670 --> 00:10:56.790
+Michele Sevegnani: Okay, so let's see how he works in practice.
+
+59
+00:10:58.650 --> 00:11:11.820
+Michele Sevegnani: So we first need to check is this algorithm. Correct. According to the recursion rules so rule one input is reduced, that it's recursive call rule to we have a stopping case.
+
+60
+00:11:13.320 --> 00:11:22.080
+Michele Sevegnani: Well, yes, let's see how it's working. So, the input is reduced here in their statement we call linger some on n minus one.
+
+61
+00:11:23.100 --> 00:11:38.940
+Michele Sevegnani: So we keep producing em and then we make sure that we stopped at some time. So we have a stopping case with the if statement. So whenever and hits one we just stopped the recursion and we end up in this return statement. Instead, and we return a zero.
+
+62
+00:11:40.530 --> 00:11:49.350
+Michele Sevegnani: Okay, so let's try to have an example again assume that we want to sound the first three elements of these big array here. So we want to sound 138
+
+63
+00:11:50.550 --> 00:11:50.880
+Michele Sevegnani: Okay.
+
+64
+00:11:52.140 --> 00:11:52.590
+Michele Sevegnani: So,
+
+65
+00:11:56.370 --> 00:12:06.390
+Michele Sevegnani: Here's the pseudo code, the report it. And here is the records of traits. So let's go through it a bit. So we start the first call with eight and three
+
+66
+00:12:07.200 --> 00:12:20.280
+Michele Sevegnani: So we just jump to the US branch. And then we have a recursive call with leaner. Some of three minus one, two, and that's the second box here. So now we enter we've a and to
+
+67
+00:12:22.050 --> 00:12:28.230
+Michele Sevegnani: Again we jump to the last branch and we arrive to these records called here. A and one
+
+68
+00:12:29.850 --> 00:12:46.650
+Michele Sevegnani: When we do that we arrived to the stopping case of the recursion and we return a zero. So a zero in this case is just one so we return one. Now we need to see what we return here when the input was a on to
+
+69
+00:12:47.760 --> 00:12:50.580
+Michele Sevegnani: So we the input as to we have to return.
+
+70
+00:12:52.200 --> 00:13:07.530
+Michele Sevegnani: The result of one some A one plus and minus one. So we return one plus three equals four. And then the last call. We return for plus eight equals 12 so we are summing up 138
+
+71
+00:13:08.940 --> 00:13:09.390
+Okay.
+
+72
+00:13:11.370 --> 00:13:15.930
+Michele Sevegnani: So what is the running time, the complexity of linear sound.
+
+73
+00:13:17.760 --> 00:13:22.890
+Michele Sevegnani: And factorial again here we need to look on the
+
+74
+00:13:24.510 --> 00:13:31.410
+Michele Sevegnani: On the recursion trace and it grows leaner. So both complexities are because of em.
+
+75
+00:13:34.050 --> 00:13:39.930
+Michele Sevegnani: Okay, so that's another class over recursion that we need to start it is qualitative recursion.
+
+76
+00:13:41.010 --> 00:13:42.540
+Michele Sevegnani: So why is it important
+
+77
+00:13:43.950 --> 00:14:04.080
+Michele Sevegnani: It's important because of recursion. It's a very useful tool to define algorithms. But in practice, it has a cost. So sometimes in the real limitations we can to avoid it because we need to keep track of the recursion through internal data structures like a stock and maybe to send expensive.
+
+78
+00:14:05.130 --> 00:14:18.750
+Michele Sevegnani: So A, you can, for example, convert the recursive algorithm into identity algorithm where the recursive call is explicitly through loops. Like why loops are for loops.
+
+79
+00:14:19.890 --> 00:14:30.840
+Michele Sevegnani: But sometimes we can just use a recursion, but we just need to make sure that it's an efficient kind of recursion. So we don't need to store temporary data from one call to another.
+
+80
+00:14:31.650 --> 00:14:49.380
+Michele Sevegnani: And that's exactly what the recursion is so a formerly is defined as the recursion. A when the recursion is linear and the recursive call. It's the very last operation. So we do need to have other operation, depending on the results of the records.
+
+81
+00:14:50.640 --> 00:14:51.060
+Michele Sevegnani: So,
+
+82
+00:14:52.140 --> 00:14:58.110
+Michele Sevegnani: Let's look at another a simple example. We want to reverse the elements of an array.
+
+83
+00:14:59.370 --> 00:15:12.630
+Michele Sevegnani: And the output is just the array reversed. And of course, we have the start index. I am the an index j. Okay, so if i is on the left of Jake's or less than Jake
+
+84
+00:15:13.650 --> 00:15:15.300
+Michele Sevegnani: Then swapping the two elements.
+
+85
+00:15:16.560 --> 00:15:18.630
+Michele Sevegnani: We assume that we have a swap function.
+
+86
+00:15:19.680 --> 00:15:31.890
+Michele Sevegnani: In this in pseudo code and then we have a recursive call CC dinner. We just call it once. And what do we do, we increase I so you make a shift to the
+
+87
+00:15:32.430 --> 00:15:45.060
+Michele Sevegnani: Right. And we decrease j we make it shrink to the left. So we keep moving from both sides until we arrive at the end of the middle of the array to end up every time we swap
+
+88
+00:15:47.130 --> 00:15:52.710
+Michele Sevegnani: So let's look a recursive call is the last operation.
+
+89
+00:15:54.060 --> 00:15:56.070
+Michele Sevegnani: So it is still recursive
+
+90
+00:15:57.570 --> 00:15:59.070
+Michele Sevegnani: And you remember factorial
+
+91
+00:16:00.240 --> 00:16:01.950
+Michele Sevegnani: He's it recursive
+
+92
+00:16:04.740 --> 00:16:15.900
+Michele Sevegnani: Let's go back. Where is total here. So in this case, it is there a curse because we still have need to do this product. So in order to return.
+
+93
+00:16:16.560 --> 00:16:28.320
+Michele Sevegnani: We need to know the value of this a recursive call, and then multiply it by n. So, this is not tailored recursive, you need to modify the algorithm in order to have a recursion.
+
+94
+00:16:29.580 --> 00:16:38.160
+Michele Sevegnani: So let's come back where we were with the reversing the elements of an array. Okay, let's look at the recursion, Trace here again.
+
+95
+00:16:38.880 --> 00:16:53.340
+Michele Sevegnani: Assume we have these array input 34610. These are the integers and RA and we want to swap in reverse the array from the index zero and four. You don't want two, three and four. So, all of it.
+
+96
+00:16:54.600 --> 00:17:06.690
+Michele Sevegnani: So what is the idea. As I said, we have i n g and we make them meet in the middle. And while we do that we keep swapping the elements. So that's how you reverse the array.
+
+97
+00:17:07.830 --> 00:17:18.210
+Michele Sevegnani: So if you look on the recursion trace. So we start with 04 down we perform the swapping is it's not realized here because it's done inside a
+
+98
+00:17:19.380 --> 00:17:26.760
+Michele Sevegnani: And what we care about is the other recursive call. Here we increment I am with the credentials. So we have one and three.
+
+99
+00:17:28.020 --> 00:17:36.150
+Michele Sevegnani: We repeat that. And we arrived to to here we are in the stock case. So we don't do anything. So it means the six remains there.
+
+100
+00:17:37.170 --> 00:17:43.050
+Michele Sevegnani: And then there's nothing to do it. We just returned from the recursive calls.
+
+101
+00:17:44.220 --> 00:17:55.140
+Michele Sevegnani: So this is a good indication that the algorithm is still recursive when we have no operations, a hanging on the blue arrows. The returners to go upward
+
+102
+00:17:58.500 --> 00:18:13.770
+Michele Sevegnani: Okay. So as I said sometimes T recursion is still too expensive. So you want to have your algorithm. A to perform the loops explicitly through a while or for loops.
+
+103
+00:18:15.360 --> 00:18:23.100
+Michele Sevegnani: So we call these algorithms that do not resource to recognition, we call them right directive.
+
+104
+00:18:24.600 --> 00:18:34.020
+Michele Sevegnani: And we can convert them typically all the recursive algorithms to it volunteers. So here I have an example.
+
+105
+00:18:35.430 --> 00:18:49.650
+Michele Sevegnani: A again we let's use the reverse array, the interactive version is the text, the same arguments, A, A, and the two indexes, instead of having
+
+106
+00:18:50.700 --> 00:19:01.920
+Michele Sevegnani: This condition in the F here on the recursive version. We use the same condition for a while loop. So we explicitly a loop through the values
+
+107
+00:19:02.640 --> 00:19:16.890
+Michele Sevegnani: A swap remains the same. And then what what we did here as the manipulation of the arguments of the recursive call. We just keep temporary variables and we increment I and the Clemente
+
+108
+00:19:18.300 --> 00:19:26.640
+Michele Sevegnani: So, you will see that it does exactly the same. And we stop whenever the NJ are the same. So we meet in the middle. As before,
+
+109
+00:19:28.410 --> 00:19:46.890
+Michele Sevegnani: So something to remark that a. Okay. This process can always be done, but often the recursive solution is shorter easy to understand. And I would say easier to reason about. So when we have, for example, to compute the running time. Sometimes the recursive version is easier.
+
+110
+00:19:49.380 --> 00:19:59.820
+Michele Sevegnani: Okay, so here we have another kind of recursion a binary recursion. So, similar to the Linear A but in this case we make two recursive calls.
+
+111
+00:20:01.320 --> 00:20:10.560
+Michele Sevegnani: Okay, so the idea is that we have the problem and we're speaking to, and the each half is handled by a different recursive. Cool.
+
+112
+00:20:11.190 --> 00:20:21.480
+Michele Sevegnani: Okay, so the classic example if the Fibonacci numbers. So it's a sequence of numbers, defined by the following a rule. So we have the Fibonacci n
+
+113
+00:20:22.170 --> 00:20:35.670
+Michele Sevegnani: Is given by the sum of the Fibonacci n minus one plus if you want it n minus two for each and greater than one and we start off with Fibonacci of zero is zero people, not just one is one.
+
+114
+00:20:37.410 --> 00:20:37.860
+Michele Sevegnani: Okay.
+
+115
+00:20:39.120 --> 00:20:52.110
+Michele Sevegnani: So we can define that in pseudo code, very simply, so we are not here event. So if n is less than or equal to one we just returned, man. And these are the two
+
+116
+00:20:57.960 --> 00:21:00.450
+Michele Sevegnani: Otherwise we
+
+117
+00:21:01.980 --> 00:21:03.810
+Michele Sevegnani: And we return the song.
+
+118
+00:21:04.890 --> 00:21:08.520
+Michele Sevegnani: If you want it or minus one, you will not have banners to
+
+119
+00:21:11.250 --> 00:21:15.060
+Michele Sevegnani: This is very inefficient. They were NEOs even tried to run it.
+
+120
+00:21:17.070 --> 00:21:26.220
+Michele Sevegnani: Let's see how we analyze the occurs. This algorithm. So since we have binary cursed no longer have trace
+
+121
+00:21:27.300 --> 00:21:36.120
+Michele Sevegnani: A over a course of course, but we have our recursion three. And since it's binary recursion. The three is binary. So it means that every box has two children.
+
+122
+00:21:37.320 --> 00:21:41.310
+Michele Sevegnani: So let's look at a few more natural five. So the idea is that
+
+123
+00:21:42.360 --> 00:21:46.890
+Michele Sevegnani: We need to some people, not so four plus people not feel free
+
+124
+00:21:48.720 --> 00:21:55.680
+Michele Sevegnani: And for each box. We need to do the same. So Fibonacci three is just the some community two plus be back to what
+
+125
+00:21:56.760 --> 00:22:08.400
+Michele Sevegnani: He wanted to if you want to want if you want to zero the same on the left hand side here. So you see that we stop and we reach the the base cases, people have to one active zero
+
+126
+00:22:09.390 --> 00:22:30.840
+Michele Sevegnani: Then we need to compute people not to five. So we need all the return Iris for here I'm just doing them implicitly by just putting the values around and we go bottom up. So people are not we can compute a Fibonacci one and zero. So it's a respectively one and zero. So we just put it. Sorry.
+
+127
+00:22:32.340 --> 00:22:49.260
+Michele Sevegnani: And then we start to do the sounds and we push up the results in the tree. So we are right here if you want to have two is the summer one and zero. So we put one Fibonacci free is the sum of 112 people not so far is the sum of two and one, three,
+
+128
+00:22:50.340 --> 00:23:02.310
+Michele Sevegnani: If you want to five is the summer free and tool for him. So the final result is five. So something that already tells you that these implementation is very inefficient is
+
+129
+00:23:03.210 --> 00:23:11.160
+Michele Sevegnani: If you look at these three you will see that there is a lot of duplicate. Take for example here. So let me activate the
+
+130
+00:23:12.720 --> 00:23:23.460
+Michele Sevegnani: Pan. So if you take all these part here of the, of the three, you see that it's duplicated here. So we are computing twice.
+
+131
+00:23:25.050 --> 00:23:30.720
+Michele Sevegnani: Okay, not to talk about this part here if you want to have to is repeated here.
+
+132
+00:23:31.950 --> 00:23:48.600
+Michele Sevegnani: And repeated here as well. So you see that is a huge amount of a duplication in the computation. So that's why it's not a very efficient. Can we actually formalize how inefficient this algorithm is
+
+133
+00:23:49.620 --> 00:24:00.990
+Michele Sevegnani: Yes, so we will do it formally later on. But just to have an idea. We can look at the size of the tree. So in the same way as we looked at the length of the
+
+134
+00:24:01.410 --> 00:24:16.830
+Michele Sevegnani: Recursion trace to understand if the algorithm was a linear or something else we can look at how many a recursion a sales, we have in the recursion three to understand how many operations, we're going to do, how many iterations.
+
+135
+00:24:17.880 --> 00:24:29.640
+Michele Sevegnani: So you have to recall from previous courses that the number of nodes and in a binary tree. So for means if we have a or the levels full
+
+136
+00:24:30.480 --> 00:24:52.350
+Michele Sevegnani: So it he is at most n a n is to power h plus one minus one, where he is the height of the tree and the height of the tree is the length of the longest path. So in this case, the law passes passes down here on the left. It takes 1234 steps so height is for
+
+137
+00:24:53.430 --> 00:25:05.190
+Michele Sevegnani: So if we have a binary tree of height for we know that in. We can have an exponential, a number of a recursive calls industry.
+
+138
+00:25:05.910 --> 00:25:21.720
+Michele Sevegnani: So if the height is the goal then then there are to be go to power and recursive calls exponential complexity. So you remember in the previous lectures we we said that exponential complexity is one of the worst one. We have and
+
+139
+00:25:23.160 --> 00:25:27.690
+Michele Sevegnani: Therefore, it can scale to bigger inputs.
+
+140
+00:25:28.710 --> 00:25:43.440
+Michele Sevegnani: So even if each call executed in constant time is because one by putting together or it is a exponentially many a recursive calls, we have the overall running time of exponential complexity.
+
+141
+00:25:45.750 --> 00:25:46.200
+Michele Sevegnani: Okay.
+
+142
+00:25:47.460 --> 00:26:02.220
+Michele Sevegnani: So A, we can look at different approaches define algorithms. So we already seen a dis one incremental approach that we use it for the definition of instructional sort in the previous lectures.
+
+143
+00:26:03.450 --> 00:26:15.750
+Michele Sevegnani: So the idea is that we assume that some part of the input is already sorted. Are you ready satisfies the property. We want to to obtain on the full input and
+
+144
+00:26:16.620 --> 00:26:26.790
+Michele Sevegnani: And then we take one element at a time and we add it to the partial solution to to build a bigger solution until we added all the elements to have the overall solution.
+
+145
+00:26:27.480 --> 00:26:38.130
+Michele Sevegnani: So the idea here in the assertion sword is that you have the sub array going from one to t minus one, it soon sorted. So you remember in the diagrams. It was shown as
+
+146
+00:26:39.420 --> 00:26:55.020
+Michele Sevegnani: In the, in the interim presentation and then we take element D and we just need to put it in the correct position. So remember, we need to shift the elements to make space for the Jade element to be in the right
+
+147
+00:26:56.250 --> 00:27:09.090
+Michele Sevegnani: Order and once you have done that. Well, you extend the green region, the sort of one by one by doing that you keep increasing the green region until you colored our inputs. So that's the incremental approach.
+
+148
+00:27:10.410 --> 00:27:18.120
+Michele Sevegnani: Another very popular approach is divide and conquer and this typical for recursive algorithms. It involves three steps.
+
+149
+00:27:19.170 --> 00:27:26.520
+Michele Sevegnani: Divides so we need to take the problem splits it up in several smaller sub problems that they are instances of the same problem.
+
+150
+00:27:27.570 --> 00:27:39.990
+Michele Sevegnani: Then we have the concrete step. The idea is that we need to solve recursive Lee each sub problem until we hit the base case because we are still talking about valid recursion.
+
+151
+00:27:41.220 --> 00:27:48.510
+Michele Sevegnani: And then we have a combined step where we put together the partial solutions to create a solution to the original problem.
+
+152
+00:27:49.350 --> 00:28:02.100
+Michele Sevegnani: So imagine that we split the problem into we compute the solution for the first half solution for the second half and the merge the combined step to stand together to generate a solution for the full problem.
+
+153
+00:28:03.330 --> 00:28:10.230
+Michele Sevegnani: Okay, so we use these approach define a sorting algorithms like Mozart and quick sort.
+
+154
+00:28:12.720 --> 00:28:19.890
+Michele Sevegnani: A we do that in the next lecture. Thank you for for your attention, and I'll talk to you soon.
+

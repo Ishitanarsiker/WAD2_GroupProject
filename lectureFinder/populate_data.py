@@ -20,6 +20,7 @@ def populate():
     users = [
         {'first_name': 'Derek', 'last_name': 'Somerville', 'email': 'email1@gmail.com', 'is_professor': True},
         {'first_name': 'Alistair', 'last_name': 'Morrison', 'email': 'email2@gmail.net', 'is_professor': True},
+        {'first_name': 'Michele', 'last_name': 'Sevegnani', 'email': 'email3@gmail.net', 'is_professor': True},
         {'first_name': 'Luke', 'last_name': 'Mullen', 'email': '2542408M@student.gla.ac.uk'},
         {'first_name': 'NotLuke', 'last_name': 'NotMullen', 'email': 'notme@gmail.com'}
     ]
@@ -56,6 +57,16 @@ def populate():
                 'professor': professors[0],
                 'views': 44,
             }
+        ],
+        2007: [
+            {
+                'title': 'Lecture 4 - Recursive Algorithms',
+                'transcript_name': 'ADS2_recursive_algorithms_transcript.vtt',
+                'video_url': 'https://uofglasgow.zoom.us/rec/play/JpbFui0-YvvulfNUERinFS-sHu9y9aUs3wDwGUU9gg97mzJUeFlZhf5cnCx2EYsJ4DVywo1TDUXDX9rS.rSFtpaMpwET_hUII?continueMode=true&_x_zm_rtaid=M70fcYTzQIibJD29XdCmug.1647531154126.915d917426e55bec361cfc35e932e89e&_x_zm_rhtaid=698',
+                'slideshow_url': 'https://moodle.gla.ac.uk/pluginfile.php/4813403/mod_folder/content/0/L4.pptx?forcedownload=1',
+                'professor': professors[2],
+                'views': 68,
+            }
         ]
     }
 
@@ -75,6 +86,7 @@ def populate():
 
     saved_lectures = [
         {'user': students[0], 'lecture': save_lectures[1]},
+        {'user': students[0], 'lecture': save_lectures[2]},
         {'user': students[1], 'lecture': save_lectures[0]},
     ]
 
