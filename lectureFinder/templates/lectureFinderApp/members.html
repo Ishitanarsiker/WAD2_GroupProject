@@ -30,15 +30,33 @@
                                 </div>
                             {% elif forloop.last %}
                                 <div class="table-cell table-bottom members">
-                                    <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a></div>
+                                    <div class="cell-container"><a class="list-item"
+                                                                   href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
+                                    </div>
                                 </div>
                             {% else %}
 
                                 <div class="table-cell members">
-                                    <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a></div>
+                                    <div class="cell-container"><a class="list-item"
+                                                                   href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
+                                    </div>
                                 </div>
                             {% endif %}
                         {% endfor %}
+                    </div>
+
+                </div>
+
+                <div class="settings-card" id="s" style="display: none">
+
+                    <div class="category-title members">Settings</div>
+
+                    <div style="padding-left: 2rem;">
+                        <h4>Toggle Theme</h4>
+                        <label class="theme-toggle">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
                     </div>
 
                 </div>
