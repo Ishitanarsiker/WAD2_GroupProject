@@ -26,8 +26,8 @@
                 </div>
                 <div>
                     <select class="dropdown">
-                        <option value="0">Module</option>
-                        {% for k in modules %}
+                        <option value="0">Course</option>
+                        {% for k in course %}
                             <option value="{{ k }}">{{ k }}</option>
                         {% endfor %}
                     </select>
@@ -35,8 +35,10 @@
                 <div>
                     <select class="dropdown">
                         <option value="0">Professor</option>
-                        {% for k in professors %}
-                            <option value="{{ k }}">{{ k }}</option>
+                        {% for k in users %}
+                            {% if is_professor %}
+                                <option value="{{ k.first_name }}">{{ k.first_name }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
                 </div>

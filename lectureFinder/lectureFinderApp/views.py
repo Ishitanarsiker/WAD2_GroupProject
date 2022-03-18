@@ -23,7 +23,6 @@ def index(request):
 def about(request):
 	return render(request, 'lectureFinderApp/about.html')
 
-
 # @login_required
 def members(request):
 	test_user_luke = User.objects.get(first_name="Luke")

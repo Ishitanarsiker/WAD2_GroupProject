@@ -2,9 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 
-
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    # first_name = models.CharField(max_length=100, unique=False)
+    # last_name = models.CharField(max_length=100, unique=False)
+    # email = forms.EmailField()
 
     # User model by default provides user_id, username, first & surname, email, password.
     is_professor = models.BooleanField(default=False)
@@ -16,6 +18,7 @@ class UserProfile(models.Model):
 class Course(models.Model):
     name = models.TextField(max_length=128, unique=False)
     code = models.IntegerField(unique=True, default=0)
+    # user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -51,4 +54,3 @@ class SavedLecture(models.Model):
 
     def __str__(self):
         return str(self.lecture) + ", saved by, " + str(self.user)
-
