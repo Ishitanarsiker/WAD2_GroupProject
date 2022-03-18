@@ -113,7 +113,7 @@
     text-decoration: none; /* removes underline for link */
 }
 
-.navbar-btn:hover {
+.active, .navbar-btn:hover {
     color: var(--blue-2);
     background-color: rgb(33, 158, 188, 0.1);
 }
