@@ -335,7 +335,7 @@ input:checked + .slider:before {
 }
 
 .slider.round:before {
-  border-radius: 50%;
+  border-radius: 50%
 }
 
 .password-link {
