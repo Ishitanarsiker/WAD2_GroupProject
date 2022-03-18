@@ -19,9 +19,11 @@ def index(request):
 
 	return render(request, 'lectureFinderApp/index.html', context=context_dict)
 
-
 def about(request):
 	return render(request, 'lectureFinderApp/about.html')
+	
+def termsandconditions(request):
+	return render(request, 'lectureFinderApp/termsandconditions.html')
 
 # @login_required
 def members(request):
