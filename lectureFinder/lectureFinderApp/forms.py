@@ -17,3 +17,15 @@ class CourseForm(forms.Form):
                 pass  # invalid input from the client; ignore and fallback to empty City queryset
         elif self.instance.pk:
             self.fields['user'].queryset = self.instance.country.user_set.order_by('name')
+
+class UserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
+
+    class Meta:
+        model = User
+        fields = ('username','email','password',)
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ('website', 'picture',)

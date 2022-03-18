@@ -54,4 +54,3 @@ class SavedLecture(models.Model):
 
     def __str__(self):
         return str(self.lecture) + ", saved by, " + str(self.user)
-

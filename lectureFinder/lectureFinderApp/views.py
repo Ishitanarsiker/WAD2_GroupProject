@@ -19,8 +19,23 @@ def index(request):
 
 	return render(request, 'lectureFinderApp/index.html', context=context_dict)
 
-def signup(request):
+def signup_user(request):
 	return render(request,'lectureFinderApp/index.html',{"form":UserCreationForm})
+
+def login_user(request):
+		if request.method == "POST":
+			username = request.POST['uname']
+			password = request.POST['pass']
+			user = authenticate(username=username, password=password)
+			if user is not None:
+				if user.is_active:
+					login(request,user)
+					return redirect('home')
+				else:
+					return render(request, 'index.html', {'error_message':'Account Deactivaated'})
+			else:
+				return render(request, 'index.html', {'error_message':'Invalid Login'})
+		return render(request, 'lectureFinderApp/login_user.html')
 
 def about(request):
 	return render(request, 'lectureFinderApp/about.html')
@@ -83,3 +98,38 @@ def remove_saved_lecture(request, lecture_name_slug):
 		)
 
 	return redirect(reverse('lectureFinderApp:members'))
+
+def signup(request):
+	signup = False
+
+	if request.method == 'POST':
+		user_form = UserForm(request.POST)
+		profile_form = UserProfileForm(request.POST)
+
+		if user_form.is_valid() and profile_form.is_valid():
+			user = user_form.save()
+
+			user.set_password(user.password)
+			user.save()
+
+			profile = profile_form.save(commit=False)
+			profile.user = user
+
+			if 'picture' in request.FILES:
+				profile.picture = request.FILES['picture'] 
+
+			profile.save()
+
+			signup = True 
+		else:
+			print(user_form.errors, profile_form.errors)
+	else:
+		user_form = UserForm()
+		profile_form = UserProfileForm()
+
+	return render(request,
+		          'lectureFinderApp/signup.html',
+		          context = {'user_form': user_form,
+		                     'profile_form': profile_form,
+		                     'signup': signup})
+

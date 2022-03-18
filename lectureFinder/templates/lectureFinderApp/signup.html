@@ -1,0 +1,17 @@
+{% extends 'lectureFinderApp/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Sign Up
+{% endblock %}
+
+{% block body_block %}
+<div class="main-body">
+        <div class="body-container-about">
+
+            <div class="heading">You have successfully been siggned in!</div>
+            <a href="{% url 'lectureFinderApp:index' %}">Return to the homepage.</a><br />
+
+        </div>
+    </div>
+{% endblock %}
