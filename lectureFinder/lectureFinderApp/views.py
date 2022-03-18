@@ -19,9 +19,12 @@ def index(request):
 
 	return render(request, 'lectureFinderApp/index.html', context=context_dict)
 
+def signup(request):
+	return render(request,'lectureFinderApp/index.html',{"form":UserCreationForm})
+
 def about(request):
 	return render(request, 'lectureFinderApp/about.html')
-	
+
 def termsandconditions(request):
 	return render(request, 'lectureFinderApp/termsandconditions.html')
 

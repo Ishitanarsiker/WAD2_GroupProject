@@ -12,6 +12,8 @@
     --blue-3: #126782;
     --blue-4: #023047;
 
+    --bluedark-1: #1D2D50;
+
     --orange-1: #FFB703;
     --orange-2: #FD9E02;
     --orange-3: #FB8500;
@@ -32,7 +34,7 @@
 .btn {
     box-shadow: 0 0 10px 4px rgb(31 66 135 / 10%);
     background-color: var(--blue-2);
-    color: var(--almost-white);
+    color: var(--darker-gray);
     border-radius: var(--corner-btn);
     padding: 1rem 2rem;
     border: none;
@@ -60,7 +62,7 @@
 
 .category-title:hover {
     background-color: var(--blue-2);
-    color: var(--almost-white);
+    color: var(--darker-gray);
 }
 
 
@@ -70,7 +72,7 @@
     display: grid;
     grid-template-columns: 1fr 6fr;
     grid-template-areas: "a b";
-    background-color: var(--almost-white);
+    background-color: var(--darker-gray);
     padding: 0 2rem;
     box-shadow: 0 0 10px 4px rgb(31 66 135 / 10%);
 }
@@ -102,7 +104,7 @@
 }
 
 .navbar-btn {
-    color: black;
+    color: white;
     background-color: inherit;
     padding: 1rem;
     border-radius: 10px;
@@ -213,7 +215,7 @@
 
 .list-item {
     text-decoration: none;
-    color: black;
+    color: white;
     width: 25rem;
 }
 
@@ -267,7 +269,7 @@
 
 .category-title.members:hover {
     background-color: var(--orange-2);
-    color: var(--almost-white);
+    color: var(--darker-gray);
 }
 
 .table-cell.members:hover .list-item {
@@ -341,7 +343,7 @@
 
 .dropdown {
     background-color: var(--blue-2);
-    color: var(--almost-white);
+    color: var(--darker-gray);
     border-radius: 7px;
     padding: 1rem;
     width: 8rem;
@@ -400,6 +402,7 @@ input[type=text], input[type=password] {
     display: flex;
     justify-content: center;
     grid-area: a;
+    color: white;
 }
 
 /* Center the image and position the close button */
@@ -507,8 +510,8 @@ img.avatar {
 .modal-content {
     display: grid;
     grid-template-columns: 1fr;
-    background-color: var(--almost-white);
-    color: #000000;
+    background-color: var(--darker-gray);
+    color: white;
     margin: auto; /* center pop-up */
     border: 1px solid var(--light-gray);
     width: 50%; /* Could be more or less, depending on screen size */
@@ -565,7 +568,7 @@ img.avatar {
 [data-custom-class='title'], [data-custom-class='title'] * {
     font-family: Arial !important;
     font-size: 26px !important;
-    color: #000000 !important;
+    color: white !important;
 }
 
 [data-custom-class='subtitle'], [data-custom-class='subtitle'] * {
@@ -577,13 +580,13 @@ img.avatar {
 [data-custom-class='heading_1'], [data-custom-class='heading_1'] * {
     font-family: Arial !important;
     font-size: 19px !important;
-    color: #000000 !important;
+    color: white !important;
 }
 
 [data-custom-class='heading_2'], [data-custom-class='heading_2'] * {
     font-family: Arial !important;
     font-size: 17px !important;
-    color: #000000 !important;
+    color: white !important;
 }
 
 [data-custom-class='body_text'], [data-custom-class='body_text'] * {
