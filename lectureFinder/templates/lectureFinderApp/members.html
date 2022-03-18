@@ -10,13 +10,13 @@
         <div class="body-container-members">
             <div>
                 <div class="side-menu">
-                    <button class="side-menu-cell side-menu-top">Settings</button>
-                    <button class="side-menu-cell side-menu-bottom">My Lectures</button>
+                    <button type="submit" class="side-menu-cell side-menu-top" onclick="swapToS()">Settings</button>
+                    <button type="submit" class="side-menu-cell side-menu-bottom" onclick="swapToM()">My Files</button>
                 </div>
             </div>
 
             <div class="selected-view">
-                <div class="table-card">
+                <div class="table-card" id="m" style="display: block">
 
                     <div class="category-title members">My Saved Lectures</div>
 
