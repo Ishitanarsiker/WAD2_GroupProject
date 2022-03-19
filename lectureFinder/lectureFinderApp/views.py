@@ -4,7 +4,7 @@ from lectureFinderApp.models import Lecture, SavedLecture, UserProfile
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-from .forms import UserForm, UserProfileForm
+from .forms import UserForm, UserProfileForm, UploadLectureForm
 
 
 def index(request):
@@ -30,15 +30,30 @@ def terms_and_conditions(request):
 
 @login_required
 def members(request):
-    logged_in_user = User.objects.get(id=request.user.id)
-    logged_in_user = UserProfile.objects.get(user=logged_in_user)
-    all_saved_lectures_for_user = SavedLecture.objects.all().filter(user=logged_in_user)
+    if request.method == 'POST':
+        upload_lecture_form = UploadLectureForm(request.POST)
 
-    context_dict = {
-        'saved_lectures': all_saved_lectures_for_user
-    }
+        if upload_lecture_form.is_valid():
+            upload_lecture = upload_lecture_form.save()
+            return redirect(reverse('lectureFinderApp:members'))
+        else:
+            print(upload_lecture_form.errors)
+            return redirect(reverse('lectureFinderApp:members'))
 
-    return render(request, 'lectureFinderApp/members.html', context=context_dict)
+    else:
+        upload_lecture_form = UploadLectureForm()
+
+        logged_in_user = User.objects.get(id=request.user.id)
+        logged_in_user = UserProfile.objects.get(user=logged_in_user)
+        all_saved_lectures_for_user = SavedLecture.objects.all().filter(user=logged_in_user)
+
+        context_dict = {
+            'saved_lectures': all_saved_lectures_for_user,
+            'user_profile': logged_in_user,
+            'upload_lecture_form': upload_lecture_form
+        }
+
+        return render(request, 'lectureFinderApp/members.html', context=context_dict)
 
 
 def search(request):
@@ -50,6 +65,18 @@ def show_lecture(request, lecture_name_slug):
     lecture_to_show = Lecture.objects.get(slug=lecture_name_slug)
 
     context_dict['lecture'] = lecture_to_show
+
+    # Get the saved lectures for this user, so we know if this lecture has been saved or not already!
+    try:
+        current_user = UserProfile.objects.get(user=User.objects.get(id=request.user.id))
+        saved_lecture = SavedLecture.objects.get(
+            lecture=Lecture.objects.get(slug=lecture_name_slug),
+            user=current_user
+        )
+    except (UserProfile.DoesNotExist, User.DoesNotExist, Lecture.DoesNotExist, SavedLecture.DoesNotExist):
+        saved_lecture = None
+
+    context_dict['saved_lecture'] = saved_lecture
 
     return render(request, 'lectureFinderApp/show_lecture.html', context=context_dict)
 
@@ -68,12 +95,13 @@ def save_lecture(request, lecture_name_slug):
 
 
 @login_required
-def remove_saved_lecture(request, lecture_name_slug):
+def delete_saved_lecture(request, lecture_name_slug):
     current_user = UserProfile.objects.get(user=User.objects.get(id=request.user.id))
-    saved_lecture = SavedLecture.objects.delete(
+
+    SavedLecture.objects.get(
         lecture=Lecture.objects.get(slug=lecture_name_slug),
         user=current_user
-    )
+    ).delete()
 
     return redirect(reverse('lectureFinderApp:members'))
 

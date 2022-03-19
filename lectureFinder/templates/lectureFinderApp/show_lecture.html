@@ -15,6 +15,10 @@
     <p>Uploaded by: {{ lecture.professor.user.first_name }} {{ lecture.professor.user.last_name }}</p>
 
     {% if user.is_authenticated %}
-        <a href="{% url 'lectureFinderApp:save_lecture' lecture.slug %}">Save this lecture</a>
+        {% if not saved_lecture %}
+            <a href="{% url 'lectureFinderApp:save_lecture' lecture.slug %}">Save this lecture</a>
+        {% else %}
+            <a href="{% url 'lectureFinderApp:delete_saved_lecture' lecture.slug %}">Remove</a>
+        {% endif %}
     {% endif %}
 {% endblock %}

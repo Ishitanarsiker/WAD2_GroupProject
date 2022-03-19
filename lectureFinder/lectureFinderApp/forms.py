@@ -1,5 +1,5 @@
 from django import forms
-from .models import UserProfile
+from .models import UserProfile, Lecture
 from django.contrib.auth.models import User
 
 # class CourseForm(forms.Form):
@@ -20,6 +20,18 @@ from django.contrib.auth.models import User
 #         elif self.instance.pk:
 #             self.fields['user'].queryset = self.instance.country.user_set.order_by('name')
 #
+
+
+class UploadLectureForm(forms.ModelForm):
+    class Meta:
+        model = Lecture
+        fields = (
+            'title',
+            'video_url',
+            'slideshow_url',
+            'course',
+            'professor'
+        )
 
 
 class UserForm(forms.ModelForm):

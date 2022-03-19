@@ -11,6 +11,7 @@ urlpatterns = [
 	path('terms_and_conditions/', views.terms_and_conditions, name='terms_and_conditions'),
 	path('lecture/<slug:lecture_name_slug>', views.show_lecture, name='show_lecture'),
 	path('save_lecture/<slug:lecture_name_slug>', views.save_lecture, name='save_lecture'),
+	path('delete_saved_lecture/<slug:lecture_name_slug>', views.delete_saved_lecture, name='delete_saved_lecture'),
 	path('signup/', views.signup, name='signup'),
 	path('login/', views.login_user, name='login'),
 	path('logout/', views.logout_user, name='logout'),
