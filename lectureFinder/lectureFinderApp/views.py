@@ -25,18 +25,13 @@ def about(request):
 
 
 def terms_and_conditions(request):
-    return render(request, 'lectureFinderApp/termsandconditions.html')
+    return render(request, 'lectureFinderApp/terms_and_conditions.html')
 
 
-# @login_required
+@login_required
 def members(request):
-    test_user_luke = User.objects.get(first_name="Luke")
-
-    # TODO: Uncomment the below (and delete the line above), when authentication system complete
-    # logged_in_user = User.objects.get(user_id=request.user.id)
-    # logged_in_user = UserProfile.objects.get(user=logged_in_user)
-
-    logged_in_user = UserProfile.objects.get(user=test_user_luke)
+    logged_in_user = User.objects.get(id=request.user.id)
+    logged_in_user = UserProfile.objects.get(user=logged_in_user)
     all_saved_lectures_for_user = SavedLecture.objects.all().filter(user=logged_in_user)
 
     context_dict = {
@@ -61,26 +56,24 @@ def show_lecture(request, lecture_name_slug):
 
 @login_required
 def save_lecture(request, lecture_name_slug):
-    current_user = UserProfile.objects.get(user=User.objects.get(user_id=request.user.id))
+    current_user = UserProfile.objects.get(user=User.objects.get(id=request.user.id))
 
-    if request.method == 'POST':
-        saved_leture = SavedLecture.objects.create(
-            lecture=Lecture.objects.get(slug=lecture_name_slug),
-            user=current_user
-        )
+    saved_lecture = SavedLecture.objects.create(
+        lecture=Lecture.objects.get(slug=lecture_name_slug),
+        user=current_user
+    )
+    saved_lecture.save()
 
-    return redirect(reverse('lectureFinderApp:search'))
+    return redirect(reverse('lectureFinderApp:index'))
 
 
 @login_required
 def remove_saved_lecture(request, lecture_name_slug):
-    current_user = UserProfile.objects.get(user=User.objects.get(user_id=request.user.id))
-
-    if request.method == 'POST':
-        saved_leture = SavedLecture.objects.delete(
-            lecture=Lecture.objects.get(slug=lecture_name_slug),
-            user=current_user
-        )
+    current_user = UserProfile.objects.get(user=User.objects.get(id=request.user.id))
+    saved_lecture = SavedLecture.objects.delete(
+        lecture=Lecture.objects.get(slug=lecture_name_slug),
+        user=current_user
+    )
 
     return redirect(reverse('lectureFinderApp:members'))
 
@@ -121,6 +114,9 @@ def login_user(request):
                 return render(request, 'lectureFinderApp/index.html', {'error_message': 'Account Deactivated'})
         else:
             return redirect(reverse('lectureFinderApp:index'))
+    else:
+        # When user tries to click MEMBERS link, but they aren't logged in.
+        return redirect(reverse('lectureFinderApp:index'))
 
 
 @login_required

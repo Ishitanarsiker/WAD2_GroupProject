@@ -13,4 +13,8 @@
     <p>Likes: {{ lecture.likes }}</p>
     <p>Course: {{ lecture.course.name }}</p>
     <p>Uploaded by: {{ lecture.professor.user.first_name }} {{ lecture.professor.user.last_name }}</p>
+
+    {% if user.is_authenticated %}
+        <a href="{% url 'lectureFinderApp:save_lecture' lecture.slug %}">Save this lecture</a>
+    {% endif %}
 {% endblock %}
