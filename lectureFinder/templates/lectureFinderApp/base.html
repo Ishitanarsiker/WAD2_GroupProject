@@ -3,7 +3,7 @@
 
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="/static/css/light.css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/light.css' %}"/>
     <meta charset="UTF-8">
     <title>
         {% block title_block %}
@@ -14,15 +14,14 @@
 <body style="margin: 0;">
 <header>
     <div class="header-container">
-        <div class="logo-area"><a href="{% url 'lectureFinderApp:index' %}"><img class="logo" src="/static/images/logo-black.png"
+        <div class="logo-area"><a href="{% url 'lectureFinderApp:index' %}"><img class="logo" src="{% static 'images/logo-black.png' %}"
                                                          alt="FindMyLecture logo"></a></div>
         <div class="nav-area">
             <nav class="navbar">
-
-                
-
                 <div><a class="navbar-btn" href="{% url 'lectureFinderApp:index' %}">HOME</a></div>
-                <div><a class="navbar-btn" href="{% url 'lectureFinderApp:members' %}">MEMBERS</a></div>
+                {% if user.is_authenticated %}
+                    <div><a class="navbar-btn" href="{% url 'lectureFinderApp:members' %}">MEMBERS</a></div>
+                {% endif %}
                 <div><a class="navbar-btn" href="{% url 'lectureFinderApp:search' %}">SEARCH</a></div>
                 <div><a class="navbar-btn" href="{% url 'lectureFinderApp:about' %}">ABOUT</a></div>
 
@@ -40,10 +39,10 @@
                             
                             function loadTheme() {
                                 if (currentTheme == "dark") {
-                                    theme.setAttribute('href', "/static/css/dark.css");
+                                    theme.setAttribute('href', "{% static 'css/dark.css' %}");
                                     console.log("Current Theme : Dark");
                                 } else {
-                                    theme.setAttribute('href', "/static/css/light.css");
+                                    theme.setAttribute('href', "{% static 'css/light.css' %}");
                                     console.log("Current Theme : Light");
                                 }
                             }
@@ -194,7 +193,12 @@
 
     </div>
 </header>
-<script src="base.js"></script>
+<script src="{% static 'js/base.js' %}"></script>
+
+{% if error_message %}
+    <strong>{{ error_message }}</strong>
+{% endif %}
+
 {% block body_block %}
 {% endblock %}
 </body>
