@@ -2,6 +2,7 @@
 from .forms import UserForm, UserProfileForm
 
 
+# TODO: Do we really need the code below?
 # def theme(request):
 #     if request.user.is_authenticated:
 #         _theme = ThemeConfiguration.objects.filter(user=request.user).last()

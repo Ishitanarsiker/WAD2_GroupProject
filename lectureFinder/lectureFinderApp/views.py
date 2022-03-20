@@ -9,12 +9,14 @@ from .forms import UserForm, UserProfileForm, UploadLectureForm
 
 def index(request):
     # Index page will display both the recently uploaded and the most viewed lectures.
+
+    # TODO: This currently shows ALL uploaded lectures; maybe do just the last 7 or so?
     all_lectures = Lecture.objects.all()  # ordered by last record inserted into the table.
     all_lectures_by_views = all_lectures.order_by('-views')
 
     context_dict = {
         'recently_uploaded': all_lectures,
-        'most_viewed': all_lectures_by_views
+        'most_viewed': all_lectures_by_views,
     }
 
     return render(request, 'lectureFinderApp/index.html', context=context_dict)
@@ -123,7 +125,6 @@ def signup(request):
 
             return redirect(reverse('lectureFinderApp:members'))
         else:
-            print(user_form.errors, user_profile_form.errors)
             return redirect(reverse('lectureFinderApp:index'))
 
 
@@ -139,11 +140,11 @@ def login_user(request):
                 login(request, user)
                 return redirect(reverse('lectureFinderApp:members'))
             else:
-                return render(request, 'lectureFinderApp/index.html', {'error_message': 'Account Deactivated'})
+                return redirect(reverse('lectureFinderApp:index'))
         else:
             return redirect(reverse('lectureFinderApp:index'))
     else:
-        # When user tries to click MEMBERS link, but they aren't logged in.
+        # When user tries to go to the MEMBERS link, but they aren't logged in.
         return redirect(reverse('lectureFinderApp:index'))
 
 
