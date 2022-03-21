@@ -34,35 +34,39 @@ Members
                 <div class="category-title members">My Saved Lectures</div>
 
                 <div class="table">
-                    {% for saved_lecture in saved_lectures %}
-                    {% if forloop.first %}
-                    <div class="table-cell table-top members">
-                        <div class="cell-container">
-                            <a class="list-item"
-                               href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
-                            <a href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">Remove</a>
-                        </div>
-                    </div>
-                    {% elif forloop.last %}
-                    <div class="table-cell table-bottom members">
-                        <div class="cell-container">
-                            <a class="list-item"
-                               href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
-                            <a href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">Remove</a>
-                        </div>
-                    </div>
+                    {% if saved_lectures %}
+                        {% for saved_lecture in saved_lectures %}
+                            {% if forloop.first %}
+                                <div class="table-cell table-top members">
+                                    <div class="cell-container">
+                                        <a class="list-item"
+                                           href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
+                                        <a href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">Remove</a>
+                                    </div>
+                                </div>
+                            {% elif forloop.last %}
+                                <div class="table-cell table-bottom members">
+                                    <div class="cell-container">
+                                        <a class="list-item"
+                                           href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
+                                        <a href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">Remove</a>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="table-cell members">
+                                    <div class="cell-container">
+                                        <a class="list-item"
+                                           href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
+                                        <a href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">Remove</a>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
                     {% else %}
-
-                    <div class="table-cell members">
-                        <div class="cell-container">
-                            <a class="list-item"
-                               href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
-                            <a href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">Remove</a>
-
+                        <div class="table-cell table-top members">
+                            <p>You have not saved any lectures yet.</p>
                         </div>
-                    </div>
                     {% endif %}
-                    {% endfor %}
                 </div>
 
                 {% if user_profile.is_professor %}
