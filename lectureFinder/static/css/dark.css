@@ -51,7 +51,7 @@
     margin-bottom: 2rem;
 
     box-shadow: 0 0 10px 4px rgb(31 66 135 / 10%);
-    background-color: rgb(33, 158, 188, 0.3);
+    background-color: var(--blue-1);
     padding: 2rem 2rem;
     color: var(--blue-3);
     font-weight: bold;
@@ -135,6 +135,7 @@
     border-radius: 10px;
     width: 6rem;
     text-align: center;
+    color: white;
     font-family: Lato, sans-serif;
     font-size: 15px;
     font-weight: bold;
@@ -179,9 +180,9 @@
 
 .table-cell {
     border: 2px solid;
-    border-color: var(--light-gray);
+    border-color: var(--almost-white);
     border-bottom: none;
-    background-color: white;
+    background-color: var(--dark-gray);
     padding: 1rem 2rem;
     width: 100%;
     cursor: pointer;
@@ -197,7 +198,7 @@
 }
 
 .table-cell:hover .list-item {
-    color: var(--blue-2);
+    color: var(--blue-1);
     font-weight: bold;
 }
 

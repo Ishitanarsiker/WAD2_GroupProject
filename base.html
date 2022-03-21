@@ -28,8 +28,37 @@
             </nav>
             <div>
                 <div class="enter-container">
-                    <button class="navbar-btn" id="darkmode_btn" onclick="ToggleTheme()">Dark Mode</button>
+                    <button id="darkmode_btn" onclick="ToggleTheme()">Dark Mode</button>
+                    <script>
+                            var theme = document.querySelector("#theme-link");
+                            var currentTheme = localStorage.getItem("currentTheme");
 
+                            loadTheme();
+
+                            function loadTheme() {
+                                if (currentTheme == "dark") {
+                                    theme.setAttribute('href', "/static/css/dark.css");
+                                    console.log("Current Theme : Dark");
+                                } else {
+                                    theme.setAttribute('href', "/static/css/light.css");
+                                    console.log("Current Theme : Light");
+                                }
+                            }
+                            
+                            function ToggleTheme() {
+                                const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+                                if (prefersDarkScheme.matches) {
+                                    window.matchMedia("(prefers-color-scheme: light)").matches ? 'light' : 'dark';
+                                } else {
+                                    window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light';
+                                }
+
+                                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                                localStorage.setItem('currentTheme', newTheme);
+                                location.reload();
+                            }
+                    </script>
                     {% if not user.is_authenticated %}
                         <button class="enter-btn log-in" onclick="document.getElementById('id01').style.display='block'">Log
                             in
@@ -152,10 +181,9 @@
 
     </div>
 </header>
-<script src="{% static 'js/base.js' %}"></script>
+<script src="js/base.js"></script>
 
 {% if messages %}
-    <strong>Messages</strong><br>
     {% for message in messages %}
         <strong>{{ message }}</strong>
     {% endfor %}
