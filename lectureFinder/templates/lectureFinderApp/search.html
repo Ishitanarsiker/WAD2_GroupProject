@@ -9,53 +9,43 @@
     <div class="main-body">
 
         <div class="body-container-search">
-            <div class="input-container">
-                <input class="search-bar" type="text"
-                       placeholder="Enter a keyword, phrase, or leave blank for filter search only">
-                <button class="btn">Q</button>
-            </div>
+            <form action="{% url 'lectureFinderApp:search' %}" method="POST">
+                {% csrf_token %}
+                 <div class="input-container">
+                    <input class="search-bar" type="text"
+                           placeholder="Enter a keyword, phrase, or leave blank for filter search only" name="search_query">
+                    <button class="btn" type="submit" name="submit">Q</button>
+                </div>
 
-            <div class="filter-container">
-<!--                <div>-->
-<!--                    <select class="dropdown">-->
-<!--                        <option value="0">Year</option>-->
-<!--                        {% for k in number_of_years %}-->
-<!--                            <option value="{{ k }}">Year {{ k }}</option>-->
-<!--                        {% endfor %}-->
-<!--                    </select>-->
-<!--                </div>-->
-                <div>
-                    <select class="dropdown">
-                        {% for course in courses %}
-                            <option value="{{ course.code }}">{{ course.name }}</option>
-                        {% endfor %}
-                    </select>
+                <div class="filter-container">
+                    <p><strong>Refine Search</strong></p>
+                    <div>
+                        <label>Select a course</label>
+                        <select class="dropdown" name="refine_course">
+                            {% for course in courses %}
+                                <option value="{{ course.code }}">{{ course.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div>
+                        <label>Select a lecturer</label>
+                        <select class="dropdown" name="refine_lecturer">
+                            {% for professor in professors %}
+                                <option value="{{ professor.user.id }}">{{ professor.user.first_name }} {{ professor.user.last_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div>
+                        <label>Select a week</label>
+                        <select class="dropdown" name="refine_week">
+                            {% for week in range %}
+                                <option value="{{ week }}">Week {{ week }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
                 </div>
-                <div>
-                    <select class="dropdown">
-                        {% for professor in professors %}
-                            <option value="{{ professor.user.id }}">{{ professor.user.first_name }} {{ professor.user.last_name }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div>
-                    <select class="dropdown">
-                        <option value="0">Week</option>
-                        {% for k in number_of_weeks %}
-                            <option value="{{ k }}">Week {{ k }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-<!--                <div>-->
-<!--                    <select class="dropdown">-->
-<!--                        <option value="0">Type</option>-->
-<!--                        {% for k in file_formats %}-->
-<!--                            <option value="{{ k }}">{{ k }}</option>-->
-<!--                        {% endfor %}-->
-<!--                    </select>-->
-<!--                </div>-->
+            </form>
 
-            </div>
 
             <div class="results-container">
                 <div class="table">

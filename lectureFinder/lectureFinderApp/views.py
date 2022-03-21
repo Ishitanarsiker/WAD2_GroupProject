@@ -60,10 +60,18 @@ def members(request):
 
 
 def search(request):
+    if request.method == 'POST':
+        search_query = request.POST.get('search_query')
+        refined_course_code = int(request.POST.get('refine_course'))
+        refined_lecturer_id = int(request.POST.get('refine_lecturer'))
+        refined_week = int(request.POST.get('refine_week'))
+        # TODO: we then pass the variables above into the search_keyword.py, get results and then add them to
+        #  the context dict!
 
     context_dict = {
         'courses': Course.objects.all(),
-        'professors': UserProfile.objects.all().filter(is_professor=True)
+        'professors': UserProfile.objects.all().filter(is_professor=True),
+        'range': range(1, 11)
     }
 
     return render(request, 'lectureFinderApp/search.html', context=context_dict)
