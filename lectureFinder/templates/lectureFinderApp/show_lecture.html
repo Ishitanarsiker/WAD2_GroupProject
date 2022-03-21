@@ -13,6 +13,7 @@
     <p>Likes: {{ lecture.likes }}</p>
     <p>Course: {{ lecture.course.name }}</p>
     <p>Uploaded by: {{ lecture.professor.user.first_name }} {{ lecture.professor.user.last_name }}</p>
+    <p>Released on week: {{ lecture.week }}</p>
 
     {% if user.is_authenticated %}
         {% if not saved_lecture %}

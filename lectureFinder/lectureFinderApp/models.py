@@ -28,6 +28,7 @@ class Lecture(models.Model):
     transcript_name = models.TextField(max_length=128, default="")
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
+    week = models.IntegerField(default=1)
 
     # Default of None only helps in the case of migrating an empty DB -- the .save() method
     # means this slug will always be populated.

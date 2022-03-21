@@ -11,7 +11,8 @@ class UploadLectureForm(forms.ModelForm):
             'video_url',
             'slideshow_url',
             'course',
-            'professor'
+            'professor',
+            'week'
         )
 
 

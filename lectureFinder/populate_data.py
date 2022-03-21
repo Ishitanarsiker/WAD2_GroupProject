@@ -21,8 +21,9 @@ def populate():
         {'first_name': 'Derek', 'last_name': 'Somerville', 'email': 'email1@gmail.com', 'is_professor': True},
         {'first_name': 'Alistair', 'last_name': 'Morrison', 'email': 'email2@gmail.net', 'is_professor': True},
         {'first_name': 'Michele', 'last_name': 'Sevegnani', 'email': 'email3@gmail.net', 'is_professor': True},
-        {'first_name': 'Luke', 'last_name': 'Mullen', 'email': '2542408M@student.gla.ac.uk'},
-        {'first_name': 'NotLuke', 'last_name': 'NotMullen', 'email': 'notme@gmail.com'}
+        {'first_name': 'Luke', 'last_name': 'Mullen', 'email': 'email4@gmail.net'},
+        {'first_name': 'John', 'last_name': 'Smith', 'email': 'email5@gmail.net'},
+        {'first_name': 'David', 'last_name': 'Black', 'email': 'email6@gmail.net'},
     ]
 
     for course in courses:
@@ -46,6 +47,7 @@ def populate():
                 'slideshow_url': 'https://moodle.gla.ac.uk/pluginfile.php/5180587/mod_resource/content/1/L1-Introduction-notes.pdf',
                 'professor': professors[1],
                 'views': 35,
+                'week': 1
             }
         ],
         2008: [
@@ -56,6 +58,7 @@ def populate():
                 'slideshow_url': 'https://gla.sharepoint.com/:p:/r/sites/COMPSCI2008OBJECT-ORIENTEDSOFTWAREENGINEERING22/_layouts/15/Doc.aspx?sourcedoc=%7BF25477F5-9A3F-4636-9D46-AF69742A1790%7D&file=OOSE%205.1.2%20Doubling%20and%20Mocking.pptx&action=edit&mobileredirect=true',
                 'professor': professors[0],
                 'views': 44,
+                'week': 5
             }
         ],
         2007: [
@@ -66,6 +69,7 @@ def populate():
                 'slideshow_url': 'https://moodle.gla.ac.uk/pluginfile.php/4813403/mod_folder/content/0/L4.pptx?forcedownload=1',
                 'professor': professors[2],
                 'views': 68,
+                'week': 2
             }
         ]
     }
@@ -81,7 +85,8 @@ def populate():
                 video_url=lecture.get('video_url'),
                 slideshow_url=lecture.get('slideshow_url'),
                 transcript_name=lecture.get('transcript_name'),
-                views=lecture.get('views')
+                views=lecture.get('views'),
+                week=lecture.get('week')
             ))
 
     saved_lectures = [
@@ -100,13 +105,14 @@ def add_course(name, code):
     return c
 
 
-def add_lecture(title, video_url, transcript_name, slideshow_url, course, professor, views=0, likes=0):
+def add_lecture(title, video_url, transcript_name, slideshow_url, course, professor, week, views=0, likes=0):
     l = Lecture.objects.get_or_create(title=title, course=course, professor=professor)[0]
     l.video_url = video_url
     l.slideshow_url = slideshow_url
     l.transcript_name = transcript_name
     l.views = views
     l.likes = likes
+    l.week = week
     l.save()
     return l
 

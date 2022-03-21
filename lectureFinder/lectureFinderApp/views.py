@@ -60,7 +60,13 @@ def members(request):
 
 
 def search(request):
-    return render(request, 'lectureFinderApp/search.html')
+
+    context_dict = {
+        'courses': Course.objects.all(),
+        'professors': UserProfile.objects.all().filter(is_professor=True)
+    }
+
+    return render(request, 'lectureFinderApp/search.html', context=context_dict)
 
 
 def show_lecture(request, lecture_name_slug):
@@ -117,9 +123,11 @@ def signup(request):
             profile.user = user
             profile.save()
 
-            return redirect(reverse('lectureFinderApp:members'))
+            messages.add_message(request, messages.SUCCESS, "Signed up! Please login now.")
+            return redirect(reverse('lectureFinderApp:index'))
         else:
-            messages.add_message(request, messages.ERROR, "Something went wrong during registration, please try again.")
+            error_string = str(user_form.errors) + str(user_profile_form.errors)
+            messages.add_message(request, messages.ERROR, error_string)
             return redirect(reverse('lectureFinderApp:index'))
 
 
