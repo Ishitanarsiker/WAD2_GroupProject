@@ -15,24 +15,30 @@
                         <div class="category-title">Recently Uploaded</div>
                     </div>
                     <div class="table">
-                        {% for list_item in recently_uploaded %}
-                            {% if forloop.first %}
-                                <div class="table-cell table-top">
-                                    <div class="cell-container"><a class="list-item"
-                                                                   href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a>
+                        {% if recently_uploaded %}
+                            {% for list_item in recently_uploaded %}
+                                {% if forloop.first %}
+                                    <div class="table-cell table-top">
+                                        <div class="cell-container"><a class="list-item"
+                                                                       href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a>
+                                        </div>
                                     </div>
-                                </div>
-                            {% elif forloop.last %}
-                                <div class="table-cell table-bottom">
-                                    <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a></div>
-                                </div>
-                            {% else %}
+                                {% elif forloop.last %}
+                                    <div class="table-cell table-bottom">
+                                        <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a></div>
+                                    </div>
+                                {% else %}
 
-                                <div class="table-cell">
-                                    <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a></div>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
+                                    <div class="table-cell">
+                                        <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a></div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% else %}
+                            <div class="table-cell table-top">
+                                <p>No recent lectures.</p>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -43,24 +49,30 @@
                     <div class="category-title">Most Viewed</div>
 
                     <div class="table">
-                        {% for list_item in most_viewed %}
-                            {% if forloop.first %}
-                                <div class="table-cell table-top">
-                                    <div class="cell-container"><a class="list-item"
-                                                                   href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a>
+                        {% if most_viewed %}
+                            {% for list_item in most_viewed %}
+                                {% if forloop.first %}
+                                    <div class="table-cell table-top">
+                                        <div class="cell-container"><a class="list-item"
+                                                                       href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a>
+                                        </div>
                                     </div>
-                                </div>
-                            {% elif forloop.last %}
-                                <div class="table-cell table-bottom">
-                                    <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a></div>
-                                </div>
-                            {% else %}
+                                {% elif forloop.last %}
+                                    <div class="table-cell table-bottom">
+                                        <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a></div>
+                                    </div>
+                                {% else %}
 
-                                <div class="table-cell">
-                                    <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a></div>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
+                                    <div class="table-cell">
+                                        <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a></div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% else %}
+                            <div class="table-cell table-top">
+                                <p>No recent lectures.</p>
+                            </div>
+                        {% endif %}
                     </div>
 
                 </div>

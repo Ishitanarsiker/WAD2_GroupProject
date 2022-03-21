@@ -1,22 +1,20 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from lectureFinderApp.models import Lecture, SavedLecture, UserProfile
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from .models import Lecture, SavedLecture, UserProfile
 from .forms import UserForm, UserProfileForm, UploadLectureForm
 
 
 def index(request):
-    # Index page will display both the recently uploaded and the most viewed lectures.
-
-    # TODO: This currently shows ALL uploaded lectures; maybe do just the last 7 or so?
+    # Index page will display both the 10 most recently uploaded and the 10 most viewed lectures.
     all_lectures = Lecture.objects.all()  # ordered by last record inserted into the table.
     all_lectures_by_views = all_lectures.order_by('-views')
 
     context_dict = {
-        'recently_uploaded': all_lectures,
-        'most_viewed': all_lectures_by_views,
+        'recently_uploaded': all_lectures[:10],
+        'most_viewed': all_lectures_by_views[:10],
     }
 
     return render(request, 'lectureFinderApp/index.html', context=context_dict)
@@ -71,10 +69,7 @@ def show_lecture(request, lecture_name_slug):
     # Get the saved lectures for this user, so we know if this lecture has been saved or not already!
     try:
         current_user = UserProfile.objects.get(user=User.objects.get(id=request.user.id))
-        saved_lecture = SavedLecture.objects.get(
-            lecture=Lecture.objects.get(slug=lecture_name_slug),
-            user=current_user
-        )
+        saved_lecture = get_saved_lectures(lecture_name_slug, current_user)
     except (UserProfile.DoesNotExist, User.DoesNotExist, Lecture.DoesNotExist, SavedLecture.DoesNotExist):
         saved_lecture = None
 
@@ -99,11 +94,7 @@ def save_lecture(request, lecture_name_slug):
 @login_required
 def delete_saved_lecture(request, lecture_name_slug):
     current_user = UserProfile.objects.get(user=User.objects.get(id=request.user.id))
-
-    SavedLecture.objects.get(
-        lecture=Lecture.objects.get(slug=lecture_name_slug),
-        user=current_user
-    ).delete()
+    get_saved_lectures(lecture_name_slug, current_user).delete()
 
     return redirect(reverse('lectureFinderApp:members'))
 
@@ -152,3 +143,11 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     return redirect(reverse('lectureFinderApp:index'))
+
+
+# Helper functions
+def get_saved_lectures(lecture_name_slug, current_user):
+    return SavedLecture.objects.get(
+        lecture=Lecture.objects.get(slug=lecture_name_slug),
+        user=current_user
+    )
