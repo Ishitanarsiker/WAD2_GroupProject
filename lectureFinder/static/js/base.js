@@ -11,3 +11,31 @@ window.onclick = function (event) {
         modal2.style.display = "none";
     }
 }
+
+var theme = document.querySelector("#theme-link");
+var currentTheme = localStorage.getItem("currentTheme");
+
+loadTheme();
+
+function loadTheme() {
+    if (currentTheme == "dark") {
+        theme.setAttribute('href', "{% static 'css/dark.css' %}");
+        console.log("Current Theme : Dark");
+    } else {
+        theme.setAttribute('href', "{% static 'css/light.css' %}");
+        console.log("Current Theme : Light");
+    }
+}
+
+function ToggleTheme() {
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+    if (prefersDarkScheme.matches) {
+        window.matchMedia("(prefers-color-scheme: light)").matches ? 'light' : 'dark';
+    } else {
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light';
+    }
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('currentTheme', newTheme);
+    location.reload();
+}
