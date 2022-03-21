@@ -28,7 +28,7 @@
             </nav>
             <div>
                 <div class="enter-container">
-                    <button id="darkmode_btn" onclick="ToggleTheme()">Dark Mode</button>
+                    <button class="navbar-btn" id="darkmode_btn" onclick="ToggleTheme()">Dark Mode</button>
 
                     {% if not user.is_authenticated %}
                         <button class="enter-btn log-in" onclick="document.getElementById('id01').style.display='block'">Log
@@ -152,7 +152,7 @@
 
     </div>
 </header>
-<script src="js/base.js"></script>
+<script src="{% static 'js/base.js' %}"></script>
 
 {% if messages %}
     {% for message in messages %}
