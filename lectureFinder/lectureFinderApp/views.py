@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-from .models import Lecture, SavedLecture, UserProfile
+from .models import Lecture, SavedLecture, UserProfile, Course
 from .forms import UserForm, UserProfileForm, UploadLectureForm
 
 
@@ -50,7 +50,9 @@ def members(request):
         context_dict = {
             'saved_lectures': all_saved_lectures_for_user,
             'user_profile': logged_in_user,
-            'upload_lecture_form': upload_lecture_form
+            'upload_lecture_form': upload_lecture_form,
+            'courses': Course.objects.all(),
+            'professors': UserProfile.objects.all().filter(is_professor=True)
         }
 
         return render(request, 'lectureFinderApp/members.html', context=context_dict)

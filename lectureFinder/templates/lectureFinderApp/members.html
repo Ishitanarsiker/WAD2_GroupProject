@@ -88,19 +88,19 @@ Members
                             </div>
 
                             <div class="form-input">
+                                <label>Course</label>
                                 <select class="dropdown" name="course" required id="id_course">
-                                    <option value selected>Course<option>
-                                    {% for k in  upload_lecture_form.course %}
-                                        <option value="{{ k }}">{{ k }}</option>
+                                    {% for course in courses %}
+                                        <option value="{{ course.code }}">{{ course.name }}</option>
                                     {% endfor %}
                                 </select>
                             </div>
 
                             <div class="form-input">
+                                <label>Professor</label>
                                 <select class="dropdown" name="professor" required id="id_professor">
-                                    <option value selected>Professor<option>
-                                    {% for k in upload_lecture_form.professor %}
-                                        <option value="{{ k }}">{{ k }}</option>
+                                    {% for professor in professors %}
+                                        <option value="{{ professor.user.id }}">{{ professor.user.username }}</option>
                                     {% endfor %}
                                 </select>
                             </div>
