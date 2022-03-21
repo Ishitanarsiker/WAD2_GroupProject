@@ -195,8 +195,10 @@
 </header>
 <script src="{% static 'js/base.js' %}"></script>
 
-{% if error_message %}
-    <strong>{{ error_message }}</strong>
+{% if messages %}
+    {% for message in messages %}
+        <strong>{{ message }}</strong>
+    {% endfor %}
 {% endif %}
 
 {% block body_block %}

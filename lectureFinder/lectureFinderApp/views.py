@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 from .models import Lecture, SavedLecture, UserProfile, Course
 from .forms import UserForm, UserProfileForm, UploadLectureForm
 
@@ -118,6 +119,7 @@ def signup(request):
 
             return redirect(reverse('lectureFinderApp:members'))
         else:
+            messages.add_message(request, messages.ERROR, "Something went wrong during registration, please try again.")
             return redirect(reverse('lectureFinderApp:index'))
 
 
@@ -133,11 +135,14 @@ def login_user(request):
                 login(request, user)
                 return redirect(reverse('lectureFinderApp:members'))
             else:
+                messages.add_message(request, messages.ERROR, "Your account has been disabled.")
                 return redirect(reverse('lectureFinderApp:index'))
         else:
+            messages.add_message(request, messages.ERROR, "Invalid login details.")
             return redirect(reverse('lectureFinderApp:index'))
     else:
         # When user tries to go to the MEMBERS link, but they aren't logged in.
+        messages.add_message(request, messages.INFO, "You must be logged in to access the members area.")
         return redirect(reverse('lectureFinderApp:index'))
 
 
