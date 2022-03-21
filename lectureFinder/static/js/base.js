@@ -19,10 +19,10 @@ loadTheme();
 
 function loadTheme() {
     if (currentTheme == "dark") {
-        theme.setAttribute('href', "{% static 'css/dark.css' %}");
+        theme.setAttribute('href', "/static/css/dark.css");
         console.log("Current Theme : Dark");
     } else {
-        theme.setAttribute('href', "{% static 'css/light.css' %}");
+        theme.setAttribute('href', "/static/css/light.css");
         console.log("Current Theme : Light");
     }
 }
