@@ -12,9 +12,9 @@
             <form action="{% url 'lectureFinderApp:search' %}" method="POST">
                 {% csrf_token %}
                  <div class="input-container">
-                    <input class="search-bar" type="text"
+                    <input class="search-bar" type="search"
                            placeholder="Enter a keyword, phrase, or leave blank for filter search only" name="search_query">
-                    <button class="btn" type="submit" name="submit">Q</button>
+                    <button class="search-btn" type="submit" name="submit"><img src="{% static 'images/search-icon.png' %}" height="35"></button>
                 </div>
 
                 <div class="filter-container">
