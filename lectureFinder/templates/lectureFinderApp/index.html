@@ -55,20 +55,20 @@
                                     <div class="table-cell table-top">
                                         <div class="cell-container"><a class="list-item"
                                                                        href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a>
-                                            <p><strong>({{ list_item.views }} views)</strong></p>
+                                            <p class="list-item"><strong>({{ list_item.views }} views)</strong></p>
                                         </div>
                                     </div>
                                 {% elif forloop.last %}
                                     <div class="table-cell table-bottom">
                                         <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a>
-                                        <p><strong>({{ list_item.views }} views)</strong></p>
+                                        <p class="list-item"><strong>({{ list_item.views }} views)</strong></p>
                                         </div>
                                     </div>
                                 {% else %}
 
                                     <div class="table-cell">
                                         <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a>
-                                        <p><strong>({{ list_item.views }} views)</strong></p>
+                                        <p class="list-item"><strong>({{ list_item.views }} views)</strong></p>
                                         </div>
                                     </div>
                                 {% endif %}

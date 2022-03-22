@@ -41,6 +41,9 @@
     font-weight: bold;
     transition: all .2s;
     cursor: pointer;
+    width: 70px;
+    height: 30px;
+    vertical-align: middle;
 }
 
 .btn:hover {
@@ -667,4 +670,27 @@ input:checked + .slider:before {
 }
 .slider.round:before {
   border-radius: 50%;
+}
+
+/* error message */
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
 }

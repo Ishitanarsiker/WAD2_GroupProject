@@ -33,7 +33,7 @@
 
 .btn {
     box-shadow: 0 0 10px 4px rgb(31 66 135 / 10%);
-    background-color: var(--blue-2);
+    background-color: var(--blue-1);
     color: var(--darker-gray);
     border-radius: var(--corner-btn);
     padding: 1rem 2rem;
@@ -41,6 +41,9 @@
     font-weight: bold;
     transition: all .2s;
     cursor: pointer;
+    width: 70px;
+    height: 30px;
+    vertical-align: middle;
 }
 
 .btn:hover {
@@ -216,7 +219,7 @@
 
 .list-item {
     text-decoration: none;
-    color: black;
+    color: white;
     width: 25rem;
 }
 
@@ -360,6 +363,8 @@ input:checked + .slider:before {
 .body-container-search {
     display: grid;
     grid-template-columns: 1fr;
+    height:200px;
+    font-size:14pt;
 }
 
 .input-container {
@@ -423,7 +428,7 @@ input:checked + .slider:before {
 }
 
 .dropdown {
-    background-color: var(--blue-2);
+    background-color: var(--blue-1);
     color: var(--darker-gray);
     border-radius: 7px;
     padding: 1rem;
@@ -697,4 +702,27 @@ ul > li > ul > li > ul {
 
 ol li {
     font-family: Arial ;
+}
+
+/* error message */
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
 }

@@ -6,14 +6,16 @@
 {% endblock %}
 
 {% block body_block %}
-    {{ lecture.title }} <br>
-    <a href="{{ lecture.video_url }}">Lecture Video</a> <br>
-    <a href="{{ lecture.slideshow_url }}">Lecture Slides</a>
-    <p>Views: {{ lecture.views }}</p>
-    <p>Likes: {{ lecture.likes }}</p>
-    <p>Course: {{ lecture.course.name }}</p>
-    <p>Uploaded by: {{ lecture.professor.user.first_name }} {{ lecture.professor.user.last_name }}</p>
-    <p>Released on week: {{ lecture.week }}</p>
+    <div class="table-cell table-top">
+        {{ lecture.title }} <br>
+        <a href="{{ lecture.video_url }}">Lecture Video</a> <br>
+        <a href="{{ lecture.slideshow_url }}">Lecture Slides</a>
+        <p>Views: {{ lecture.views }}</p>
+        <p>Likes: {{ lecture.likes }}</p>
+        <p>Course: {{ lecture.course.name }}</p>
+        <p>Uploaded by: {{ lecture.professor.user.first_name }} {{ lecture.professor.user.last_name }}</p>
+        <p>Released on week: {{ lecture.week }}</p>
+    </div>
 
     {% if user.is_authenticated %}
         {% if not saved_lecture %}

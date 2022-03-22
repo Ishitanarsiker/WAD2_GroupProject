@@ -14,8 +14,15 @@
 <body style="margin: 0;">
 <header>
     <div class="header-container">
-        <div class="logo-area"><a href="{% url 'lectureFinderApp:index' %}"><img class="logo" src="{% static 'images/logo-black.png' %}"
+
+        {% if currentTheme == light %}
+            <div class="logo-area"><a href="{% url 'lectureFinderApp:index' %}"><img class="logo" src="{% static 'images/logo-black.png' %}"
                                                          alt="FindMyLecture logo"></a></div>
+        {% else %}
+        <div class="logo-area"><a href="{% url 'lectureFinderApp:index' %}"><img class="logo" src="{% static 'images/logo-white.png' %}"
+                                                         alt="FindMyLecture logo"></a></div>
+        {% endif %}
+
         <div class="nav-area">
             <nav class="navbar">
                 <div><a class="navbar-btn" href="{% url 'lectureFinderApp:index' %}">HOME</a></div>
@@ -84,7 +91,7 @@
 
                         <div id="id02" class="modal">
                             <form class="modal-content animate" action="{% url 'lectureFinderApp:signup' %}" method="POST" enctype="multipart/form-data">
-                                {% csrf_token %}
+                                
                                 <div class="form-header">
                                     <div class="form-title"><h1>Sign up</h1></div>
 
@@ -155,10 +162,12 @@
 <script src="{% static 'js/base.js' %}"></script>
 
 {% if messages %}
-    <strong>Messages</strong><br>
-    {% for message in messages %}
-        <strong>{{ message }}</strong>
-    {% endfor %}
+    <div class="alert">
+        {% for message in messages %}
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>{{ message }}</strong>
+        {% endfor %}
+    </div>
 {% endif %}
 
 {% block body_block %}
