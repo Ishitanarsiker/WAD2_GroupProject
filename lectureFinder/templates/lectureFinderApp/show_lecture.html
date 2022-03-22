@@ -6,22 +6,57 @@
 {% endblock %}
 
 {% block body_block %}
-    <div class="table-cell table-top">
-        {{ lecture.title }} <br>
-        <a href="{{ lecture.video_url }}">Lecture Video</a> <br>
-        <a href="{{ lecture.slideshow_url }}">Lecture Slides</a>
-        <p>Views: {{ lecture.views }}</p>
-        <p>Likes: {{ lecture.likes }}</p>
-        <p>Course: {{ lecture.course.name }}</p>
-        <p>Uploaded by: {{ lecture.professor.user.first_name }} {{ lecture.professor.user.last_name }}</p>
-        <p>Released on week: {{ lecture.week }}</p>
-    </div>
+    <div class="main-body">
+        <div class="body-container-index">
+
+                <div>
+                    <div class="table-card">
+                        <div>
+                            <div class="category-title">{{ lecture.title }}</div>
+                        </div>
+                        <div class="table">
+
+                            <div class="table-cell table-top">
+                                <div class="cell-container"><a class="list-item"
+                                    href="{{ lecture.video_url }}">Lecture Video</a></div>
+                            </div>
+
+                            <div class="table-cell">
+                                <div class="cell-container"><a class="list-item"
+                                    href="{{ lecture.slideshow_url }}">Lecture Slides</a></div>
+                            </div>
+
+                            <div class="table-cell">
+                                <div class="cell-container"><a class="list-item">Views: {{ lecture.views }}</a></div>
+                            </div>
+
+                            <div class="table-cell">
+                                <div class="cell-container"><a class="list-item">Likes: {{ lecture.likes }}</a></div>
+                            </div>
+
+                            <div class="table-cell">
+                                <div class="cell-container"><a class="list-item">Course: {{ lecture.course.name }}</a></div>
+                            </div>
+
+                            <div class="table-cell">
+                                <div class="cell-container"><a class="list-item">Uploaded by: {{ lecture.professor.user.first_name }} {{lecture.professor.user.last_name }}</a></div>
+                            </div>
+
+                            <div class="table-cell table-bottom">
+                                <div class="cell-container"><a class="list-item">Released on week: {{ lecture.week }}</a></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
     {% if user.is_authenticated %}
         {% if not saved_lecture %}
-            <a href="{% url 'lectureFinderApp:save_lecture' lecture.slug %}">Save this lecture</a>
+                <button class="search-btn"  href="{% url 'lectureFinderApp:save_lecture' lecture.slug %}"><img src="{% static 'images/save-icon.png' %}" height="35"></button>
         {% else %}
-            <a href="{% url 'lectureFinderApp:delete_saved_lecture' lecture.slug %}">Remove</a>
+            <button class="btn"  href="{% url 'lectureFinderApp:delete_saved_lecture' lecture.slug %}">Remove</button>
         {% endif %}
     {% endif %}
+
 {% endblock %}
