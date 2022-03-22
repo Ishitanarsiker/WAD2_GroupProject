@@ -91,7 +91,7 @@
 
                         <div id="id02" class="modal">
                             <form class="modal-content animate" action="{% url 'lectureFinderApp:signup' %}" method="POST" enctype="multipart/form-data">
-                                
+                                {% csrf_token %}
                                 <div class="form-header">
                                     <div class="form-title"><h1>Sign up</h1></div>
 
