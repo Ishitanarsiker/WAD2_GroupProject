@@ -755,3 +755,7 @@ ol li {
 .closebtn:hover {
   color: black;
 }
+
+#logout_button {
+    color: white;
+}

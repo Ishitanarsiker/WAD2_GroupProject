@@ -4,6 +4,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'css/light.css' %}" id="theme-link"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" id="theme-link-main"/>
     <meta charset="UTF-8">
     <title>
         {% block title_block %}
@@ -149,7 +150,7 @@
                     </div>
                     {% else %}
                         <button class="enter-btn log-in" onclick="document.getElementById('id01').style.display='block'">
-                            <a href="{% url 'lectureFinderApp:logout' %}">Logout</a>
+                            <a href="{% url 'lectureFinderApp:logout' %}" id="logout_button">Logout</a>
                         </button>
                     {% endif %}
                 </div>
