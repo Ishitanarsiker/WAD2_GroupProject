@@ -4,6 +4,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'css/light.css' %}" id="theme-link"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" id="theme-link-main"/>
     <meta charset="UTF-8">
     <title>
         {% block title_block %}
@@ -86,7 +87,7 @@
 
                         <div id="id02" class="modal">
                             <form class="modal-content animate" action="{% url 'lectureFinderApp:signup' %}" method="POST" enctype="multipart/form-data">
-                                
+                                {% csrf_token %}
                                 <div class="form-header">
                                     <div class="form-title"><h1>Sign up</h1></div>
 
@@ -143,8 +144,9 @@
                             </form>
                     </div>
                     {% else %}
-                        <button class="enter-btn log-in">
-                            <a href="{% url 'lectureFinderApp:logout' %}">Logout</a>
+
+                        <button class="enter-btn log-in" onclick="document.getElementById('id01').style.display='block'">
+                            <a href="{% url 'lectureFinderApp:logout' %}" id="logout_button">Logout</a>
                         </button>
                     {% endif %}
                 </div>
@@ -157,12 +159,12 @@
 <script src="{% static 'js/base.js' %}"></script>
 
 {% if messages %}
-    <div class="alert">
-        {% for message in messages %}
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+    {% for message in messages %}
+        <div class="alert {% if message.tags == 'error' %}alert-error{% else %} alert-success {% endif %}">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
             <strong>{{ message }}</strong>
-        {% endfor %}
-    </div>
+        </div>
+    {% endfor %}
 {% endif %}
 
 {% block body_block %}

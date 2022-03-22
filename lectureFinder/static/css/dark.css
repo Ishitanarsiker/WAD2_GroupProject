@@ -729,11 +729,17 @@ ol li {
 }
 
 /* error message */
-
 .alert {
-  padding: 20px;
-  background-color: #f44336;
-  color: white;
+    padding: 20px;
+    color: white;
+}
+
+.alert-error {
+    background-color: #f44336;
+}
+
+.alert-success {
+    background-color: green;
 }
 
 .closebtn {
@@ -749,4 +755,8 @@ ol li {
 
 .closebtn:hover {
   color: black;
+}
+
+#logout_button {
+    color: white;
 }
