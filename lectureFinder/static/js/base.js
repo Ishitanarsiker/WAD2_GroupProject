@@ -15,15 +15,18 @@ window.onclick = function (event) {
 var theme = document.querySelector("#theme-link");
 var currentTheme = localStorage.getItem("currentTheme");
 
+
 loadTheme();
 
 function loadTheme() {
     if (currentTheme == "dark") {
         theme.setAttribute('href', "/static/css/dark.css");
         console.log("Current Theme : Dark");
+        logo.src = "/static/images/logo-white.png";
     } else {
         theme.setAttribute('href', "/static/css/light.css");
         console.log("Current Theme : Light");
+        logo.src = "/static/images/logo-black.png";
     }
 }
 
