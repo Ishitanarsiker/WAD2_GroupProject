@@ -22,6 +22,7 @@
                     <div>
                         <label>Select a course</label>
                         <select class="dropdown" name="refine_course">
+                            <option value="-1">----</option>
                             {% for course in courses %}
                                 <option value="{{ course.code }}">{{ course.name }}</option>
                             {% endfor %}
@@ -30,6 +31,7 @@
                     <div>
                         <label>Select a lecturer</label>
                         <select class="dropdown" name="refine_lecturer">
+                            <option value="-1">----</option>
                             {% for professor in professors %}
                                 <option value="{{ professor.user.id }}">{{ professor.user.first_name }} {{ professor.user.last_name }}</option>
                             {% endfor %}
@@ -38,6 +40,7 @@
                     <div>
                         <label>Select a week</label>
                         <select class="dropdown" name="refine_week">
+                            <option value="-1">----</option>
                             {% for week in range %}
                                 <option value="{{ week }}">Week {{ week }}</option>
                             {% endfor %}
@@ -49,18 +52,18 @@
 
             <div class="results-container">
                 <div class="table">
-                    {% for item in results %}
+                    {% for lecture in search_results %}
                         {% if forloop.first %}
                             <div class="table-cell table-top">
-                                <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                                <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' lecture.first.slug %}">{{ lecture.first.title }}</a></div>
                             </div>
                         {% elif forloop.last %}
                             <div class="table-cell table-bottom">
-                                <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                                <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' lecture.first.slug %}">{{ lecture.first.title }}</a></div>
                             </div>
                         {% else %}
                             <div class="table-cell">
-                                <div class="cell-container"><a class="list-item" href="#">{{ list_item }}</a></div>
+                                <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' lecture.first.slug %}">{{ lecture.first.title }}</a></div>
                             </div>
                         {% endif %}
                     {% endfor %}
