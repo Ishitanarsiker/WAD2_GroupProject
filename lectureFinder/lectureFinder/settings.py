@@ -18,16 +18,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
+JSON_DIR = os.path.join(STATIC_DIR, 'JSON')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'tefio7ffw)ya9&0q*1+!5kir=2hgs6ka*g(&i+c&ryceaobff0'
-secret_file = os.path.join(BASE_DIR, 'secrets.json')
+secret_file = os.path.join(JSON_DIR, 'secrets.json')
 
 with open(secret_file) as f:
     secrets = json.loads(f.read())
+
 
 def get_secret(setting, secrets=secrets):
     try:
@@ -35,6 +37,7 @@ def get_secret(setting, secrets=secrets):
     except KeyError:
         error_msg = "Set the {} environment variable".format(setting)
         raise ImproperlyConfigured(error_msg)
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
