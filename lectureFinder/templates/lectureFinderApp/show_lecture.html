@@ -55,7 +55,7 @@
         {% if not saved_lecture %}
             <a class="search-btn"  href="{% url 'lectureFinderApp:save_lecture' lecture.slug %}"><img src="{% static 'images/save-icon.png' %}" height="35"></a>
         {% else %}
-            <a class="btn"  href="{% url 'lectureFinderApp:delete_saved_lecture' lecture.slug %}">Remove</a>
+            <a class="search-btn"  href="{% url 'lectureFinderApp:delete_saved_lecture' lecture.slug %}"><img src="{% static 'images/remove-icon.png' %}" height="35"></a>
         {% endif %}
     {% endif %}
 

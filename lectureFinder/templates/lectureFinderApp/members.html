@@ -35,35 +35,47 @@ Members
 
                 <div class="table">
                     {% if saved_lectures %}
-                        {% for saved_lecture in saved_lectures %}
-                            {% if forloop.first %}
-                                <div class="table-cell table-top members">
-                                    <div class="cell-container">
-                                        <a class="list-item"
+                        {% if saved_lectures|length == 1 %}
+                            {% for saved_lecture in saved_lectures %}
+                            <div class="table-cell table-single members">
+                                <div class="cell-container">
+                                    <a class="list-item"
                                            href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
-                                        <a href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">Remove</a>
+                                    <a class="delete-btn" href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}"><img src="{% static 'images/remove-icon.png' %}" height="35"></a>
                                     </div>
-                                </div>
-                            {% elif forloop.last %}
-                                <div class="table-cell table-bottom members">
-                                    <div class="cell-container">
-                                        <a class="list-item"
-                                           href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
-                                        <a href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">Remove</a>
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                            {% for saved_lecture in saved_lectures %}
+                                {% if forloop.first %}
+                                    <div class="table-cell table-top members">
+                                        <div class="cell-container">
+                                            <a class="list-item" 
+                                            href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
+                                            <a href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">Remove</a>
+                                        </div>
                                     </div>
-                                </div>
-                            {% else %}
-                                <div class="table-cell members">
-                                    <div class="cell-container">
-                                        <a class="list-item"
-                                           href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
-                                        <a href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">Remove</a>
+                                {% elif forloop.last %}
+                                    <div class="table-cell table-bottom members">
+                                        <div class="cell-container">
+                                            <a class="list-item"
+                                            href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
+                                            <a href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">Remove</a>
+                                        </div>
                                     </div>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
+                                {% else %}
+                                    <div class="table-cell members">
+                                        <div class="cell-container">
+                                            <a class="list-item"
+                                            href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
+                                            <a href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">Remove</a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
                     {% else %}
-                        <div class="table-cell table-top members">
+                        <div class="table-cell table-single members">
                             <p>You have not saved any lectures yet.</p>
                         </div>
                     {% endif %}
@@ -91,7 +103,7 @@ Members
                             </div>
 
                             <div class="form-input">
-                                <label>Course</label>
+                                <label><strong>Course</strong></label>
                                 <select class="dropdown" name="course" required id="id_course">
                                     {% for course in courses %}
                                         <option value="{{ course.code }}">{{ course.name }}</option>
@@ -100,7 +112,7 @@ Members
                             </div>
 
                             <div class="form-input">
-                                <label>Professor</label>
+                                <label><strong>Professor</strong></label>
                                 <select class="dropdown" name="professor" required id="id_professor">
                                     {% for professor in professors %}
                                         <option value="{{ professor.user.id }}">{{ professor.user.username }}</option>

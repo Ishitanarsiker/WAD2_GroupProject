@@ -51,7 +51,18 @@
 
 
             <div class="results-container">
-                <div class="table">
+                {% if search_results|length == 1 %}
+                    <strong>We found 1 result:</strong>
+                    <div class="table">
+                    {% for lecture in search_results %}
+                        <div class="table-cell table-single">
+                            <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' lecture.first.slug %}">{{ lecture.first.title }}</a></div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                {% else %}
+                    <strong>We found {{ search_results|length }} results:</strong>
+                    <div class="table">
                     {% for lecture in search_results %}
                         {% if forloop.first %}
                             <div class="table-cell table-top">
@@ -67,7 +78,8 @@
                             </div>
                         {% endif %}
                     {% endfor %}
-                </div>
+                    </div>
+                {% endif %}
             </div>
 
         </div>
