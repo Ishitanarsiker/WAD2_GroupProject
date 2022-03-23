@@ -105,7 +105,7 @@ def save_lecture(request, lecture_name_slug):
     )
     saved_lecture.save()
 
-    return redirect(reverse('lectureFinderApp:index'))
+    return redirect(reverse('lectureFinderApp:members'))
 
 
 @login_required
@@ -158,7 +158,7 @@ def login_user(request):
             return redirect(reverse('lectureFinderApp:index'))
     else:
         # When user tries to go to the MEMBERS link, but they aren't logged in.
-        messages.add_message(request, messages.INFO, "You must be logged in to access the members area.")
+        messages.add_message(request, messages.ERROR, "You must be logged in to access the members area.")
         return redirect(reverse('lectureFinderApp:index'))
 
 
