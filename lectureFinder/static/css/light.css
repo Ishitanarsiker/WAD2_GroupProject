@@ -346,7 +346,7 @@ body {
 
 .search-btn {
     position:relative;
-    background: var(--blue-2);
+    background: var(--blue-1);
     box-shadow: 0 0 10px 4px rgb(31 66 135 / 10%);
     border-radius: var(--corner-btn);
     padding: 1rem 2rem;
@@ -369,7 +369,7 @@ body {
 }
 
 .search-btn:hover {
-    background-color: var(--blue-3);
+    background-color: var(--blue-2);
 }
 
 .search-icon {
@@ -381,7 +381,6 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 2rem;
-    color:  black;
     width: 90%;
     box-shadow: 0 0 10px 4px rgb(31 66 135 / 10%);
     background-color: rgb(33, 158, 188, 0.1);
@@ -392,17 +391,18 @@ body {
 }
 
 .dropdown {
-    background-color: var(--blue-2);
+    background-color: var(--blue-1);
+    border-color: var(--blue-2);
     color: var(--almost-white);
     border-radius: 7px;
     padding: 1rem;
-    width: 40%;
+    width: 80%;
     outline: none;
     cursor: pointer;
 }
 
 .dropdown:hover {
-    background-color: var(--blue-3);
+    background-color: var(--blue-2);
 }
 
 .table.results {
@@ -671,58 +671,6 @@ ul > li > ul > li > ul {
 
 ol li {
     font-family: Arial ;
-}
-
-/*-----------------------------------------------------------------------------------------------*/
-.theme-toggle {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-.theme-toggle input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-input:checked + .slider {
-  background-color: var(--orange-2);
-}
-input:focus + .slider {
-  box-shadow: 0 0 1px var(--orange-2);
-}
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  transform: translateX(26px);
-}
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-.slider.round:before {
-  border-radius: 50%;
 }
 
 /* error message */
