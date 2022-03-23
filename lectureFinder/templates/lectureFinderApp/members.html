@@ -52,7 +52,7 @@ Members
                                         <div class="cell-container">
                                             <a class="list-item" 
                                             href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
-                                            <a href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">Remove</a>
+                                            <a class="delete-btn" href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}"><img src="{% static 'images/remove-icon.png' %}" height="35"></a>
                                         </div>
                                     </div>
                                 {% elif forloop.last %}
@@ -60,7 +60,7 @@ Members
                                         <div class="cell-container">
                                             <a class="list-item"
                                             href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
-                                            <a href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">Remove</a>
+                                            <a class="delete-btn" href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}"><img src="{% static 'images/remove-icon.png' %}" height="35"></a>
                                         </div>
                                     </div>
                                 {% else %}
@@ -68,7 +68,7 @@ Members
                                         <div class="cell-container">
                                             <a class="list-item"
                                             href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
-                                            <a href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">Remove</a>
+                                            <a class="delete-btn" href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}"><img src="{% static 'images/remove-icon.png' %}" height="35"></a>
                                         </div>
                                     </div>
                                 {% endif %}
