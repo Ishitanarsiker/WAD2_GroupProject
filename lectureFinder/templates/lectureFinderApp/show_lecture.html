@@ -53,9 +53,9 @@
 
     {% if user.is_authenticated %}
         {% if not saved_lecture %}
-                <button class="search-btn"  href="{% url 'lectureFinderApp:save_lecture' lecture.slug %}"><img src="{% static 'images/save-icon.png' %}" height="35"></button>
+            <a class="search-btn"  href="{% url 'lectureFinderApp:save_lecture' lecture.slug %}"><img src="{% static 'images/save-icon.png' %}" height="35"></a>
         {% else %}
-            <button class="btn"  href="{% url 'lectureFinderApp:delete_saved_lecture' lecture.slug %}">Remove</button>
+            <a class="btn"  href="{% url 'lectureFinderApp:delete_saved_lecture' lecture.slug %}">Remove</a>
         {% endif %}
     {% endif %}
 

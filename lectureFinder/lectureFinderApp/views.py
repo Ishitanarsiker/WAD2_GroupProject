@@ -105,7 +105,7 @@ def save_lecture(request, lecture_name_slug):
     )
     saved_lecture.save()
 
-    return redirect(reverse('lectureFinderApp:index'))
+    return redirect(reverse('lectureFinderApp:members'))
 
 
 @login_required
