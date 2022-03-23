@@ -483,6 +483,7 @@ input:checked + .slider:before {
 
 
 .about-paragraph {
+    color: white;
     width: 40rem;
     text-align: center;
     line-height: 1.6;
