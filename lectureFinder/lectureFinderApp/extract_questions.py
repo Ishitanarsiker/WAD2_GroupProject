@@ -30,6 +30,3 @@ def search_transcripts_for_phrase(phrase):
             files_phrase_appears_in.append(filename)
 
     return files_phrase_appears_in
-
-
-print(search_transcripts_for_phrase("Dublin"))
