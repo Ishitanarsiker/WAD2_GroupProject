@@ -16,8 +16,9 @@
 <header>
     <div class="header-container">
 
-        <div class="logo-area"><a href="{% url 'lectureFinderApp:index' %}"><img id="logo" class="logo" src="{% static 'images/logo-black.png' %}"
-                                                         alt="FindMyLecture logo"></a></div>
+        <div class="logo-area"><a href="{% url 'lectureFinderApp:index' %}"><img id="logo" class="logo"
+                                                                                 src="{% static 'images/logo-black.png' %}"
+                                                                                 alt="FindMyLecture logo"></a></div>
 
         <div class="nav-area">
             <nav class="navbar">
@@ -31,15 +32,18 @@
             </nav>
             <div>
                 <div class="enter-container">
-                    <button class="navbar-btn" id="darkmode_btn" onclick="ToggleTheme()">Dark Mode</button>
-
+                    <!--
+                                        <button class="navbar-btn" id="darkmode_btn" onclick="ToggleTheme()">Dark Mode</button>
+                    -->
                     {% if not user.is_authenticated %}
-                        <button class="enter-btn log-in" onclick="document.getElementById('id01').style.display='block'">Log
+                        <button class="enter-btn log-in"
+                                onclick="document.getElementById('id01').style.display='block'">Log
                             in
                         </button>
 
-                        <div id="id01" class="modal">
-                            <form class="modal-content animate" action="{% url 'lectureFinderApp:login' %}" method="POST">
+                        <div id="id01" class="modal log-in">
+                            <form class="modal-content animate" action="{% url 'lectureFinderApp:login' %}"
+                                  method="POST">
                                 {% csrf_token %}
                                 <div class="form-header">
                                     <div class="form-title"><h1>Log in</h1></div>
@@ -52,20 +56,23 @@
 
                                 <div class="form-container">
                                     <div class="form-input">
-                                        <label for="username"><b>Username</b>
+                                        <label class="filter-text" for="username"><b>Username</b>
                                             <input type="text" placeholder="Enter Username" name="username" required>
                                         </label>
                                     </div>
 
                                     <div class="form-input">
-                                        <label for="password"><b>Password</b>
-                                            <input type="password" placeholder="Enter Password" name="password" required>
+                                        <label class="filter-text" for="password"><b>Password</b>
+                                            <input type="password" placeholder="Enter Password" name="password"
+                                                   required>
                                         </label>
                                     </div>
 
 
                                     <div class="login-options-container">
-                                        <div><a class="password-reset-link" href="{% url 'lectureFinderApp:password_reset' %}">Forgot password?</a></div>
+                                        <div><a class="password-reset-link"
+                                                href="{% url 'lectureFinderApp:password_reset' %}">Forgot password?</a>
+                                        </div>
 
                                     </div>
 
@@ -81,56 +88,58 @@
                             </form>
                         </div>
 
-                        <button class="enter-btn sign-up" onclick="document.getElementById('id02').style.display='block'">
+                        <button class="enter-btn sign-up"
+                                onclick="document.getElementById('id02').style.display='block'">
                             Sign up
                         </button>
 
-                        <div id="id02" class="modal">
-                            <form class="modal-content animate" action="{% url 'lectureFinderApp:signup' %}" method="POST" enctype="multipart/form-data">
+                        <div id="id02" class="modal sign-up">
+                            <form class="modal-content animate" action="{% url 'lectureFinderApp:signup' %}"
+                                  method="POST" enctype="multipart/form-data">
                                 {% csrf_token %}
                                 <div class="form-header">
                                     <div class="form-title"><h1>Sign up</h1></div>
 
                                     <div class="close-btn-container">
-                                <span onclick="document.getElementById('id02').style.display='none'"
-                                      class="close">&times;</span>
+                                        <span onclick="document.getElementById('id02').style.display='none'"
+                                              class="close">&times;</span>
                                     </div>
                                 </div>
 
                                 <div class="form-container">
                                     <div class="form-input">
-                                        <label for="username"><b>Username</b>
-                                            {{ user_form.username }}
-                                        </label>
-                                    </div>
-
-                                    <div class="form-input">
-                                        <label for="first_name"><b>First Name</b>
+                                        <label class="filter-text" for="first_name"><b>First Name</b>
                                             {{ user_form.first_name }}
                                         </label>
                                     </div>
 
                                     <div class="form-input">
-                                        <label for="last_name"><b>Last Name</b>
+                                        <label class="filter-text" for="last_name"><b>Last Name</b>
                                             {{ user_form.last_name }}
                                         </label>
                                     </div>
 
                                     <div class="form-input">
-                                        <label for="email"><b>Email</b>
+                                        <label class="filter-text" for="username"><b>Username</b>
+                                            {{ user_form.username }}
+                                        </label>
+                                    </div>
+
+                                    <div class="form-input">
+                                        <label class="filter-text" for="email"><b>Email</b>
                                             {{ user_form.email }}
                                         </label>
                                     </div>
 
                                     <div class="form-input">
-                                        <label for="password"><b>Password</b>
+                                        <label class="filter-text" for="password"><b>Password</b>
                                             {{ user_form.password }}
                                         </label>
                                     </div>
 
                                     <div class="checkbox-container">
                                         <label>{{ user_profile_form.is_professor }}</label>
-                                        <span>Are you a lecturer/professor?</span>
+                                        <span class="filter-text">Are you a lecturer/professor?</span>
                                     </div>
                                 </div>
 
@@ -138,15 +147,19 @@
                                     <button type="button" onclick="document.getElementById('id02').style.display='none'"
                                             class="enter-btn cancel-btn">Cancel
                                     </button>
-                                    <button type="submit" class="enter-btn sign-up" name="submit" value="Signup">Sign up</button>
+                                    <button type="submit" class="enter-btn sign-up" name="submit" value="Signup">Sign
+                                        up
+                                    </button>
                                 </div>
-                                <div class="tos-container"><p>By creating an account you agree to our <a href="{% url 'lectureFinderApp:terms_and_conditions' %}"style="color:dodgerblue">Terms & Conditions</a>.</p></div>
+                                <div class="tos-container filter-text">By creating an account you agree to our <a
+                                        href="{% url 'lectureFinderApp:terms_and_conditions' %}"
+                                        style="color:dodgerblue"> Terms & Conditions</a>.
+                                </div>
                             </form>
-                    </div>
+                        </div>
                     {% else %}
-
-                        <button class="enter-btn log-in" onclick="document.getElementById('id01').style.display='block'">
-                            <a href="{% url 'lectureFinderApp:logout' %}" id="logout_button">Logout</a>
+                        <button class="enter-btn log-out">
+                            <a class="log-out-btn" href="{% url 'lectureFinderApp:logout' %}">Log out</a>
                         </button>
                     {% endif %}
                 </div>

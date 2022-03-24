@@ -11,40 +11,51 @@
         <div class="body-container-search">
             <form action="{% url 'lectureFinderApp:search' %}" method="POST">
                 {% csrf_token %}
-                 <div class="input-container">
-                    <input class="search-bar" type="search"
-                           placeholder="Enter a keyword, phrase, or leave blank for filter search only" name="search_query">
-                    <button class="search-btn" type="submit" name="submit"><img src="{% static 'images/search-icon.png' %}" height="35"></button>
+                <div class="input-container">
+                    <label for="search-bar">
+                        <input class="search-bar" type="search"
+                               placeholder="Enter a keyword, phrase, or leave blank for filter search only"
+                               name="search_query">
+                    </label>
+                    <button class="search-btn" type="submit" name="submit"><img class="search-icon"
+                                                                                src="{% static 'images/search-icon.png' %}">
+                    </button>
                 </div>
 
                 <div class="filter-container">
-                    <p><strong>Refine Search</strong></p>
+                    <div class="filter-text"><strong>Refine Search</strong></div>
                     <div>
-                        <label>Select a course</label>
-                        <select class="dropdown" name="refine_course">
-                            <option value="-1">----</option>
-                            {% for course in courses %}
-                                <option value="{{ course.code }}">{{ course.name }}</option>
-                            {% endfor %}
-                        </select>
+                        <div class="dropdown-label filter-text">Select a course</div>
+                        <label for="refine_course">
+                            <select class="dropdown" name="refine_course">
+                                <option value="-1">----</option>
+                                {% for course in courses %}
+                                    <option value="{{ course.code }}">{{ course.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </label>
                     </div>
                     <div>
-                        <label>Select a lecturer</label>
-                        <select class="dropdown" name="refine_lecturer">
-                            <option value="-1">----</option>
-                            {% for professor in professors %}
-                                <option value="{{ professor.user.id }}">{{ professor.user.first_name }} {{ professor.user.last_name }}</option>
-                            {% endfor %}
-                        </select>
+                        <div class="dropdown-label filter-text">Select a lecturer</div>
+                        <label for="refine_lecturer">
+                            <select class="dropdown" name="refine_lecturer">
+                                <option value="-1">----</option>
+                                {% for professor in professors %}
+                                    <option value="{{ professor.user.id }}">{{ professor.user.first_name }} {{ professor.user.last_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </label>
                     </div>
                     <div>
-                        <label>Select a week</label>
-                        <select class="dropdown" name="refine_week">
-                            <option value="-1">----</option>
-                            {% for week in range %}
-                                <option value="{{ week }}">Week {{ week }}</option>
-                            {% endfor %}
-                        </select>
+                        <div class="dropdown-label filter-text">Select a week</div>
+                        <label for="refine_week">
+                            <select class="dropdown" name="refine_week">
+                                <option value="-1">----</option>
+                                {% for week in range %}
+                                    <option value="{{ week }}">Week {{ week }}</option>
+                                {% endfor %}
+                            </select>
+                        </label>
                     </div>
                 </div>
             </form>
@@ -52,32 +63,40 @@
 
             <div class="results-container">
                 {% if search_results|length == 1 %}
-                    <strong class="about-paragraph">We found 1 result:</strong>
+                    <strong class="filter-text">We found 1 result:</strong>
                     <div class="table">
-                    {% for lecture in search_results %}
-                        <div class="table-cell table-single">
-                            <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' lecture.first.slug %}">{{ lecture.first.title }}</a></div>
-                        </div>
-                    {% endfor %}
+                        {% for lecture in search_results %}
+                            <div class="table-cell table-single">
+                                <div class="cell-container"><a class="list-item"
+                                                               href="{% url 'lectureFinderApp:show_lecture' lecture.first.slug %}">{{ lecture.first.title }}</a>
+                                </div>
+                            </div>
+                        {% endfor %}
                     </div>
                 {% else %}
-                    <strong class="about-paragraph">We found {{ search_results|length }} results:</strong>
+                    <strong class="filter-text">We found {{ search_results|length }} results:</strong>
                     <div class="table">
-                    {% for lecture in search_results %}
-                        {% if forloop.first %}
-                            <div class="table-cell table-top">
-                                <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' lecture.first.slug %}">{{ lecture.first.title }}</a></div>
-                            </div>
-                        {% elif forloop.last %}
-                            <div class="table-cell table-bottom">
-                                <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' lecture.first.slug %}">{{ lecture.first.title }}</a></div>
-                            </div>
-                        {% else %}
-                            <div class="table-cell">
-                                <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' lecture.first.slug %}">{{ lecture.first.title }}</a></div>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
+                        {% for lecture in search_results %}
+                            {% if forloop.first %}
+                                <div class="table-cell table-top">
+                                    <div class="cell-container"><a class="list-item"
+                                                                   href="{% url 'lectureFinderApp:show_lecture' lecture.first.slug %}">{{ lecture.first.title }}</a>
+                                    </div>
+                                </div>
+                            {% elif forloop.last %}
+                                <div class="table-cell table-bottom">
+                                    <div class="cell-container"><a class="list-item"
+                                                                   href="{% url 'lectureFinderApp:show_lecture' lecture.first.slug %}">{{ lecture.first.title }}</a>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="table-cell">
+                                    <div class="cell-container"><a class="list-item"
+                                                                   href="{% url 'lectureFinderApp:show_lecture' lecture.first.slug %}">{{ lecture.first.title }}</a>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 {% endif %}
             </div>

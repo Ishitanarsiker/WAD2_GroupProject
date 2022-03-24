@@ -2,84 +2,87 @@
 {% load staticfiles %}
 
 {% block title_block %}
-Members
+    Members
 {% endblock %}
 
 {% block body_block %}
-<div class="main-body">
-    <div class="body-container-members">
-        <div>
-            <div class="side-menu">
-                <button type="submit" class="side-menu-cell side-menu-top" onclick="swapToS()">Settings</button>
-                <button type="submit" class="side-menu-cell side-menu-bottom" onclick="swapToM()">My Files</button>
-            </div>
-        </div>
-
-        <div class="settings-card" id="s" style="display: none">
-            <div class="category-title members">Settings</div>
-            <div style="padding-left: 2rem;">
-                <h4>Toggle Theme</h4>
-                <label class="theme-toggle">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-                <h4><a class="password-link" href="#">Change Password</a></h4>
-                <h4><a class="delete-link" href="#">Delete account</a></h4>
-            </div>
-        </div>
-
-        <div class="selected-view">
-            <div class="table-card" id="m" style="display: block">
-
-                <div class="category-title members">My Saved Lectures</div>
-
-                <div class="table">
-                    {% if saved_lectures %}
-                        {% if saved_lectures|length == 1 %}
-                            {% for saved_lecture in saved_lectures %}
-                            <div class="table-cell table-single members">
-                                <div class="cell-container">
-                                    <a class="list-item"
-                                           href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
-                                    <a class="delete-btn" href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}"><img src="{% static 'images/remove-icon.png' %}" height="35"></a>
-                                    </div>
-                            </div>
-                            {% endfor %}
-                        {% else %}
-                            {% for saved_lecture in saved_lectures %}
-                                {% if forloop.first %}
-                                    <div class="table-cell table-top members">
-                                        <div class="cell-container">
-                                            <a class="list-item" 
-                                            href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
-                                            <a class="delete-btn" href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}"><img src="{% static 'images/remove-icon.png' %}" height="35"></a>
-                                        </div>
-                                    </div>
-                                {% elif forloop.last %}
-                                    <div class="table-cell table-bottom members">
-                                        <div class="cell-container">
-                                            <a class="list-item"
-                                            href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
-                                            <a class="delete-btn" href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}"><img src="{% static 'images/remove-icon.png' %}" height="35"></a>
-                                        </div>
-                                    </div>
-                                {% else %}
-                                    <div class="table-cell members">
-                                        <div class="cell-container">
-                                            <a class="list-item"
-                                            href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
-                                            <a class="delete-btn" href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}"><img src="{% static 'images/remove-icon.png' %}" height="35"></a>
-                                        </div>
-                                    </div>
-                                {% endif %}
-                            {% endfor %}
-                        {% endif %}
-                    {% else %}
-                        <div class="table-cell table-single members">
-                            <p>You have not saved any lectures yet.</p>
-                        </div>
-                    {% endif %}
+    <div class="main-body">
+        <div class="body-container-members">
+            <div>
+                <div class="side-menu">
+                    <button type="submit" class="side-menu-cell side-menu-top" onclick="swapToS()">Settings</button>
+                    <button type="submit" class="side-menu-cell side-menu-bottom" onclick="swapToM()">My Files</button>
                 </div>
+            </div>
+
+            <div class="selected-view">
+
+                <div class="table-card" id="m" style="display: block">
+
+                    <div class="category-title members">My Saved Lectures</div>
+
+                    <div class="table">
+                        {% if saved_lectures %}
+                            {% if saved_lectures|length == 1 %}
+                                {% for saved_lecture in saved_lectures %}
+                                    <div class="table-cell table-single members">
+                                        <div class="cell-container">
+                                            <a class="list-item"
+                                               href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
+                                        </div>
+                                        <a class="delete-btn"
+                                           href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">
+                                            <ion-icon class="delete-button" name="close-circle-outline"></ion-icon>
+                                        </a>
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                {% for saved_lecture in saved_lectures %}
+                                    {% if forloop.first %}
+                                        <div class="table-cell table-top members">
+                                            <div class="cell-container">
+                                                <a class="list-item"
+                                                   href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
+                                            </div>
+                                            <a class="delete-btn"
+                                               href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">
+                                                <ion-icon class="delete-button"
+                                                          name="close-circle-outline"></ion-icon></a>
+                                        </div>
+                                    {% elif forloop.last %}
+                                        <div class="table-cell table-bottom members">
+                                            <div class="cell-container">
+                                                <a class="list-item"
+                                                   href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
+
+                                            </div>
+                                            <a class="delete-btn"
+                                               href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">
+                                                <ion-icon class="delete-button"
+                                                          name="close-circle-outline"></ion-icon></a>
+                                        </div>
+                                    {% else %}
+                                        <div class="table-cell members">
+                                            <div class="cell-container">
+                                                <a class="list-item"
+                                                   href="{% url 'lectureFinderApp:show_lecture' saved_lecture.lecture.slug %}">{{ saved_lecture.lecture }}</a>
+
+                                            </div>
+                                            <a class="delete-btn"
+                                               href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">
+                                                <ion-icon class="delete-button"
+                                                          name="close-circle-outline"></ion-icon></a>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        {% else %}
+                            <div class="table-cell table-single members no-lectures">
+                                <p class="filter-text">You have not saved any lectures yet.</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                
 
                 {% if user_profile.is_professor %}
                     <div class="category-title members">Upload new content</div>
@@ -129,22 +132,27 @@ Members
             </div>
 
             <div class="settings-card" id="s" style="display: none">
-
                 <div class="category-title members">Settings</div>
+                <div class="settings-content" style="padding-left: 2rem;">
+                    <div class="settings-item toggle-container">
+                        <div class="settings-text"><h4>Toggle Theme:</h4></div>
+                        <input type="checkbox" id="switch" onclick="ToggleTheme()"/><label class="toggle-label"
+                                                                                           for="switch">Toggle</label>
+                    </div>
 
-                <div style="padding-left: 2rem;">
-                    <h4>Toggle Theme</h4>
-                    <label class="theme-toggle">
-                        <input type="checkbox">
-                        <span class="slider round"></span>
-                    </label>
+                    <div class="settings-item">
+                        <h4><a class="settings-url" href="#">Change Password</a></h4>
+                    </div>
                 </div>
-
             </div>
+
         </div>
 
     </div>
 
-</div>
-<script src="{% static 'js/base.js' %}"></script>
+    </div>
+    <script src="{% static 'js/members.js' %}"></script>
+    <script src="{% static 'js/base.js' %}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 {% endblock %}
