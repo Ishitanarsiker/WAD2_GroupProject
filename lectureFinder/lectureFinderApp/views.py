@@ -65,11 +65,13 @@ def members(request):
 
 
 def search(request):
+    all_lectures = Lecture.objects.all()
+
     context_dict = {
         'courses': Course.objects.all(),
         'professors': UserProfile.objects.all().filter(is_professor=True),
         'range': range(1, 11),
-        'search_results': None
+        'search_results': all_lectures
     }
 
     if request.method == 'POST':
@@ -79,29 +81,27 @@ def search(request):
         refined_week = int(request.POST.get('refine_week'))
         search_results = search_transcripts_for_phrase(search_query)
 
-        all_lectures = Lecture.objects.all()
-        if len(search_query) == 0:
-            context_dict['search_results'] = [lecture for lecture in all_lectures]
-        else:
-            returned_lectures = []
-            for result in search_results:
-                all_lectures = Lecture.objects.all()
-                found_lecture = all_lectures.filter(transcript_name=result)
+        returned_lectures_by_query = []
+        for lecture in all_lectures:
+            if len(search_query) == 0:
+                returned_lectures_by_query.append(lecture)
+            else:
+                for result in search_results:
+                    if lecture.transcript_name == result:
+                        returned_lectures_by_query.append(lecture)
 
-                if refined_course_code != -1:
-                    found_lecture = found_lecture.filter(course=Course.objects.get(code=refined_course_code))
+        returned_lectures = returned_lectures_by_query.copy()
+        for lecture in returned_lectures_by_query:
+            if refined_course_code != -1 and lecture.course.code != refined_course_code:
+                returned_lectures.remove(lecture)
 
-                if refined_lecturer_id != -1:
-                    lecturer = UserProfile.objects.get(user=User.objects.get(id=refined_lecturer_id))
-                    found_lecture = found_lecture.filter(professor=lecturer)
+            elif refined_lecturer_id != -1 and lecture.professor.user.id != refined_lecturer_id:
+                returned_lectures.remove(lecture)
 
-                if refined_week != -1:
-                    found_lecture = found_lecture.filter(week=refined_week)
+            elif refined_week != -1 and lecture.week != refined_week:
+                returned_lectures.remove(lecture)
 
-                if found_lecture:
-                    returned_lectures.append(found_lecture[0])
-
-            context_dict['search_results'] = returned_lectures
+        context_dict['search_results'] = returned_lectures
 
     return render(request, 'lectureFinderApp/search.html', context=context_dict)
 
