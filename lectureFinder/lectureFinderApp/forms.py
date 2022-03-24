@@ -1,5 +1,5 @@
 from django import forms
-from .models import UserProfile, Lecture
+from .models import UserProfile, Lecture, Course
 from django.contrib.auth.models import User
 
 
@@ -10,10 +10,14 @@ class UploadLectureForm(forms.ModelForm):
             'title',
             'video_url',
             'slideshow_url',
-            'course',
-            'professor',
             'week',
         )
+
+    # def is_valid(self):
+    #     valid = super(UploadLectureForm, self).is_valid()
+    #
+    #     if not valid:
+    #         return valid
 
 
 class UserForm(forms.ModelForm):

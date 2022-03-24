@@ -36,10 +36,14 @@ def members(request):
         upload_lecture_form = UploadLectureForm(request.POST)
 
         if upload_lecture_form.is_valid():
-            upload_lecture = upload_lecture_form.save()
+            new_lecture = upload_lecture_form.save(commit=False)
+            new_lecture.course = Course.objects.get(code=request.POST.get('course'))
+            new_lecture.professor = UserProfile.objects.get(user=User.objects.get(id=request.user.id))
+            new_lecture.save()
+
             return redirect(reverse('lectureFinderApp:members'))
         else:
-            print(upload_lecture_form.errors)
+            messages.add_message(request, messages.ERROR, message=upload_lecture_form.errors)
             return redirect(reverse('lectureFinderApp:members'))
 
     else:

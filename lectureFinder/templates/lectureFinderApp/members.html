@@ -119,15 +119,6 @@
                                 </select>
                             </div>
 
-                            <div class="form-input">
-                                <label><strong>Professor:</strong></label>
-                                <select class="dropdown-upload" name="professor" required id="id_professor">
-                                    {% for professor in professors %}
-                                        <option value="{{ professor.user.id }}">{{ professor.user.username }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-
                         </div>
                         <button class="navbar-btn" type="submit" name="submit">Upload</button>
                     </form>
