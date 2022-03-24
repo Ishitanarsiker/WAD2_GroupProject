@@ -9,7 +9,6 @@ def phrase_appears_in_file(filename, phrase):
     for spoken_line in all_spoken_lines:
         # Look through each spoken line, see if the phrase appears.
         spoken_line_words = [word.lower() for word in spoken_line.split(" ")]
-
         phrase_parts = [word.lower() for word in phrase.split(" ")]
 
         for each_phrase in phrase_parts:
