@@ -227,6 +227,7 @@
     border-bottom-left-radius: var(--corner);
     border-bottom-right-radius: var(--corner);
     border-bottom: 2px solid var(--dark-gray);
+    margin-bottom: 50px;
 }
 
 .list-item {
@@ -281,6 +282,7 @@
 
 .selected-view {
     display: flex;
+    justify-content: center;
 }
 
 .table-card {
@@ -288,11 +290,7 @@
 }
 
 .settings-card {
-    display: flex;
-    align-items: center;
-    float: right;
     width: 25rem;
-    padding: 10px;
 }
 
 .category-title.members {
@@ -596,6 +594,7 @@ input[type=text], input[type=password], input[type=email] {
 }
 
 .form-title {
+    color: white;
     display: flex;
     justify-content: center;
     grid-area: a;
@@ -622,6 +621,7 @@ input[type=text], input[type=password], input[type=email] {
 }
 
 .form-container {
+    color: white;
     margin-bottom: 2rem;
 }
 
@@ -640,7 +640,7 @@ input[type=text], input[type=password], input[type=email] {
     display: flex;
     justify-content: flex-start;
     padding-right: 1rem;
-    color: #000;
+    color: white;
 }
 
 .password-reset-link {
@@ -650,6 +650,15 @@ input[type=text], input[type=password], input[type=email] {
 
 .password-reset-link:hover {
     color: var(--dark-gray);
+}
+
+.password-reset-link.members {
+    text-decoration: none;
+    color: var(--lightest-gray);
+}
+
+.password-reset-link.members:hover {
+    color: var(--orange-2);
 }
 
 .portal-buttons-container {
