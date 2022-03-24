@@ -227,6 +227,7 @@
     border-bottom-left-radius: var(--corner);
     border-bottom-right-radius: var(--corner);
     border-bottom: 2px solid var(--dark-gray);
+    margin-bottom: 50px;
 }
 
 .list-item {
@@ -639,7 +640,7 @@ input[type=text], input[type=password], input[type=email] {
     display: flex;
     justify-content: flex-start;
     padding-right: 1rem;
-    color: #000;
+    color: white;
 }
 
 .password-reset-link {

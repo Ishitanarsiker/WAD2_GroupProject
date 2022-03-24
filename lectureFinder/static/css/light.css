@@ -227,6 +227,7 @@
     border: 2px solid var(--light-gray);
     text-align: center;
     text-align: center;
+    margin-bottom: 50px;
 }
 
 .table-top {
@@ -238,6 +239,7 @@
     border-bottom-left-radius: var(--corner);
     border-bottom-right-radius: var(--corner);
     border-bottom: 2px solid var(--light-gray);
+    margin-bottom: 50px;
 }
 
 .list-item {
