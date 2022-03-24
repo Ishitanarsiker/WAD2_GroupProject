@@ -12,6 +12,8 @@ window.onclick = function (event) {
     }
 }
 
+// Dark Mode
+
 var theme = document.querySelector("#theme-link");
 var currentTheme = localStorage.getItem("currentTheme");
 
@@ -42,3 +44,5 @@ function ToggleTheme() {
     localStorage.setItem('currentTheme', newTheme);
     location.reload();
 }
+
+// Active Page

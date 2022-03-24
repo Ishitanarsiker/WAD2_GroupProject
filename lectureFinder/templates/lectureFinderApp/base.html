@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+{% url 'lectureFinderApp:index' as index %}
+{% url 'lectureFinderApp:members' as members %}
+{% url 'lectureFinderApp:search' as search %}
+{% url 'lectureFinderApp:about' as about %}
 
 <html lang="en">
 <head>
@@ -22,12 +26,12 @@
 
         <div class="nav-area">
             <nav class="navbar">
-                <div><a class="navbar-btn" href="{% url 'lectureFinderApp:index' %}">HOME</a></div>
+                <div><a id="link-home" class="navbar-btn {% if request.path == index %} active {% endif %}" href="{% url 'lectureFinderApp:index' %}">HOME</a></div>
                 {% if user.is_authenticated %}
-                    <div><a class="navbar-btn" href="{% url 'lectureFinderApp:members' %}">MEMBERS</a></div>
+                    <div><a id="link-members" class="navbar-btn {% if request.path == members %} active {% endif %}" href="{% url 'lectureFinderApp:members' %}">MEMBERS</a></div>
                 {% endif %}
-                <div><a class="navbar-btn" href="{% url 'lectureFinderApp:search' %}">SEARCH</a></div>
-                <div><a class="navbar-btn" href="{% url 'lectureFinderApp:about' %}">ABOUT</a></div>
+                <div><a id="link-search" class="navbar-btn {% if request.path == search %} active {% endif %}" href="{% url 'lectureFinderApp:search' %}">SEARCH</a></div>
+                <div><a id="link-about" class="navbar-btn {% if request.path == about %} active {% endif %}" href="{% url 'lectureFinderApp:about' %}">ABOUT</a></div>
 
             </nav>
             <div>
