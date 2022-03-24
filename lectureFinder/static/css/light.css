@@ -464,6 +464,7 @@ input:checked + label:after {
     background-color: rgb(33, 158, 188, 0.1);
     padding: 2rem 4rem;
     border-radius: var(--corner);
+    width: 1000px;
     margin-bottom: 6rem;
 }
 

@@ -281,7 +281,6 @@
 
 .selected-view {
     display: flex;
-    justify-content: center;
 }
 
 .table-card {
@@ -289,7 +288,11 @@
 }
 
 .settings-card {
+    display: flex;
+    align-items: center;
+    float: right;
     width: 25rem;
+    padding: 10px;
 }
 
 .category-title.members {
@@ -351,13 +354,13 @@ input[type=checkbox] {
     left: 3px;
     width: 24px;
     height: 24px;
-    background: var(--darker-gray);
+    background: #fff;
     border-radius: var(--corner-btn);
     transition: all 0.2s;
 }
 
 input:checked + label {
-    background: var(--orange-3);
+    background: var(--orange-2);
 }
 
 input:checked + label:after {
@@ -455,6 +458,7 @@ input:checked + label:after {
     box-shadow: 0 0 10px 1px rgb(200 200 200 / 10%);
     background-color: rgb(33, 158, 188, 0.7);
     padding: 2rem 4rem;
+    width: 1000px;
     border-radius: var(--corner);
     margin-bottom: 6rem;
 }
