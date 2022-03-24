@@ -24,7 +24,6 @@ JSON_DIR = os.path.join(STATIC_DIR, 'JSON')
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'tefio7ffw)ya9&0q*1+!5kir=2hgs6ka*g(&i+c&ryceaobff0'
 secret_file = os.path.join(JSON_DIR, 'secrets.json')
 
 with open(secret_file) as f:
