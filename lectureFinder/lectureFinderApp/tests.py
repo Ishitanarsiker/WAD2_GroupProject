@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 from lectureFinderApp.models import Lecture, Course, UserProfile
+from django.urls import reverse
 
 
 # Create your tests here.
@@ -89,6 +90,57 @@ class LectureMethodTests(TestCase):
         self.assertEqual(lecture.slug, 'oose2-mocking-lecture-51')
 
 
+class IndexViewTests(TestCase):
+    def test_index_view_with_no_lectures(self):
+        """
+        If there are no lectures, an appropriate message should be displayed.
+        """
+        response = self.client.get(reverse('lectureFinderApp:index'))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'No recent lectures.')
+        self.assertQuerysetEqual(response.context['most_viewed'], [])
+        self.assertQuerysetEqual(response.context['recently_uploaded'], [])
+
+    def test_index_view_with_lectures(self):
+        """
+        Checks whether lectures are displayed correctly when they are present.
+        """
+        lecturer = create_mock_lecturer()
+        course = create_mock_course()
+
+        create_mock_lecture(
+            title="OOSE2 Mocking Lecture 5.1",
+            video_url="site.com",
+            slideshow_url="site2.com",
+            transcript_name="Lecture1.vtt",
+            views=4,
+            likes=15,
+            week=0,
+            course=course,
+            professor=lecturer
+        )
+
+        create_mock_lecture(
+            title="OOSE2 Faking Lecture 3.2",
+            video_url="site2.com",
+            slideshow_url="site23.com",
+            transcript_name="Lecture3.vtt",
+            views=8,
+            likes=4,
+            week=0,
+            course=course,
+            professor=lecturer
+        )
+
+        response = self.client.get(reverse('lectureFinderApp:index'))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'OOSE2 Mocking Lecture 5.1')
+        self.assertContains(response, 'OOSE2 Faking Lecture 3.2')
+
+        num_lectures = len(response.context['recently_uploaded'])
+        self.assertEqual(num_lectures, 2)
+
+
 def create_mock_lecturer():
     lecturer_user = User(
         username="JohnSmith13",
@@ -108,7 +160,7 @@ def create_mock_lecturer():
 
 def create_mock_course():
     course = Course(
-        name="Test course",
+        name="FakeCourse",
         code=4567
     )
     course.save()
