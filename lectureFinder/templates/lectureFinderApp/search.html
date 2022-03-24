@@ -68,7 +68,7 @@
                         {% for lecture in search_results %}
                             <div class="table-cell table-single">
                                 <div class="cell-container"><a class="list-item"
-                                                               href="{% url 'lectureFinderApp:show_lecture' lecture.first.slug %}">{{ lecture.first.title }}</a>
+                                                               href="{% url 'lectureFinderApp:show_lecture' lecture.slug %}">{{ lecture.title }}</a>
                                 </div>
                             </div>
                         {% endfor %}
@@ -80,19 +80,19 @@
                             {% if forloop.first %}
                                 <div class="table-cell table-top">
                                     <div class="cell-container"><a class="list-item"
-                                                                   href="{% url 'lectureFinderApp:show_lecture' lecture.first.slug %}">{{ lecture.first.title }}</a>
+                                                                   href="{% url 'lectureFinderApp:show_lecture' lecture.slug %}">{{ lecture.title }}</a>
                                     </div>
                                 </div>
                             {% elif forloop.last %}
                                 <div class="table-cell table-bottom">
                                     <div class="cell-container"><a class="list-item"
-                                                                   href="{% url 'lectureFinderApp:show_lecture' lecture.first.slug %}">{{ lecture.first.title }}</a>
+                                                                   href="{% url 'lectureFinderApp:show_lecture' lecture.slug %}">{{ lecture.title }}</a>
                                     </div>
                                 </div>
                             {% else %}
                                 <div class="table-cell">
                                     <div class="cell-container"><a class="list-item"
-                                                                   href="{% url 'lectureFinderApp:show_lecture' lecture.first.slug %}">{{ lecture.first.title }}</a>
+                                                                   href="{% url 'lectureFinderApp:show_lecture' lecture.slug %}">{{ lecture.title }}</a>
                                     </div>
                                 </div>
                             {% endif %}

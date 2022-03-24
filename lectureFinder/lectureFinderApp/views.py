@@ -79,25 +79,29 @@ def search(request):
         refined_week = int(request.POST.get('refine_week'))
         search_results = search_transcripts_for_phrase(search_query)
 
-        returned_lectures = []
-        for result in search_results:
-            all_lectures = Lecture.objects.all()
-            found_lecture = all_lectures.filter(transcript_name=result)
+        all_lectures = Lecture.objects.all()
+        if len(search_query) == 0:
+            context_dict['search_results'] = [lecture for lecture in all_lectures]
+        else:
+            returned_lectures = []
+            for result in search_results:
+                all_lectures = Lecture.objects.all()
+                found_lecture = all_lectures.filter(transcript_name=result)
 
-            if refined_course_code != -1:
-                found_lecture = found_lecture.filter(course=Course.objects.get(code=refined_course_code))
+                if refined_course_code != -1:
+                    found_lecture = found_lecture.filter(course=Course.objects.get(code=refined_course_code))
 
-            if refined_lecturer_id != -1:
-                lecturer = UserProfile.objects.get(user=User.objects.get(id=refined_lecturer_id))
-                found_lecture = found_lecture.filter(professor=lecturer)
+                if refined_lecturer_id != -1:
+                    lecturer = UserProfile.objects.get(user=User.objects.get(id=refined_lecturer_id))
+                    found_lecture = found_lecture.filter(professor=lecturer)
 
-            if refined_week != -1:
-                found_lecture = found_lecture.filter(week=refined_week)
+                if refined_week != -1:
+                    found_lecture = found_lecture.filter(week=refined_week)
 
-            if found_lecture:
-                returned_lectures.append(found_lecture)
+                if found_lecture:
+                    returned_lectures.append(found_lecture[0])
 
-        context_dict['search_results'] = returned_lectures
+            context_dict['search_results'] = returned_lectures
 
     return render(request, 'lectureFinderApp/search.html', context=context_dict)
 
