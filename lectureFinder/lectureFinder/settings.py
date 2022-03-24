@@ -24,7 +24,6 @@ JSON_DIR = os.path.join(STATIC_DIR, 'JSON')
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'tefio7ffw)ya9&0q*1+!5kir=2hgs6ka*g(&i+c&ryceaobff0'
 secret_file = os.path.join(JSON_DIR, 'secrets.json')
 
 with open(secret_file) as f:
@@ -38,6 +37,8 @@ def get_secret(setting, secrets=secrets):
         error_msg = "Set the {} environment variable".format(setting)
         raise ImproperlyConfigured(error_msg)
 
+
+SECRET_KEY = get_secret('SECRET_KEY', secrets)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
