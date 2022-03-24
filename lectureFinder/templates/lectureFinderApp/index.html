@@ -5,15 +5,15 @@
     Homepage
 {% endblock %}
 
-{% block body_block %}    
-<div class="main-body">
+{% block body_block %}
+    <div class="main-body">
         <div class="body-container-index">
 
             <div class="index-col-1">
                 <div class="table-card">
-                    <div>
-                        <div class="category-title">Recently Uploaded</div>
-                    </div>
+
+                    <div class="category-title">Recently Uploaded</div>
+
                     <div class="table">
                         {% if recently_uploaded %}
                             {% for list_item in recently_uploaded %}
@@ -25,12 +25,16 @@
                                     </div>
                                 {% elif forloop.last %}
                                     <div class="table-cell table-bottom">
-                                        <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a></div>
+                                        <div class="cell-container"><a class="list-item"
+                                                                       href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a>
+                                        </div>
                                     </div>
                                 {% else %}
 
                                     <div class="table-cell">
-                                        <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a></div>
+                                        <div class="cell-container"><a class="list-item"
+                                                                       href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a>
+                                        </div>
                                     </div>
                                 {% endif %}
                             {% endfor %}
@@ -60,15 +64,17 @@
                                     </div>
                                 {% elif forloop.last %}
                                     <div class="table-cell table-bottom">
-                                        <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a>
-                                        <p class="list-item"><strong>({{ list_item.views }} views)</strong></p>
+                                        <div class="cell-container"><a class="list-item"
+                                                                       href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a>
+                                            <p class="list-item"><strong>({{ list_item.views }} views)</strong></p>
                                         </div>
                                     </div>
                                 {% else %}
 
                                     <div class="table-cell">
-                                        <div class="cell-container"><a class="list-item" href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a>
-                                        <p class="list-item"><strong>({{ list_item.views }} views)</strong></p>
+                                        <div class="cell-container"><a class="list-item"
+                                                                       href="{% url 'lectureFinderApp:show_lecture' list_item.slug %}">{{ list_item }}</a>
+                                            <p class="list-item"><strong>({{ list_item.views }} views)</strong></p>
                                         </div>
                                     </div>
                                 {% endif %}
