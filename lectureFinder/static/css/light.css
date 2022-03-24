@@ -58,7 +58,7 @@ body {
 
 .category-title {
     margin-bottom: 2rem;
-
+    text-align: center;
     box-shadow: 0 0 10px 4px rgb(31 66 135 / 10%);
     background-color: rgb(33, 158, 188, 0.3);
     padding: 2rem 2rem;
@@ -194,6 +194,20 @@ body {
     width: 25rem;
 }
 
+/** --bs-table-bg: transparent;
+  --bs-table-accent-bg: transparent;
+  --bs-table-striped-color: #212529;
+  --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+  --bs-table-active-color: #212529;
+  --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+  --bs-table-hover-color: #212529;
+  --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  vertical-align: top;
+  border-color: #dee2e6; **/
+
 .table-cell {
     border: 2px solid;
     border-color: var(--dark-gray);
@@ -234,6 +248,7 @@ body {
     border-bottom-left-radius: var(--corner);
     border-bottom-right-radius: var(--corner);
     border-bottom: 2px solid;
+    border-color: var(--dark-gray);
 }
 
 .list-item {
@@ -400,6 +415,21 @@ body {
 
 .dropdown:hover {
     background-color: var(--blue-2);
+}
+
+.dropdown-upload {
+    background-color: var(--orange-1);
+    border-color: var(--orange-2);
+    color: var(--almost-white);
+    border-radius: 7px;
+    padding: 1rem;
+    width: 35%;
+    outline: none;
+    cursor: pointer;
+}
+
+.dropdown-upload:hover {
+    background-color: var(--orange-2);
 }
 
 .table.results {

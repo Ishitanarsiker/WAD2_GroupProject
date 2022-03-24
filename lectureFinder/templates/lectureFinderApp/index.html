@@ -43,12 +43,12 @@
                 </div>
             </div>
 
-            <div class="index-col-2">
-                <div class="table-card">
+            <div class="index-col-2 card">
+                <div class="table-card table-responsive">
 
                     <div class="category-title">Most Viewed</div>
 
-                    <div class="table">
+                    <div class="table table-bordered table-striped">
                         {% if most_viewed %}
                             {% for list_item in most_viewed %}
                                 {% if forloop.first %}

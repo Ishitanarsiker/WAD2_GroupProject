@@ -82,7 +82,7 @@ Members
                 </div>
 
                 {% if user_profile.is_professor %}
-                    <div class="category-title members">Upload new content (Lecturers)</div>
+                    <div class="category-title members">Upload new content</div>
                     <form action="{% url 'lectureFinderApp:members' %}" method="POST">
                         {% csrf_token %}
                         <div class="form-container">
@@ -103,8 +103,8 @@ Members
                             </div>
 
                             <div class="form-input">
-                                <label><strong>Course</strong></label>
-                                <select class="dropdown" name="course" required id="id_course">
+                                <label><strong>Course:</strong></label>
+                                <select class="dropdown-upload" name="course" required id="id_course">
                                     {% for course in courses %}
                                         <option value="{{ course.code }}">{{ course.name }}</option>
                                     {% endfor %}
@@ -112,8 +112,8 @@ Members
                             </div>
 
                             <div class="form-input">
-                                <label><strong>Professor</strong></label>
-                                <select class="dropdown" name="professor" required id="id_professor">
+                                <label><strong>Professor:</strong></label>
+                                <select class="dropdown-upload" name="professor" required id="id_professor">
                                     {% for professor in professors %}
                                         <option value="{{ professor.user.id }}">{{ professor.user.username }}</option>
                                     {% endfor %}

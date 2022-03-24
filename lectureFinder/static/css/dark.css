@@ -52,11 +52,11 @@
 
 .category-title {
     margin-bottom: 2rem;
-
+    text-align: center;
     box-shadow: 0 0 10px 4px rgb(31 66 135 / 10%);
-    background-color: var(--blue-1);
+    background-color: var(--blue-2);
     padding: 2rem 2rem;
-    color: var(--blue-3);
+    color: var(--blue-1);
     font-weight: bold;
     border-radius: var(--corner);
     width: 25rem;
@@ -64,7 +64,7 @@
 }
 
 .category-title:hover {
-    background-color: var(--blue-2);
+    background-color: var(--blue-3);
     color: var(--darker-gray);
 }
 
@@ -215,6 +215,7 @@
 }
 
 .table-single {
+    color: white;
     border-radius: 15px;
     border: 2px solid var(--almost-white);
     margin-bottom: 50px;
@@ -292,11 +293,11 @@
 
 .category-title.members {
     background-color: rgb(253, 158, 2, 0.2);
-    color: var(--orange-2);
+    color: var(--orange-1);
 }
 
 .category-title.members:hover {
-    background-color: var(--orange-2);
+    background-color: var(--orange-3);
     color: var(--darker-gray);
 }
 
@@ -402,6 +403,21 @@
 
 .dropdown:hover {
     background-color: var(--blue-3);
+}
+
+.dropdown-upload {
+    background-color: var(--orange-2);
+    border-color: var(--orange-3);
+    color: var(--almost-white);
+    border-radius: 7px;
+    padding: 1rem;
+    width: 35%;
+    outline: none;
+    cursor: pointer;
+}
+
+.dropdown-upload:hover {
+    background-color: var(--orange-3);
 }
 
 .table.results {
