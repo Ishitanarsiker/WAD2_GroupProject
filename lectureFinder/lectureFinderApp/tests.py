@@ -142,9 +142,9 @@ class IndexViewTests(TestCase):
 
 
 class SearchViewTests(TestCase):
-    def test_search_view_with_query(self):
+    def test_search_view_with_on_load(self):
         """
-        Given a search query, ensure the correct result(s) is/are displayed.
+        When loaded, ensure all the lectures are displayed.
         """
         lecturer = create_mock_lecturer()
         course = create_mock_course()
@@ -153,8 +153,18 @@ class SearchViewTests(TestCase):
             title="Lecture 4 - Recursive Algorithms",
             video_url="site.com",
             slideshow_url="site2.com",
-            transcript_name="ADS2_recursive_algorithms_transcript.vtt",
             views=4,
+            likes=15,
+            week=0,
+            course=course,
+            professor=lecturer
+        )
+
+        create_mock_lecture(
+            title="Lecture 5 - Non Recursive Algorithms",
+            video_url="site.com",
+            slideshow_url="site2.com",
+            views=40,
             likes=15,
             week=0,
             course=course,
@@ -163,6 +173,8 @@ class SearchViewTests(TestCase):
 
         response = self.client.get(reverse('lectureFinderApp:search'))
         self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'Lecture 4 - Recursive Algorithms')
+        self.assertContains(response, 'Lecture 5 - Non Recursive Algorithms')
 
 
 def create_mock_lecturer():
