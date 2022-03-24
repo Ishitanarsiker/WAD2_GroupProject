@@ -281,6 +281,7 @@
 
 .selected-view {
     display: flex;
+    justify-content: center;
 }
 
 .table-card {
@@ -288,11 +289,7 @@
 }
 
 .settings-card {
-    display: flex;
-    align-items: center;
-    float: right;
     width: 25rem;
-    padding: 10px;
 }
 
 .category-title.members {
@@ -596,6 +593,7 @@ input[type=text], input[type=password], input[type=email] {
 }
 
 .form-title {
+    color: white;
     display: flex;
     justify-content: center;
     grid-area: a;
@@ -622,6 +620,7 @@ input[type=text], input[type=password], input[type=email] {
 }
 
 .form-container {
+    color: white;
     margin-bottom: 2rem;
 }
 
@@ -650,6 +649,15 @@ input[type=text], input[type=password], input[type=email] {
 
 .password-reset-link:hover {
     color: var(--dark-gray);
+}
+
+.password-reset-link.members {
+    text-decoration: none;
+    color: var(--lightest-gray);
+}
+
+.password-reset-link.members:hover {
+    color: var(--orange-2);
 }
 
 .portal-buttons-container {

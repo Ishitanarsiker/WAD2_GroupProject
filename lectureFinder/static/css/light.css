@@ -225,6 +225,8 @@
 .table-single {
     border-radius: 15px;
     border: 2px solid var(--light-gray);
+    text-align: center;
+    text-align: center;
 }
 
 .table-top {
@@ -257,6 +259,7 @@
     border-radius: 17px;
     margin: 0 1rem;
     cursor: pointer;
+    margin-bottom: 50px;
 }
 
 .side-menu-cell {
@@ -302,6 +305,7 @@
 }
 
 .category-title.members {
+    margin-top: 40px;
     background-color: rgb(253, 158, 2, 0.2);
     color: var(--orange-2);
 }
@@ -645,6 +649,15 @@ input[type=text], input[type=password], input[type=email] {
 .password-reset-link {
     text-decoration: none;
     color: var(--light-gray);
+}
+
+.password-reset-link.members {
+    text-decoration: none;
+    color: black;
+}
+
+.password-reset-link.members:hover {
+    color: var(--orange-2);
 }
 
 .password-reset-link:hover {

@@ -91,17 +91,17 @@
                         <div class="form-container">
 
                             <div class="form-input">
-                                <label for="id_title"><b>Title:</b></label>
+                                <label class="filter-text" for="id_title"><b>Title:</b></label>
                                 <textarea name="title" cols="20" rows="10" maxlength="128" required id="id_title"></textarea>
                             </div>
 
                             <div class="form-input">
-                                <label for="id_video_url"><b>Video URL:</b></label>
+                                <label class="filter-text" for="id_video_url"><b>Video URL:</b></label>
                                 <input type="url" name="video_url" maxlength="400" required id="id_video_url">
                             </div>
 
                             <div class="form-input">
-                                <label for="id_slideshow_url"><b>Slideshow URL:</b></label>
+                                <label class="filter-text" for="id_slideshow_url"><b>Slideshow URL:</b></label>
                                 <input type="url" name="slideshow_url" maxlength="400" required id="id_slideshow_url">
                             </div>
 
@@ -129,21 +129,19 @@
                     </div>
                 {% endif %}
 
-            </div>
-
-            <div class="settings-card" id="s" style="display: none">
-                <div class="category-title members">Settings</div>
-                <div class="settings-content" style="padding-left: 2rem;">
-                    <div class="settings-item toggle-container">
-                        <div class="settings-text"><h4>Toggle Theme:</h4></div>
-                        <input type="checkbox" id="switch" onclick="ToggleTheme()"/><label class="toggle-label"
-                                                                                           for="switch">Toggle</label>
-                    </div>
-
-                    <div><a class="settings-item password-reset-link"
-                                                href="{% url 'lectureFinderApp:password_reset' %}">Forgot password?</a>
+                <div class="settings-card" id="s" style="display: none">
+                    <div class="category-title members">Settings</div>
+                    <div class="settings-content" style="padding-left: 2rem;">
+                        <div class="settings-item toggle-container">
+                            <div class="settings-text"><h4>Toggle Theme:</h4></div>
+                            <input type="checkbox" id="switch" onclick="ToggleTheme()"/><label class="toggle-label" 
+                            for="switch">Toggle</label>
+                        </div>
+                        <div class="table-single"><a class="settings-item password-reset-link members" href="{% url 'lectureFinderApp:password_reset' %}"><strong>Reset password</strong></a>
+                        </div>
                     </div>
                 </div>
+
             </div>
 
         </div>

@@ -44,5 +44,3 @@ function ToggleTheme() {
     localStorage.setItem('currentTheme', newTheme);
     location.reload();
 }
-
-// Active Page
