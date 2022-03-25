@@ -151,7 +151,7 @@ def show_lecture(request, lecture_name_slug):
 
     try:
         user_has_liked_lecture = LikedLecture.objects.get(user=current_user, lecture=lecture_to_show)
-    except LikedLecture.DoesNotExist:
+    except (LikedLecture.DoesNotExist, UnboundLocalError):
         user_has_liked_lecture = None
     context_dict['user_has_liked_lecture'] = user_has_liked_lecture
 
