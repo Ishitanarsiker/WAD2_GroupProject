@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
+from django.http import HttpResponse
+from django.utils.decorators import method_decorator
+from django.views import View
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
@@ -7,6 +10,24 @@ from django.contrib import messages
 from .models import Lecture, SavedLecture, UserProfile, Course
 from .forms import UserForm, UserProfileForm, UploadLectureForm
 from .extract_questions import search_transcripts_for_phrase
+
+
+class LikeLectureView(View):
+    @method_decorator(login_required)
+    def get(self, request):
+        lecture_id = request.GET['lecture_id']
+
+        try:
+            lecture = Lecture.objects.get(id=int(lecture_id))
+        except Lecture.DoesNotExist:
+            return HttpResponse(-1)
+        except ValueError:
+            return HttpResponse(-1)
+
+        lecture.likes += 1
+        lecture.save()
+
+        return HttpResponse(lecture.likes)
 
 
 def index(request):

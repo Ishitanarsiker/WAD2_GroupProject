@@ -32,9 +32,17 @@
 
                         <div class="table-cell no-click">
                             <div class="cell-container">
-                                <div class="list-item">Likes: {{ lecture.likes }}</div>
+                                <div class="list-item" id="like_count">Likes: {{ lecture.likes }}</div>
                             </div>
                         </div>
+
+                        {% if user.is_authenticated %}
+                            <div class="table-cell no-click" id="like_btn_container">
+                                 <button id="like_btn" data-lectureid="{{ lecture.id }}" type="button">
+                                    Like this lecture
+                                 </button>
+                            </div>
+                        {% endif %}
 
                         <div class="table-cell no-click">
                             <div class="cell-container">
@@ -54,7 +62,6 @@
                                 <div class="list-item">Released on week: {{ lecture.week }}</div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
