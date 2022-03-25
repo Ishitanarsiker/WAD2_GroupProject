@@ -142,7 +142,7 @@ class IndexViewTests(TestCase):
 
 
 class SearchViewTests(TestCase):
-    def test_search_view_with_on_load(self):
+    def test_search_view_on_load(self):
         """
         When loaded, ensure all the lectures are displayed.
         """
@@ -175,6 +175,16 @@ class SearchViewTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Lecture 4 - Recursive Algorithms')
         self.assertContains(response, 'Lecture 5 - Non Recursive Algorithms')
+
+
+class MembersViewTests(TestCase):
+    def test_member_view_not_accessible(self):
+        """
+        Members page should not be accessible when user is not logged in.
+        """
+        response = self.client.get(reverse('lectureFinderApp:members'), follow=True)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'You must be logged in to access the members area.')
 
 
 def create_mock_lecturer():
