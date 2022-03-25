@@ -110,6 +110,10 @@ def show_lecture(request, lecture_name_slug):
     context_dict = {}
     lecture_to_show = Lecture.objects.get(slug=lecture_name_slug)
 
+    # Increment view count on this lecture, while we are here.
+    lecture_to_show.views += 1
+    lecture_to_show.save()
+
     context_dict['lecture'] = lecture_to_show
 
     # Get the saved lectures for this user, so we know if this lecture has been saved or not already!
