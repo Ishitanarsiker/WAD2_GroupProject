@@ -541,6 +541,7 @@ input:checked + label:after {
     transition: all .2s;
     height: 1rem;
     cursor: pointer;
+    margin-left: 50px;
 }
 
 .save-btn:hover {
@@ -572,6 +573,44 @@ input:checked + label:after {
     color: var(--lightest-gray);
 }
 
+.like-btn {
+    box-shadow: 0 0 10px 4px rgb(31 66 135 / 10%);
+    background-color: var(--orange-2);
+    border-radius: var(--corner-btn);
+    padding: 1rem;
+    transition: all .2s;
+    height: 1rem;
+    cursor: pointer;
+}
+
+.like-btn:hover {
+    background-color: var(--orange-3);
+}
+
+.like-icon {
+    color: var(--medium-dark-gray);
+    size: 2rem;
+}
+
+.like-btn:hover .like-icon.to-activate,
+.like-btn .like-icon.activated {
+    display: none;
+}
+
+.like-btn:hover .like-icon.activated {
+    display: inline;
+    color: var(--lightest-gray);
+}
+
+.like-btn:hover .like-icon.activated-2,
+.like-btn .like-icon.to-deactivate {
+    display: none;
+}
+
+.like-btn:hover .like-icon.to-deactivate {
+    display: inline;
+    color: var(--lightest-gray);
+}
 
 /* members portal buttons ---------------------------------------------------------------------- */
 

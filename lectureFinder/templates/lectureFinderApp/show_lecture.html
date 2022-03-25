@@ -36,14 +36,6 @@
                             </div>
                         </div>
 
-                        {% if user.is_authenticated and user_has_liked_lecture == None %}
-                            <div class="table-cell no-click" id="like_btn_container">
-                                 <button id="like_btn" data-lectureid="{{ lecture.id }}" type="button">
-                                    Like this lecture
-                                 </button>
-                            </div>
-                        {% endif %}
-
                         <div class="table-cell no-click">
                             <div class="cell-container">
                                 <div class="list-item">Course: {{ lecture.course.name }}</div>
@@ -68,6 +60,16 @@
         </div>
 
         {% if user.is_authenticated %}
+            {% if user_has_liked_lecture == None %}
+                <div class="like-btn" id="like_btn_container">
+                    <a id="like_btn" data-lectureid="{{ lecture.id }}" type="button">
+                        <ion-icon class="like-icon to-activate"
+                                  name="checkmark-circle-outline"></ion-icon>
+                        <ion-icon class="like-icon activated"
+                                  name="checkmark-circle"></ion-icon>
+                    </a>
+                </div>
+            {% endif %}
             {% if not saved_lecture %}
                 <div class="save-btn">
                     <a href="{% url 'lectureFinderApp:save_lecture' lecture.slug %}">
