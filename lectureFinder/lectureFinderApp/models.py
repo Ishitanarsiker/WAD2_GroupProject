@@ -62,3 +62,11 @@ class SavedLecture(models.Model):
 
     def __str__(self):
         return str(self.lecture) + ", saved by, " + str(self.user)
+
+
+class LikedLecture(models.Model):
+    lecture = models.ForeignKey(Lecture, on_delete=models.CASCADE)
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.lecture) + ", liked by, " + str(self.user)

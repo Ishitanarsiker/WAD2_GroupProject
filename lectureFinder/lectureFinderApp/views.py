@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .models import Lecture, SavedLecture, UserProfile, Course
+from .models import Lecture, SavedLecture, UserProfile, Course, LikedLecture
 from .forms import UserForm, UserProfileForm, UploadLectureForm
 from .extract_questions import search_transcripts_for_phrase
 
@@ -24,8 +24,12 @@ class LikeLectureView(View):
         except ValueError:
             return HttpResponse(-1)
 
-        lecture.likes += 1
-        lecture.save()
+        current_user = UserProfile.objects.get(user=User.objects.get(id=request.user.id))
+        liked_lecture, liked_lecture_was_created = LikedLecture.objects.get_or_create(user=current_user, lecture=lecture)
+
+        if liked_lecture_was_created:
+            lecture.likes += 1
+            lecture.save()
 
         return HttpResponse(lecture.likes)
 
@@ -143,8 +147,13 @@ def show_lecture(request, lecture_name_slug):
         saved_lecture = get_saved_lectures(lecture_name_slug, current_user)
     except (UserProfile.DoesNotExist, User.DoesNotExist, Lecture.DoesNotExist, SavedLecture.DoesNotExist):
         saved_lecture = None
-
     context_dict['saved_lecture'] = saved_lecture
+
+    try:
+        user_has_liked_lecture = LikedLecture.objects.get(user=current_user, lecture=lecture_to_show)
+    except LikedLecture.DoesNotExist:
+        user_has_liked_lecture = None
+    context_dict['user_has_liked_lecture'] = user_has_liked_lecture
 
     return render(request, 'lectureFinderApp/show_lecture.html', context=context_dict)
 

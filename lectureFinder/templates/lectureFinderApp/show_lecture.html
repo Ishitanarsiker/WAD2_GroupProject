@@ -36,7 +36,7 @@
                             </div>
                         </div>
 
-                        {% if user.is_authenticated %}
+                        {% if user.is_authenticated and user_has_liked_lecture == None %}
                             <div class="table-cell no-click" id="like_btn_container">
                                  <button id="like_btn" data-lectureid="{{ lecture.id }}" type="button">
                                     Like this lecture
