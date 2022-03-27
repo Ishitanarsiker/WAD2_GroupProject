@@ -83,7 +83,7 @@
                             <div class="table-cell table-single members no-lectures">
                                 <p class="filter-text">You have not saved any lectures yet.</p>
                             </div>
-                        {% endif %}
+                        {% endif %}                    
                     </div>
 
                     {% if user_profile.is_professor %}
@@ -126,16 +126,13 @@
                             </div>
                             <button class="navbar-btn" type="submit" name="submit">Upload</button>
                         </form>
-                        </div>
                     {% endif %}
+                </div>
 
                 <div class="settings-card" id="s" style="display: none">
-
                     <div class="category-title members">Settings</div>
-
                     <div class="settings-content" style="padding-left: 2rem;">
                         <div class="settings-item toggle-container">
-
                             <div class="settings-text">
                                 <h4>Toggle Theme:</h4></div>
                                 <input type="checkbox" class="switch" onclick="ToggleTheme()"/>
@@ -146,9 +143,7 @@
                                href="{% url 'lectureFinderApp:password_reset' %}">
                                 <strong>Reset password</strong></a>
                         </div>
-
                     </div>
-
                 </div>
 
             </div>
