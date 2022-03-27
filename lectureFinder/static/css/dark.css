@@ -687,14 +687,22 @@ input[type=text], input[type=password], input[type=email] {
     color: white;
 }
 
+.email-link {
+    text-decoration: none;
+    color: var(--blue-2);
+}
+
+.email-link:hover {
+    color: var(--blue-3);
+}
 
 .password-reset-link {
     text-decoration: none;
-    color: var(--light-gray);
+    color: var(--lightest-gray);
 }
 
 .password-reset-link:hover {
-    color: var(--dark-gray);
+    color: var(--light-gray);
 }
 
 .password-reset-link.members {
@@ -810,13 +818,11 @@ img.avatar {
 }
 
 
-/* ------------------------------------------------------------------------------------------------------------- */
-
-
 /* TERMS AND CONDITIONS */
 
 [data-custom-class='body'], [data-custom-class='body'] * {
     background: transparent !important;
+    color: white !important;
 }
 
 [data-custom-class='title'], [data-custom-class='title'] * {
@@ -844,7 +850,7 @@ img.avatar {
 }
 
 [data-custom-class='body_text'], [data-custom-class='body_text'] * {
-    color: #595959 !important;
+    color: white !important;
     font-size: 14px !important;
     font-family: Arial !important;
 }

@@ -693,6 +693,15 @@ input[type=text], input[type=password], input[type=email] {
     color: #000;
 }
 
+.email-link {
+    text-decoration: none;
+    color: var(--blue-2);
+}
+
+.email-link:hover {
+    color: var(--blue-3);
+}
+
 .password-reset-link {
     text-decoration: none;
     color: var(--light-gray);
