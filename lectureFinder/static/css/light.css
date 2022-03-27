@@ -337,6 +337,7 @@
     size: 1.2rem;
 }
 
+
 .settings-item.toggle-container {
     display: flex;
     justify-content: flex-start;
@@ -346,7 +347,7 @@
 
 /* theme toggle */
 
-input[type=checkbox] {
+.switch {
     height: 0;
     width: 0;
     visibility: hidden;
@@ -375,11 +376,11 @@ input[type=checkbox] {
     transition: all 0.2s;
 }
 
-input:checked + label {
+.switch:checked + .toggle-label {
     background: var(--orange-2);
 }
 
-input:checked + label:after {
+.switch:checked + .toggle-label:after {
     left: calc(100% - 4px);
     transform: translateX(-100%);
 }
@@ -667,6 +668,8 @@ input[type=text], input[type=password], input[type=email] {
 .form-container {
     margin-bottom: 2rem;
 }
+
+
 
 .form-input {
     margin-bottom: 1rem;
