@@ -61,7 +61,7 @@
 
         {% if user.is_authenticated %}
             {% if user_has_liked_lecture == None %}
-                <div class="save-btn like-btn">
+                <div class="save-btn like-btn" id="like_btn_container">
                     <a id="like_btn" data-lectureid="{{ lecture.id }}" type="button">
                         <ion-icon class="save-icon to-activate"
                                   name="heart-outline"></ion-icon>
