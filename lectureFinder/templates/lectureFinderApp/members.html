@@ -83,7 +83,6 @@
                         {% endif %}
                     </div>
                 
-
                 {% if user_profile.is_professor %}
                     <div class="category-title members">Upload new content</div>
                     <form action="{% url 'lectureFinderApp:members' %}" method="POST">
@@ -124,18 +123,23 @@
                     </form>
                     </div>
                 {% endif %}
-
+                
                 <div class="settings-card" id="s" style="display: none">
+
                     <div class="category-title members">Settings</div>
+
                     <div class="settings-content" style="padding-left: 2rem;">
                         <div class="settings-item toggle-container">
                             <div class="settings-text"><h4>Toggle Theme:</h4></div>
-                            <input type="checkbox" id="switch" onclick="ToggleTheme()"/><label class="toggle-label" 
-                            for="switch">Toggle</label>
+                            <input type="checkbox" id="switch" onclick="ToggleTheme()"/><label class="toggle-label" for="switch">Toggle</label>
                         </div>
+
                         <div class="table-single"><a class="settings-item password-reset-link members" href="{% url 'lectureFinderApp:password_reset' %}"><strong>Reset password</strong></a>
+
                         </div>
+
                     </div>
+
                 </div>
 
             </div>
@@ -144,7 +148,6 @@
 
     </div>
 
-    </div>
     <script src="{% static 'js/members.js' %}"></script>
     <script src="{% static 'js/base.js' %}"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
