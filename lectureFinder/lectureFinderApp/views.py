@@ -192,6 +192,7 @@ def signup(request):
 
             profile = user_profile_form.save(commit=False)
             profile.user = user
+            profile.is_professor = bool(request.POST.get('is_professor'))
             profile.save()
 
             messages.add_message(request, messages.SUCCESS, "Signed up! Please login now.")
