@@ -101,29 +101,29 @@
                         {% csrf_token %}
                         <div class="form-container">
 
-                            <div class="form-input">
+                            <div class="upload-row">
                                 <label class="filter-text" for="id_title"><b>Title:</b></label>
                                 <textarea name="title" cols="20" rows="10" maxlength="128" required
                                           id="id_title"></textarea>
                             </div>
 
-                            <div class="form-input">
+                            <div class="upload-row">
                                 <label class="filter-text" for="id_video_url"><b>Video URL:</b></label>
                                 <input type="url" name="video_url" maxlength="400" required id="id_video_url">
                             </div>
 
-                            <div class="form-input">
+                            <div class="upload-row">
                                 <label class="filter-text" for="id_slideshow_url"><b>Slideshow URL:</b></label>
                                 <input type="url" name="slideshow_url" maxlength="400" required
                                        id="id_slideshow_url">
                             </div>
 
-                            <div class="form-input">
+                            <div class="upload-row">
                                 <label for="id_title"><b>Week:</b></label>
                                 <input type="number" name="week" maxlength="400" required id="id_week">
                             </div>
 
-                            <div class="form-input">
+                            <div class="upload-row">
                                 <label><strong>Course:</strong></label>
                                 <select class="dropdown-upload" name="course" required id="id_course">
                                     {% for course in courses %}

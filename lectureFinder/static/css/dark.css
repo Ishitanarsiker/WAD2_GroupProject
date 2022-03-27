@@ -306,6 +306,10 @@
     width: 25rem;
 }
 
+.upload-card {
+    width: 25rem;
+}
+
 .category-title.members {
     background-color: rgb(253, 158, 2, 0.2);
     color: var(--orange-1);
@@ -403,7 +407,7 @@ input:checked + .slider:before {
 /* --- */
 
 .settings-text {
-    color: var(--light-gray);
+    color: var(--almost-white);
     display: flex;
     justify-content: flex-start;
 }
@@ -703,6 +707,10 @@ input[type=text], input[type=password], input[type=email] {
 }
 
 .form-input {
+    margin-bottom: 1rem;
+}
+
+.upload-row {
     display: grid;
     grid-template-columns: 1fr 3fr;
     align-items: center;
