@@ -86,7 +86,7 @@
     background-color: rgb(33, 158, 188, 0.1);
 }
 
-.navbar-btn .active {
+.navbar-btn.active {
     color: var(--blue-2);
 }
 
