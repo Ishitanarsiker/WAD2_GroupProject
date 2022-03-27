@@ -695,6 +695,10 @@ input[type=text], input[type=password], input[type=email] {
 
 
 .form-input {
+    margin-bottom: 1rem;
+}
+
+.upload-row {
     display: grid;
     grid-template-columns: 1fr 3fr;
     align-items: center;
