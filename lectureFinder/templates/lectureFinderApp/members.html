@@ -47,7 +47,8 @@
                                             <a class="delete-btn"
                                                href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">
                                                 <ion-icon class="delete-button"
-                                                          name="close-circle-outline"></ion-icon></a>
+                                                          name="close-circle-outline"></ion-icon>
+                                            </a>
                                         </div>
                                     {% elif forloop.last %}
                                         <div class="table-cell table-bottom members">
@@ -59,7 +60,8 @@
                                             <a class="delete-btn"
                                                href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">
                                                 <ion-icon class="delete-button"
-                                                          name="close-circle-outline"></ion-icon></a>
+                                                          name="close-circle-outline"></ion-icon>
+                                            </a>
                                         </div>
                                     {% else %}
                                         <div class="table-cell members">
@@ -71,7 +73,8 @@
                                             <a class="delete-btn"
                                                href="{% url 'lectureFinderApp:delete_saved_lecture' saved_lecture.lecture.slug %}">
                                                 <ion-icon class="delete-button"
-                                                          name="close-circle-outline"></ion-icon></a>
+                                                          name="close-circle-outline"></ion-icon>
+                                            </a>
                                         </div>
                                     {% endif %}
                                 {% endfor %}
@@ -82,58 +85,64 @@
                             </div>
                         {% endif %}
                     </div>
-                
 
-                {% if user_profile.is_professor %}
-                    <div class="category-title members">Upload new content</div>
-                    <form action="{% url 'lectureFinderApp:members' %}" method="POST">
-                        {% csrf_token %}
-                        <div class="form-container">
 
-                            <div class="form-input">
-                                <label class="filter-text" for="id_title"><b>Title:</b></label>
-                                <textarea name="title" cols="20" rows="10" maxlength="128" required id="id_title"></textarea>
+                    {% if user_profile.is_professor %}
+                        <div class="category-title members">Upload new content</div>
+                        <form action="{% url 'lectureFinderApp:members' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="form-container">
+
+                                <div class="form-input">
+                                    <label class="filter-text" for="id_title"><b>Title:</b></label>
+                                    <textarea name="title" cols="20" rows="10" maxlength="128" required
+                                              id="id_title"></textarea>
+                                </div>
+
+                                <div class="form-input">
+                                    <label class="filter-text" for="id_video_url"><b>Video URL:</b></label>
+                                    <input type="url" name="video_url" maxlength="400" required id="id_video_url">
+                                </div>
+
+                                <div class="form-input">
+                                    <label class="filter-text" for="id_slideshow_url"><b>Slideshow URL:</b></label>
+                                    <input type="url" name="slideshow_url" maxlength="400" required
+                                           id="id_slideshow_url">
+                                </div>
+
+                                <div class="form-input">
+                                    <label for="id_title"><b>Week:</b></label>
+                                    <input type="number" name="week" maxlength="400" required id="id_week">
+                                </div>
+
+                                <div class="form-input">
+                                    <label><strong>Course:</strong></label>
+                                    <select class="dropdown-upload" name="course" required id="id_course">
+                                        {% for course in courses %}
+                                            <option value="{{ course.code }}">{{ course.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
                             </div>
-
-                            <div class="form-input">
-                                <label class="filter-text" for="id_video_url"><b>Video URL:</b></label>
-                                <input type="url" name="video_url" maxlength="400" required id="id_video_url">
-                            </div>
-
-                            <div class="form-input">
-                                <label class="filter-text" for="id_slideshow_url"><b>Slideshow URL:</b></label>
-                                <input type="url" name="slideshow_url" maxlength="400" required id="id_slideshow_url">
-                            </div>
-
-                             <div class="form-input">
-                                <label for="id_title"><b>Week:</b></label>
-                                <input type="number" name="week" maxlength="400" required id="id_week">
-                            </div>
-
-                            <div class="form-input">
-                                <label><strong>Course:</strong></label>
-                                <select class="dropdown-upload" name="course" required id="id_course">
-                                    {% for course in courses %}
-                                        <option value="{{ course.code }}">{{ course.name }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-
+                            <button class="navbar-btn" type="submit" name="submit">Upload</button>
+                        </form>
                         </div>
-                        <button class="navbar-btn" type="submit" name="submit">Upload</button>
-                    </form>
-                    </div>
-                {% endif %}
+                    {% endif %}
 
                 <div class="settings-card" id="s" style="display: none">
                     <div class="category-title members">Settings</div>
                     <div class="settings-content" style="padding-left: 2rem;">
                         <div class="settings-item toggle-container">
-                            <div class="settings-text"><h4>Toggle Theme:</h4></div>
-                            <input type="checkbox" id="switch" onclick="ToggleTheme()"/><label class="toggle-label" 
-                            for="switch">Toggle</label>
+                            <div class="settings-text">
+                                <h4>Toggle Theme:</h4></div>
+                                <input type="checkbox" class="switch" onclick="ToggleTheme()"/>
+                                <label class="toggle-label" for="switch">Toggle</label>
                         </div>
-                        <div class="table-single"><a class="settings-item password-reset-link members" href="{% url 'lectureFinderApp:password_reset' %}"><strong>Reset password</strong></a>
+                        <div class="table-single">
+                            <a class="settings-item password-reset-link members"
+                               href="{% url 'lectureFinderApp:password_reset' %}">
+                                <strong>Reset password</strong></a>
                         </div>
                     </div>
                 </div>

@@ -61,12 +61,12 @@
 
         {% if user.is_authenticated %}
             {% if user_has_liked_lecture == None %}
-                <div class="like-btn" id="like_btn_container">
+                <div class="save-btn like-btn">
                     <a id="like_btn" data-lectureid="{{ lecture.id }}" type="button">
-                        <ion-icon class="like-icon to-activate"
-                                  name="checkmark-circle-outline"></ion-icon>
-                        <ion-icon class="like-icon activated"
-                                  name="checkmark-circle"></ion-icon>
+                        <ion-icon class="save-icon to-activate"
+                                  name="heart-outline"></ion-icon>
+                        <ion-icon class="save-icon activated"
+                                  name="heart"></ion-icon>
                     </a>
                 </div>
             {% endif %}

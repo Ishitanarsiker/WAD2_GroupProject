@@ -81,9 +81,13 @@
     text-decoration: none; /* removes underline for link */
 }
 
-.active, .navbar-btn:hover {
+.navbar-btn:hover {
     color: var(--blue-2);
     background-color: rgb(33, 158, 188, 0.1);
+}
+
+.navbar-btn .active {
+    color: var(--blue-2);
 }
 
 
@@ -328,7 +332,7 @@
 
 /* theme toggle */
 
-input[type=checkbox] {
+.switch {
     height: 0;
     width: 0;
     visibility: hidden;
@@ -357,11 +361,11 @@ input[type=checkbox] {
     transition: all 0.2s;
 }
 
-input:checked + label {
+.switch:checked + .toggle-label {
     background: var(--orange-2);
 }
 
-input:checked + label:after {
+.switch:checked + .toggle-label:after {
     left: calc(100% - 4px);
     transform: translateX(-100%);
 }
@@ -539,7 +543,7 @@ input:checked + label:after {
     border-radius: var(--corner-btn);
     padding: 1rem;
     transition: all .2s;
-    height: 1rem;
+    height: 2rem;
     cursor: pointer;
     margin-left: 50px;
 }
@@ -573,44 +577,18 @@ input:checked + label:after {
     color: var(--lightest-gray);
 }
 
+/* --- */
+
 .like-btn {
     box-shadow: 0 0 10px 4px rgb(31 66 135 / 10%);
     background-color: var(--orange-2);
     border-radius: var(--corner-btn);
     padding: 1rem;
     transition: all .2s;
-    height: 1rem;
+    height: 2rem;
     cursor: pointer;
 }
 
-.like-btn:hover {
-    background-color: var(--orange-3);
-}
-
-.like-icon {
-    color: var(--medium-dark-gray);
-    size: 2rem;
-}
-
-.like-btn:hover .like-icon.to-activate,
-.like-btn .like-icon.activated {
-    display: none;
-}
-
-.like-btn:hover .like-icon.activated {
-    display: inline;
-    color: var(--lightest-gray);
-}
-
-.like-btn:hover .like-icon.activated-2,
-.like-btn .like-icon.to-deactivate {
-    display: none;
-}
-
-.like-btn:hover .like-icon.to-deactivate {
-    display: inline;
-    color: var(--lightest-gray);
-}
 
 /* members portal buttons ---------------------------------------------------------------------- */
 
@@ -678,9 +656,9 @@ input[type=text], input[type=password], input[type=email] {
 .checkbox-container {
     display: flex;
     justify-content: flex-start;
-    padding-right: 1rem;
     color: white;
 }
+
 
 .password-reset-link {
     text-decoration: none;
