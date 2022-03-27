@@ -553,6 +553,7 @@
     transition: all .2s;
     height: 1rem;
     cursor: pointer;
+    margin-left: 30px;
 }
 
 .save-btn:hover {
@@ -586,7 +587,7 @@
 
 .like-btn {
     box-shadow: 0 0 10px 4px rgb(31 66 135 / 10%);
-    background-color: var(--orange-2);
+    background-color: var(--blue-1);
     border-radius: var(--corner-btn);
     padding: 1rem;
     transition: all .2s;
@@ -595,11 +596,11 @@
 }
 
 .like-btn:hover {
-    background-color: var(--orange-3);
+    background-color: var(--blue-2);
 }
 
 .like-icon {
-    color: var(--medium-dark-gray);
+    color: var(--blue-3);
     size: 2rem;
 }
 
