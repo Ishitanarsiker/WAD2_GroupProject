@@ -506,8 +506,8 @@ input:checked + .slider:before {
 }
 
 .dropdown {
-    background-color: var(--blue-1);
-    border-color: var(--blue-2);
+    background-color: var(--blue-2);
+    border-color: var(--blue-3);
     color: var(--almost-white);
     border-radius: 7px;
     padding: 1rem;
