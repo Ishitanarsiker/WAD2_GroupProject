@@ -25,7 +25,8 @@ class LikeLectureView(View):
             return HttpResponse(-1)
 
         current_user = UserProfile.objects.get(user=User.objects.get(id=request.user.id))
-        liked_lecture, liked_lecture_was_created = LikedLecture.objects.get_or_create(user=current_user, lecture=lecture)
+        liked_lecture, liked_lecture_was_created = LikedLecture.objects.get_or_create(user=current_user,
+                                                                                      lecture=lecture)
 
         if liked_lecture_was_created:
             lecture.likes += 1

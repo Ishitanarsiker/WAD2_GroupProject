@@ -1,0 +1,434 @@
+WEBVTT
+
+1
+00:00:01.230 --> 00:00:09.030
+Michele Sevegnani: Hello everyone. Today we are going to study the first recursive sorting algorithm in the course. A namely merged sort
+
+2
+00:00:09.960 --> 00:00:28.980
+Michele Sevegnani: So Mozart is defined in terms of emerged procedure, we will see what it means and we will study its properties, then we will define the moon sort it's divide and conquer algorithm as we started in the last lecture, we were studying their properties and possible improvements on the algorithm.
+
+3
+00:00:30.060 --> 00:00:42.660
+Michele Sevegnani: Okay, so let's give a bit of history. First, a according to North these algorithm was invented, even before computers in the 38 1938
+
+4
+00:00:43.200 --> 00:00:54.930
+Michele Sevegnani: And it was used apparently to merge the decks of punch cards in an efficient manner. We know the first implementation is due to MoMA in 1945
+
+5
+00:00:55.860 --> 00:01:08.010
+Michele Sevegnani: So as I said, it's a divide and conquer algorithm. So we need to follow the usual three steps of this paradigm. We need to first divide the input array that has an elements.
+
+6
+00:01:08.910 --> 00:01:23.190
+Michele Sevegnani: Into two separate have an divided by two elements. So, and half elements, then we have the conquer step and the we need to basically sort these two separate records ugly using again. Merge Short
+
+7
+00:01:24.360 --> 00:01:43.470
+Michele Sevegnani: And then we have a combined step that he has to sort that to somebody raised so we have to sort of summarize and we need to put them together in such a way that we get a full sort of array. So as you can see the complexity here in the algorithm and lies in the combined step.
+
+8
+00:01:44.490 --> 00:01:52.710
+Michele Sevegnani: And we use these merge procedure to define the step. So let's get started with the definition of merge.
+
+9
+00:01:53.640 --> 00:02:05.850
+Michele Sevegnani: So, marriage is a procedure, we are going to define that it's going to be called by the main Merge Sort algorithm. Okay, so he does this through the code on the left that we activate the pointer.
+
+10
+00:02:07.800 --> 00:02:11.010
+Michele Sevegnani: Okay, so as usually takes an array A
+
+11
+00:02:12.300 --> 00:02:22.620
+Michele Sevegnani: And three indexes be q and r. So, we can imagine with Wi Fi is the left boundary are is the right boundary and Q is the the middle point
+
+12
+00:02:23.520 --> 00:02:37.680
+Michele Sevegnani: Okay, so that's what these inequalities are telling us, and we assume when we call Merge that the two halves of the summary. So, namely the left half going ranging from P to kill
+
+13
+00:02:38.520 --> 00:02:57.630
+Michele Sevegnani: And the right of ranging from q plus one, two are are already sorted. So that's key for the correct functioning on the algorithm. And what we obtained the output is the sort of summary from P to our so can time a range, not the two halves.
+
+14
+00:02:59.040 --> 00:03:17.340
+Michele Sevegnani: Okay, so let's go through the instructions here in this with the code. So the first step is to compute the size of the left a summary and the size of the right sub array. And you can do that by just manipulating a the indexes that we have in the first school in the input.
+
+15
+00:03:18.540 --> 00:03:34.590
+Michele Sevegnani: A note that we want these two separate to be to have one extra element and we will see why in a bit. So first part, we copy over from A to this new temporary variable temporary L.
+
+16
+00:03:35.700 --> 00:03:50.610
+Michele Sevegnani: The left half of a from PQ we map it over to 02 and one and one. Sorry. And we do the same for the right half away and we store it in a temporary they called our
+
+17
+00:03:51.780 --> 00:04:04.080
+Michele Sevegnani: Then here we use something called the Sentinels and we use this infinity symbol and it's just a value that is bigger than any other value that we can store it in a so it makes
+
+18
+00:04:04.650 --> 00:04:17.580
+Michele Sevegnani: The rest of the code slightly simple so we can avoid checking at every step if L or are have been entirely account. So that's why we use this streak. And that's why we need the extra cell in our and our
+
+19
+00:04:18.990 --> 00:04:29.040
+Michele Sevegnani: Alright, so what do we have afterwards, whether we need to initialize to indices, I am J to zero and use them to scan a
+
+20
+00:04:30.120 --> 00:04:42.480
+Michele Sevegnani: L and j is used for our then we have a for loop, and we use it from to range from P to our so over the entire array.
+
+21
+00:04:43.650 --> 00:04:50.490
+Michele Sevegnani: And then I teach a step of decoration, we just compare L and are
+
+22
+00:04:51.570 --> 00:04:59.580
+Michele Sevegnani: If L is less than our down we copied over to the current position in a so AK takes I
+
+23
+00:05:00.000 --> 00:05:16.620
+Michele Sevegnani: And we increment by otherwise we copy over the right elements and we increment j. So, I remember is the index to scan L and G is the index to scan our thing. So we only increment the array from which we copy from
+
+24
+00:05:18.510 --> 00:05:25.920
+Michele Sevegnani: Right, so let's see a couple of examples. So I assume that we have these array A
+
+25
+00:05:27.420 --> 00:05:33.660
+Michele Sevegnani: And then our indices are zero. So we want to merge the entire array.
+
+26
+00:05:34.830 --> 00:05:47.910
+Michele Sevegnani: So we have zero and five has the two hippie and our indices and Q is in the middle is to change. So of course we start from zero. So 01234 and five.
+
+27
+00:05:48.990 --> 00:05:54.630
+Michele Sevegnani: So we can compute and one and then two, if you do the math, it becomes three and three
+
+28
+00:05:55.650 --> 00:06:02.550
+Michele Sevegnani: So we create the temporary arrays to store the left a summary and the right summary.
+
+29
+00:06:03.630 --> 00:06:22.800
+Michele Sevegnani: So let's say we copy over from P to queue. And remember, we have an extra sale. So we are one, three and four years stored in L and to five and six stored in our so we assume we have this copy function that is a linear running time. So we need to scan a to copy it over to LA or are
+
+30
+00:06:24.570 --> 00:06:33.390
+Michele Sevegnani: Here we put the Sentinels infinity in the last elements of L and are and then we initialize the two indexes I NJ.
+
+31
+00:06:34.440 --> 00:06:48.810
+Michele Sevegnani: To zero. So, they are the first elements in our and our mark them in green and the same here. I want to mark the current index of four of the for loop ingredients. Okay, is zero at the moment here.
+
+32
+00:06:50.460 --> 00:06:52.410
+Michele Sevegnani: Okay, because it takes the value of being
+
+33
+00:06:53.430 --> 00:07:07.980
+Michele Sevegnani: So we are live here and the conditional inside the for loop, we need to compare la vie is if it's less or equal done air of J. So in this case we have f of zero.
+
+34
+00:07:08.700 --> 00:07:21.180
+Michele Sevegnani: Is one and our of zero is too. So one is less than two and we copy over one and we increment only. I know. Jay, because we are in the if branch.
+
+35
+00:07:22.140 --> 00:07:32.400
+Michele Sevegnani: Okay, so I incremental I say marketing green and we loop again in the for loop. So now we are in three and position case or a petition to
+
+36
+00:07:33.240 --> 00:07:42.810
+Michele Sevegnani: So now we compare two and three and this time we copy from our because two is less than three. So we increment j and we copy to imposition K inside a
+
+37
+00:07:43.800 --> 00:07:56.700
+Michele Sevegnani: So that's what happened here. So now we do the third iteration of the for loop, we need to compare five and three we copy from L because fee is less than five. So we copied from L and we increment i
+
+38
+00:07:57.900 --> 00:07:58.260
+Michele Sevegnani: So,
+
+39
+00:07:59.430 --> 00:08:03.000
+Michele Sevegnani: We incremental I now we are in position k here.
+
+40
+00:08:04.260 --> 00:08:06.990
+Michele Sevegnani: Is for is less than five we copy again from hell.
+
+41
+00:08:08.790 --> 00:08:18.030
+Michele Sevegnani: And then here we are always going to copy it from our because a everybody we take from our is always less than the sentinel L. So we copy over five and six.
+
+42
+00:08:19.620 --> 00:08:29.280
+Michele Sevegnani: And that's it. So that's how he works so important here to notice is that l&r were already sorted. You see 134 to five six.
+
+43
+00:08:30.840 --> 00:08:35.970
+Michele Sevegnani: But the procedure puts them together in a sort of array 12345 and six.
+
+44
+00:08:38.160 --> 00:08:41.400
+Michele Sevegnani: Alright, so let's move forward. I hope that is clear.
+
+45
+00:08:43.140 --> 00:08:53.190
+Michele Sevegnani: So clearly the running time here is linear. So it's bigger of an because we are just scanning a so there's nothing more to do, and
+
+46
+00:08:54.240 --> 00:09:00.660
+Michele Sevegnani: You can see here domain loop is just linear in the is executed and times. Where is the size of a
+
+47
+00:09:02.280 --> 00:09:05.730
+Michele Sevegnani: And all the operations are
+
+48
+00:09:06.930 --> 00:09:10.980
+Michele Sevegnani: A constant. OK. So the only a leaner operation is copy
+
+49
+00:09:12.960 --> 00:09:16.560
+Michele Sevegnani: So we can use be go and then another property.
+
+50
+00:09:17.730 --> 00:09:19.920
+Michele Sevegnani: In these murders procedure is stable.
+
+51
+00:09:21.090 --> 00:09:32.400
+Michele Sevegnani: You remember stable means that the order of elements with the same key is preserved. Okay, so if you have two buckets. We don't swap them around. We keep them in the same order as the they were in the input.
+
+52
+00:09:34.080 --> 00:09:46.050
+Michele Sevegnani: And then we have a linear memory requirement. Why is that, well, we need to use this temporary our raid arrays to store our air and our
+
+53
+00:09:47.220 --> 00:09:53.280
+Michele Sevegnani: So we need extra memory of why we perform the computation of merge.
+
+54
+00:09:54.510 --> 00:10:05.430
+Michele Sevegnani: It is possible to implement our new place version where l and are not necessary, but then it's quite difficult to keep stability as well so
+
+55
+00:10:06.930 --> 00:10:08.460
+Michele Sevegnani: And we are not going to do that here.
+
+56
+00:10:10.650 --> 00:10:21.330
+Michele Sevegnani: Okay, so that's the most complex part of the merchant, the algorithm. Now let's see how we are going to use merge and divide and conquer scheme to define merge shorts.
+
+57
+00:10:22.590 --> 00:10:33.810
+Michele Sevegnani: So let's start from as usual the input of our procedure, it sort of takes an array and to indexes be and are so the left P and are the right
+
+58
+00:10:34.920 --> 00:10:48.150
+Michele Sevegnani: Index sets that piece less required an hour. So one is to the left piece to the left or. And the idea is that the output is a sort of disordered array from P to our
+
+59
+00:10:49.170 --> 00:10:54.300
+Michele Sevegnani: OK, so the pseudo code is here is very, very simple is. Yeah, it's much easier than lurch.
+
+60
+00:10:55.380 --> 00:11:01.020
+Michele Sevegnani: So we have a termination termination condition. So it's if he is
+
+61
+00:11:02.160 --> 00:11:18.120
+Michele Sevegnani: Not it's great to record an hour. We don't do anything. We just terminate. Otherwise if piece less than an hour. We need to execute this for instructions. Let's go through them. So first of all, we defined the midpoint index. Q.
+
+62
+00:11:19.140 --> 00:11:30.420
+Michele Sevegnani: Is just p plus are divided by to remember. Here we are doing integer division, so we don't get I don't know 3.5 it's either three or four
+
+63
+00:11:32.850 --> 00:11:46.800
+Michele Sevegnani: A merged sort. So we need to do the divide steps. So let's invoke a recursive emerged sort on the left part of a so we arranged from P to Q. So we defined as the midpoint. So we are fine.
+
+64
+00:11:47.190 --> 00:11:56.610
+Michele Sevegnani: And then we need to call it a recursive we on the right, a summary. So we call it from q plus one to our. So the last part.
+
+65
+00:11:58.320 --> 00:12:07.560
+Michele Sevegnani: Down, assuming that merged sort returns from the left hand Mercer to transform the right, then we know that these two sub arrays are sorted
+
+66
+00:12:08.250 --> 00:12:18.360
+Michele Sevegnani: Them, then we can call Merge on the entire a with the appropriate indexes PQ under in order to fuse them to merge them to obtain are fully sorted a.
+
+67
+00:12:19.200 --> 00:12:33.120
+Michele Sevegnani: Chain. So if you want to sort an array A with an elements. We want to sort all of it. The initial call to maturity is going to be like this. So we call it on a week from first element zero to the last element n minus one.
+
+68
+00:12:35.430 --> 00:12:35.910
+Michele Sevegnani: Okay.
+
+69
+00:12:37.350 --> 00:12:50.190
+Michele Sevegnani: So let's go through the recursion three a, as you saw, hearing the pseudo code. We are in a binary data collection because there are merged sorting defined in terms of to cause of Mozart within its body.
+
+70
+00:12:50.670 --> 00:13:11.430
+Michele Sevegnani: So we don't have a recursion trace. We have a recursion tree binary tree. So let's look at this example input here we have an array A with elements you know 563213 and we want to sort it all from index zero to index six. So the last one.
+
+71
+00:13:12.660 --> 00:13:13.920
+Michele Sevegnani: Okay, so as usual.
+
+72
+00:13:15.510 --> 00:13:20.970
+Michele Sevegnani: We want to have a box in the tree and node in the tree representing each recursive call.
+
+73
+00:13:22.200 --> 00:13:36.990
+Michele Sevegnani: So a first step we to compute the midpoint queue. So in this case is free. So we take four elements for the left Sudbury and three elements for the right separate so
+
+74
+00:13:38.730 --> 00:13:50.130
+Michele Sevegnani: First, let's go back one second here. Once we complete the queue. We need to call Mercer on the left, then emerged on the right and down. We do the Union, the, the merge.
+
+75
+00:13:51.180 --> 00:13:51.930
+Michele Sevegnani: Okay, so
+
+76
+00:13:53.130 --> 00:13:56.010
+Michele Sevegnani: Left separate and 0563 okay
+
+77
+00:13:57.150 --> 00:14:23.520
+Michele Sevegnani: Then we need to call again recursive the A, we need to split it again. So he of the midpoint is going to give us 05 for the left separate then we do it again until we arrive at the stopping condition of the recursion. So once we stop. We can call the, the second call to merge short
+
+78
+00:14:24.630 --> 00:14:42.420
+Michele Sevegnani: On the right, summary. Once that one returns as well. It will terminate because there's only one element, then we can finally invoke merge over zero and five, so zero and five A already sorted, so sorry I just right here. The result of the merge.
+
+79
+00:14:43.710 --> 00:14:56.880
+Michele Sevegnani: So when we are right here. Now we are set to call merged sort on the right summary. So we have six three. Now we need to call it on the left, separate and then on the right, sorry.
+
+80
+00:14:58.350 --> 00:15:12.120
+Michele Sevegnani: Now we do merge. Sorry. And we got three six because it was six is sort of sorted. But when we do the merge. We need to swap them. And here again. Now we want to
+
+81
+00:15:13.560 --> 00:15:17.430
+Michele Sevegnani: A do merge between 05 and three six
+
+82
+00:15:18.990 --> 00:15:33.510
+Michele Sevegnani: And that's what we obtained so 035 and six. Now we can call the recursive a procedure recursive or sort on the right, a summary of the top level. So now, we call it on 213
+
+83
+00:15:34.680 --> 00:15:42.780
+Michele Sevegnani: We do the left first left again right emerge. So you see, we go down, up.
+
+84
+00:15:44.550 --> 00:15:48.990
+Michele Sevegnani: Then here we only have three so it's fine. We don't need to go further down
+
+85
+00:15:50.340 --> 00:15:55.470
+Michele Sevegnani: And we can merge on 123 so now we need to do the final call to merge.
+
+86
+00:15:57.210 --> 00:16:05.010
+Michele Sevegnani: We need to merge 0356 and 123 that would give us the sorts of every from zero to six, and we terminate.
+
+87
+00:16:06.240 --> 00:16:27.480
+Michele Sevegnani: So you see that having the recursion three helps understanding how the algorithms algorithm works and all the swapping is just performed by merge. You said we are not moving around the elements. A going through the recursion, the recursion is just a splitting up the array correctly.
+
+88
+00:16:29.580 --> 00:16:33.450
+Michele Sevegnani: All right, so what are the properties of March forth
+
+89
+00:16:35.400 --> 00:16:47.430
+Michele Sevegnani: Since merger stable Mercedes also stay well. As I said, the only part of the algorithm that moves elements around is merged since merger stable. The overall merged sorties stable.
+
+90
+00:16:48.600 --> 00:16:56.880
+Michele Sevegnani: It is not in place. Why because merge a user's memory to allocate L and are the temporary arrays.
+
+91
+00:16:58.290 --> 00:17:04.230
+Michele Sevegnani: And the running time is because of n log n within the best and worst cases.
+
+92
+00:17:05.250 --> 00:17:13.530
+Michele Sevegnani: So you will you see that it's more efficient than the insertion sore. We have already started. It was a quadratic in the worst case,
+
+93
+00:17:14.790 --> 00:17:29.640
+Michele Sevegnani: A, we are not going to do the formal analysis. Now we are going to see how to compute that running time in the next lecture because it's a bit complicated, because we need to introduce a new methods to analyze recursive algorithms.
+
+94
+00:17:31.140 --> 00:17:42.090
+Michele Sevegnani: Alright, so, in practice, you usually have a huge improvements on the standard sort if you need to implement it in, you know, in a working project.
+
+95
+00:17:42.630 --> 00:17:56.040
+Michele Sevegnani: So you can have in place, or sort by redefining merge so that it's in place are very common implementation is to have bottom up iterative Merge Short
+
+96
+00:17:57.120 --> 00:18:14.940
+Michele Sevegnani: And here there are the details. So you need to organize the mergers. So that's all the emergence of a race of length to are done one bus so we pass a delay in this country one and we just check all the summaries of length to then we know do another pass and we just
+
+97
+00:18:16.140 --> 00:18:23.490
+Michele Sevegnani: merge the summaries of length for and so on and so forth until the entire array is a a sort of
+
+98
+00:18:24.750 --> 00:18:31.830
+Michele Sevegnani: So that's how we pretty much to reproduce the the binary a
+
+99
+00:18:32.910 --> 00:18:35.430
+Michele Sevegnani: Question three that we have seen in the example before
+
+100
+00:18:36.510 --> 00:18:44.700
+Michele Sevegnani: Another very common approach is to use insertion sorts for small instances. So, we have seen that insertion sort is
+
+101
+00:18:45.810 --> 00:18:48.240
+Michele Sevegnani: In the worst case, it's lower
+
+102
+00:18:49.320 --> 00:19:03.780
+Michele Sevegnani: But often for a small inputs and maybe with a lot of duplicates or already sorted it can be competitive. So, typically a you instead of keep going down with the recursion until you
+
+103
+00:19:04.350 --> 00:19:20.940
+Michele Sevegnani: Reach the one size the elements with only one element. They are raised with only one element you call in session sort instead when you have something in between five or 20 elements. So you keep doing your
+
+104
+00:19:21.540 --> 00:19:41.220
+Michele Sevegnani: Merged sort, but then you cut the regression earlier and you just call insertion sort of these smaller chunks, then of course you need to keep calling marriage to propagate up to the top of the regression tree. So I will ask you to implement some of these in the second log
+
+105
+00:19:42.480 --> 00:19:42.990
+Michele Sevegnani: All right.
+
+106
+00:19:44.730 --> 00:19:54.420
+Michele Sevegnani: So summary, we have studied Mozart is a divide and conquer recursive sorting algorithm. We have seen its properties and some possible improvements.
+
+107
+00:19:54.930 --> 00:20:10.140
+Michele Sevegnani: And we put a lot of emphasis on the merge procedure that allows us to, to, to define the algorithm. So next time we are going to see how we analyze a algorithms like Mozart and later on we will see some other sorting algorithms.
+
+108
+00:20:11.580 --> 00:20:17.850
+Michele Sevegnani: Okay, so that's all for today. Thank you for your attention, and I'll see you in class.
+

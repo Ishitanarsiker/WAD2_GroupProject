@@ -1,7 +1,9 @@
 import os
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'lectureFinder.settings')
 
 import django
+
 django.setup()
 from lectureFinderApp.models import UserProfile, Course, Lecture, SavedLecture
 from django.contrib.auth.models import User
@@ -21,6 +23,9 @@ def populate():
         {'first_name': 'Derek', 'last_name': 'Somerville', 'email': 'email1@gmail.com', 'is_professor': True},
         {'first_name': 'Alistair', 'last_name': 'Morrison', 'email': 'email2@gmail.net', 'is_professor': True},
         {'first_name': 'Michele', 'last_name': 'Sevegnani', 'email': 'email3@gmail.net', 'is_professor': True},
+        {'first_name': 'Gethin', 'last_name': 'Norman', 'email': 'email4@gmail.net', 'is_professor': True},
+        {'first_name': 'Mary Ellen', 'last_name': 'Foster', 'email': 'email5@gmail.net', 'is_professor': True},
+        {'first_name': 'Angelos', 'last_name': 'Marnerides', 'email': 'email6@gmail.net', 'is_professor': True},
         {'first_name': 'Luke', 'last_name': 'Mullen', 'email': 'email4@gmail.net'},
         {'first_name': 'John', 'last_name': 'Smith', 'email': 'email5@gmail.net'},
         {'first_name': 'David', 'last_name': 'Black', 'email': 'email6@gmail.net'},
@@ -70,6 +75,49 @@ def populate():
                 'professor': professors[2],
                 'views': 68,
                 'week': 2
+            },
+
+            {
+                'title': 'ADS2 - Lecture 5 - MERGE SORT',
+                'transcript_name': 'ADS2_merge_sort_transcript.vtt',
+                'video_url': 'https://uofglasgow.zoom.us/rec/play/l5_NrzmZizGtIEU14tw48_Hsmk0lWCRAmMnys1n7dxYa8X3mDNcmAQA4s55ZMbnQvvrdFUGaLc0tYEeN.06DWBCPf86ox6iof?continueMode=true&_x_zm_rtaid=Eec8LpnvRpKOq198-1c_mw.1648433865556.223cbaf9613b52610ba63ef83260fb6a&_x_zm_rhtaid=980',
+                'slideshow_url': 'https://moodle.gla.ac.uk/pluginfile.php/4813403/mod_folder/content/0/L5.pptx?forcedownload=1',
+                'professor': professors[2],
+                'views': 103,
+                'week': 1
+            }
+        ],
+        2024: [
+            {
+                'title': 'Topic 8 - TLS',
+                'transcript_name': '',
+                'video_url': 'https://uofglasgow.zoom.us/rec/play/x2LkSCG96eCY7VNopDTOsyEttrjed46OdszGVBYm7SSNGyvad49SCyKzIIo5AqygP3CVzfScr9DMg6Fl.Ol_IZqhIAlt4yBzi?startTime=1603134412000&_x_zm_rtaid=Eec8LpnvRpKOq198-1c_mw.1648433865556.223cbaf9613b52610ba63ef83260fb6a&_x_zm_rhtaid=980',
+                'slideshow_url': 'https://moodle.gla.ac.uk/pluginfile.php/4812897/mod_resource/content/1/Security%20and%20Privacy_1.pdf',
+                'professor': professors[5],
+                'views': 33,
+                'week': 4
+            }
+        ],
+        2001: [
+            {
+                'title': 'JP2 Week 1 Lecture Video',
+                'transcript_name': '',
+                'video_url': 'https://web.microsoftstream.com/video/d506f755-a79a-4393-90b8-33d94d321df3?referrer=https:%2F%2Fmoodle.gla.ac.uk%2F',
+                'slideshow_url': 'https://moodle.gla.ac.uk/pluginfile.php/4810872/mod_resource/content/1/2021-09-27.pdf',
+                'professor': professors[4],
+                'views': 83,
+                'week': 1
+            }
+        ],
+        2003: [
+            {
+                'title': 'Lecture 6 (Numbers - Part 1) - Video 2',
+                'transcript_name': '',
+                'video_url': 'https://uofglasgow.zoom.us/rec/play/Q_jMuxRWON93DbJ1EBNSR3-DWHlERyMe5-4U2hcTG7IUpPMEztkGfvHs1xSvWon38ixmOvRophQezYTq.ytrrF2vmtUaZYbBC?startTime=1599730606000&_x_zm_rtaid=Eec8LpnvRpKOq198-1c_mw.1648433865556.223cbaf9613b52610ba63ef83260fb6a&_x_zm_rhtaid=980',
+                'slideshow_url': 'https://moodle.gla.ac.uk/pluginfile.php/4810872/mod_resource/content/1/2021-09-27.pdf',
+                'professor': professors[3],
+                'views': 83,
+                'week': 1
             }
         ]
     }
@@ -119,7 +167,9 @@ def add_lecture(title, video_url, transcript_name, slideshow_url, course, profes
 
 def add_user(first_name, last_name, email, is_professor=False):
     # first create a user record using django's user model
-    django_user = User.objects.get_or_create(username=first_name+last_name, first_name=first_name, last_name=last_name, email=email)[0]
+    django_user = \
+    User.objects.get_or_create(username=first_name + last_name, first_name=first_name, last_name=last_name,
+                               email=email)[0]
     django_user.save()
 
     user = UserProfile.objects.get_or_create(user=django_user, is_professor=is_professor)[0]
