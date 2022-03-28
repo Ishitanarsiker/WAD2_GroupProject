@@ -35,13 +35,13 @@ class LikeLectureView(View):
 
 
 def index(request):
-    # Index page will display both the 10 most recently uploaded and the 10 most viewed lectures.
+    # Index page will display both the 7 most recently uploaded and the 10 most viewed lectures.
     all_lectures = Lecture.objects.all()  # ordered by last record inserted into the table.
     all_lectures_by_views = all_lectures.order_by('-views')
 
     context_dict = {
-        'recently_uploaded': all_lectures[:10],
-        'most_viewed': all_lectures_by_views[:10],
+        'recently_uploaded': all_lectures[0:7:-1],
+        'most_viewed': all_lectures_by_views[:7],
     }
 
     return render(request, 'lectureFinderApp/index.html', context=context_dict)
