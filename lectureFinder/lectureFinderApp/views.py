@@ -41,7 +41,7 @@ def index(request):
     all_lectures_by_views = all_lectures.order_by('-views')
 
     context_dict = {
-        'recently_uploaded': all_lectures[0:7:-1],
+        'recently_uploaded': all_lectures[::-1][:7],
         'most_viewed': all_lectures_by_views[:7],
     }
 
