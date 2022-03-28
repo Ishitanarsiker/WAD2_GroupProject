@@ -168,8 +168,8 @@ def add_lecture(title, video_url, transcript_name, slideshow_url, course, profes
 def add_user(first_name, last_name, email, is_professor=False):
     # first create a user record using django's user model
     django_user = \
-    User.objects.get_or_create(username=first_name + last_name, first_name=first_name, last_name=last_name,
-                               email=email)[0]
+        User.objects.get_or_create(username=first_name + last_name, first_name=first_name, last_name=last_name,
+                                   email=email)[0]
     django_user.save()
 
     user = UserProfile.objects.get_or_create(user=django_user, is_professor=is_professor)[0]
